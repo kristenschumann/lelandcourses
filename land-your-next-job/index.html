@@ -250,6 +250,48 @@ nav .btn { padding: 10px 24px; font-size: 0.875rem; }
 .instructor-sessions {
   font-size: 0.8rem; color: var(--gray-500); font-weight: 500;
 }
+.instructor-card-link { text-decoration: none; color: inherit; display: block; }
+
+/* --- Comparison --- */
+.comparison { background: var(--white); }
+.comparison-table-wrap { margin-top: 40px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.comparison-table {
+  width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 700px;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--gray-100);
+}
+.comparison-table thead th {
+  font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--gray-500); padding-bottom: 12px; white-space: nowrap;
+}
+.comparison-table thead th:first-child { color: var(--gray-400); }
+.comparison-table thead th.highlight {
+  color: var(--green); border-top: 3px solid var(--green); border-radius: 8px 8px 0 0;
+}
+.comparison-table td:first-child { font-weight: 600; color: var(--gray-700); }
+.comparison-table td.highlight { background: rgba(21, 176, 120, 0.04); }
+.comparison-table .check { color: var(--green); font-weight: 700; }
+.comparison-table .dash { color: var(--gray-300); }
+/* Mobile stacked cards */
+.comparison-mobile { display: none; margin-top: 32px; }
+.compare-card {
+  background: var(--gray-50); border-radius: 12px; padding: 24px; margin-bottom: 16px;
+}
+.compare-card.featured {
+  background: var(--white); border: 2px solid var(--green);
+}
+.compare-card h3 { font-size: 1.1rem; margin-bottom: 4px; }
+.compare-card .compare-price { font-size: 0.9rem; color: var(--gray-500); margin-bottom: 16px; }
+.compare-card .compare-price.featured-price { color: var(--green); font-weight: 700; }
+.compare-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--gray-100); font-size: 0.9rem; }
+.compare-row:last-child { border-bottom: none; }
+.compare-label { color: var(--gray-500); }
+.compare-value { font-weight: 600; text-align: right; max-width: 55%; }
+@media (max-width: 768px) {
+  .comparison-table-wrap { display: none; }
+  .comparison-mobile { display: block; }
+}
 
 /* --- Testimonials --- */
 .testimonials { background: var(--white); }
@@ -386,7 +428,7 @@ footer a:hover { color: var(--white); }
 <section class="hero">
   <div class="container">
     <div class="cohort-badge"><span class="dot"></span> Next Cohort: Mar 17 &ndash; Apr 3</div>
-    <h1>Land Your Next Job With AI on Your Side</h1>
+    <h1>Land Your Next Job</h1>
     <p>Build a job search system that combines AI tools with real human connection, helping you land a role you're excited about.</p>
     <div class="trust-strip">
       <div class="trust-item"><span class="num">6</span> Live Sessions</div>
@@ -649,6 +691,7 @@ footer a:hover { color: var(--white); }
     <p style="max-width: 640px; font-size: 1.05rem;">Each session is led by a top-rated Leland coach with deep expertise in that topic. You'll get coaching from multiple perspectives across the bootcamp.</p>
     <div class="instructor-grid">
 
+      <a href="https://www.joinleland.com/coaches/grant-r" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-top">
           <div class="instructor-avatar">
@@ -662,9 +705,10 @@ footer a:hover { color: var(--white); }
         <div class="instructor-meta">
           <span class="instructor-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7.73304 20.8254H7.73305C6.99865 21.2088 6.09253 20.9242 5.70919 20.1898C5.55585 19.896 5.5041 19.5597 5.56204 19.2334L6.37104 14.5964L2.96504 11.3324V11.3324C2.36553 10.7607 2.343 9.81123 2.91473 9.21172C3.14806 8.96704 3.45722 8.80837 3.79204 8.76144L8.52104 8.08544L10.656 3.82644V3.82644C11.0239 3.08417 11.9239 2.78065 12.6661 3.14852C12.9602 3.29425 13.1983 3.53239 13.344 3.82644L15.479 8.08544L20.208 8.76144V8.76144C21.0285 8.87643 21.6003 9.63472 21.4853 10.4551C21.4384 10.7899 21.2797 11.0991 21.035 11.3324L17.629 14.5964L18.438 19.2344V19.2344C18.5829 20.0501 18.0391 20.8287 17.2234 20.9736C16.8971 21.0315 16.5608 20.9798 16.267 20.8264L12 18.6214L7.73304 20.8254Z" stroke="#15B078" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 53 reviews</span>
         </div>
-        <div class="instructor-sessions">Sessions 1, 2 &amp; 4</div>
       </div>
+      </a>
 
+      <a href="https://www.joinleland.com/coaches/kevin-a" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-top">
           <div class="instructor-avatar">
@@ -678,9 +722,10 @@ footer a:hover { color: var(--white); }
         <div class="instructor-meta">
           <span class="instructor-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7.73304 20.8254H7.73305C6.99865 21.2088 6.09253 20.9242 5.70919 20.1898C5.55585 19.896 5.5041 19.5597 5.56204 19.2334L6.37104 14.5964L2.96504 11.3324V11.3324C2.36553 10.7607 2.343 9.81123 2.91473 9.21172C3.14806 8.96704 3.45722 8.80837 3.79204 8.76144L8.52104 8.08544L10.656 3.82644V3.82644C11.0239 3.08417 11.9239 2.78065 12.6661 3.14852C12.9602 3.29425 13.1983 3.53239 13.344 3.82644L15.479 8.08544L20.208 8.76144V8.76144C21.0285 8.87643 21.6003 9.63472 21.4853 10.4551C21.4384 10.7899 21.2797 11.0991 21.035 11.3324L17.629 14.5964L18.438 19.2344V19.2344C18.5829 20.0501 18.0391 20.8287 17.2234 20.9736C16.8971 21.0315 16.5608 20.9798 16.267 20.8264L12 18.6214L7.73304 20.8254Z" stroke="#15B078" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 78 reviews</span>
         </div>
-        <div class="instructor-sessions">Sessions 3, 4 &amp; 5</div>
       </div>
+      </a>
 
+      <a href="https://www.joinleland.com/coaches/faith-b" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-top">
           <div class="instructor-avatar">
@@ -694,9 +739,10 @@ footer a:hover { color: var(--white); }
         <div class="instructor-meta">
           <span class="instructor-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7.73304 20.8254H7.73305C6.99865 21.2088 6.09253 20.9242 5.70919 20.1898C5.55585 19.896 5.5041 19.5597 5.56204 19.2334L6.37104 14.5964L2.96504 11.3324V11.3324C2.36553 10.7607 2.343 9.81123 2.91473 9.21172C3.14806 8.96704 3.45722 8.80837 3.79204 8.76144L8.52104 8.08544L10.656 3.82644V3.82644C11.0239 3.08417 11.9239 2.78065 12.6661 3.14852C12.9602 3.29425 13.1983 3.53239 13.344 3.82644L15.479 8.08544L20.208 8.76144V8.76144C21.0285 8.87643 21.6003 9.63472 21.4853 10.4551C21.4384 10.7899 21.2797 11.0991 21.035 11.3324L17.629 14.5964L18.438 19.2344V19.2344C18.5829 20.0501 18.0391 20.8287 17.2234 20.9736C16.8971 21.0315 16.5608 20.9798 16.267 20.8264L12 18.6214L7.73304 20.8254Z" stroke="#15B078" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 16 reviews</span>
         </div>
-        <div class="instructor-sessions">Sessions 5 &amp; 6</div>
       </div>
+      </a>
 
+      <a href="https://www.joinleland.com/coaches/nick-e" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-top">
           <div class="instructor-avatar">
@@ -710,9 +756,10 @@ footer a:hover { color: var(--white); }
         <div class="instructor-meta">
           <span class="instructor-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7.73304 20.8254H7.73305C6.99865 21.2088 6.09253 20.9242 5.70919 20.1898C5.55585 19.896 5.5041 19.5597 5.56204 19.2334L6.37104 14.5964L2.96504 11.3324V11.3324C2.36553 10.7607 2.343 9.81123 2.91473 9.21172C3.14806 8.96704 3.45722 8.80837 3.79204 8.76144L8.52104 8.08544L10.656 3.82644V3.82644C11.0239 3.08417 11.9239 2.78065 12.6661 3.14852C12.9602 3.29425 13.1983 3.53239 13.344 3.82644L15.479 8.08544L20.208 8.76144V8.76144C21.0285 8.87643 21.6003 9.63472 21.4853 10.4551C21.4384 10.7899 21.2797 11.0991 21.035 11.3324L17.629 14.5964L18.438 19.2344V19.2344C18.5829 20.0501 18.0391 20.8287 17.2234 20.9736C16.8971 21.0315 16.5608 20.9798 16.267 20.8264L12 18.6214L7.73304 20.8254Z" stroke="#15B078" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 15 reviews</span>
         </div>
-        <div class="instructor-sessions">Session 2</div>
       </div>
+      </a>
 
+      <a href="https://www.joinleland.com/coaches/aleesha-p" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-top">
           <div class="instructor-avatar">
@@ -726,9 +773,10 @@ footer a:hover { color: var(--white); }
         <div class="instructor-meta">
           <span class="instructor-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7.73304 20.8254H7.73305C6.99865 21.2088 6.09253 20.9242 5.70919 20.1898C5.55585 19.896 5.5041 19.5597 5.56204 19.2334L6.37104 14.5964L2.96504 11.3324V11.3324C2.36553 10.7607 2.343 9.81123 2.91473 9.21172C3.14806 8.96704 3.45722 8.80837 3.79204 8.76144L8.52104 8.08544L10.656 3.82644V3.82644C11.0239 3.08417 11.9239 2.78065 12.6661 3.14852C12.9602 3.29425 13.1983 3.53239 13.344 3.82644L15.479 8.08544L20.208 8.76144V8.76144C21.0285 8.87643 21.6003 9.63472 21.4853 10.4551C21.4384 10.7899 21.2797 11.0991 21.035 11.3324L17.629 14.5964L18.438 19.2344V19.2344C18.5829 20.0501 18.0391 20.8287 17.2234 20.9736C16.8971 21.0315 16.5608 20.9798 16.267 20.8264L12 18.6214L7.73304 20.8254Z" stroke="#15B078" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 16 reviews</span>
         </div>
-        <div class="instructor-sessions">Sessions 2 &amp; 3</div>
       </div>
+      </a>
 
+      <a href="https://www.joinleland.com/coaches/michelle-w-3" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-top">
           <div class="instructor-avatar">
@@ -742,8 +790,8 @@ footer a:hover { color: var(--white); }
         <div class="instructor-meta">
           <span class="instructor-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M7.73304 20.8254H7.73305C6.99865 21.2088 6.09253 20.9242 5.70919 20.1898C5.55585 19.896 5.5041 19.5597 5.56204 19.2334L6.37104 14.5964L2.96504 11.3324V11.3324C2.36553 10.7607 2.343 9.81123 2.91473 9.21172C3.14806 8.96704 3.45722 8.80837 3.79204 8.76144L8.52104 8.08544L10.656 3.82644V3.82644C11.0239 3.08417 11.9239 2.78065 12.6661 3.14852C12.9602 3.29425 13.1983 3.53239 13.344 3.82644L15.479 8.08544L20.208 8.76144V8.76144C21.0285 8.87643 21.6003 9.63472 21.4853 10.4551C21.4384 10.7899 21.2797 11.0991 21.035 11.3324L17.629 14.5964L18.438 19.2344V19.2344C18.5829 20.0501 18.0391 20.8287 17.2234 20.9736C16.8971 21.0315 16.5608 20.9798 16.267 20.8264L12 18.6214L7.73304 20.8254Z" stroke="#15B078" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> 17 reviews</span>
         </div>
-        <div class="instructor-sessions">Sessions 1 &amp; 2</div>
       </div>
+      </a>
 
     </div>
   </div>
@@ -817,11 +865,121 @@ footer a:hover { color: var(--white); }
   </div>
 </section>
 
+<!-- Comparison -->
+<section class="comparison">
+  <div class="container">
+    <h2 style="text-align: center;">How we compare</h2>
+    <p style="text-align: center; max-width: 640px; margin: 0 auto; font-size: 1.05rem;">There are many ways to get job search help. Here&rsquo;s how this bootcamp stacks up.</p>
+
+    <!-- Desktop table -->
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="highlight">Leland ($599)</th>
+            <th>Maven ($1,200)</th>
+            <th>Pathrise ($6k&ndash;$24k ISA)</th>
+            <th>Udemy ($15)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Live sessions</td>
+            <td class="highlight"><span class="check">&#10003;</span> 6 sessions, 90 min each</td>
+            <td>~2 sessions (weekend)</td>
+            <td><span class="dash">&mdash;</span> None structured</td>
+            <td><span class="dash">&mdash;</span> None</td>
+          </tr>
+          <tr>
+            <td>1:1 coaching</td>
+            <td class="highlight"><span class="check">&#10003;</span> 30-min mock interview</td>
+            <td><span class="dash">&mdash;</span> No</td>
+            <td><span class="check">&#10003;</span> Yes (ongoing)</td>
+            <td><span class="dash">&mdash;</span> No</td>
+          </tr>
+          <tr>
+            <td>AI tools training</td>
+            <td class="highlight"><span class="check">&#10003;</span> Built into curriculum</td>
+            <td><span class="dash">&mdash;</span> No</td>
+            <td><span class="dash">&mdash;</span> No</td>
+            <td><span class="dash">&mdash;</span> No</td>
+          </tr>
+          <tr>
+            <td>Platform membership</td>
+            <td class="highlight"><span class="check">&#10003;</span> 3 months Leland+ FREE</td>
+            <td><span class="dash">&mdash;</span> No</td>
+            <td><span class="dash">&mdash;</span> No</td>
+            <td><span class="dash">&mdash;</span> No</td>
+          </tr>
+          <tr>
+            <td>Community</td>
+            <td class="highlight"><span class="check">&#10003;</span> Alumni Slack</td>
+            <td>Discord (limited)</td>
+            <td><span class="dash">&mdash;</span> No</td>
+            <td><span class="dash">&mdash;</span> No</td>
+          </tr>
+          <tr>
+            <td>Recordings</td>
+            <td class="highlight"><span class="check">&#10003;</span> All sessions recorded</td>
+            <td><span class="check">&#10003;</span> Yes</td>
+            <td><span class="dash">&mdash;</span> N/A</td>
+            <td><span class="check">&#10003;</span> Pre-recorded only</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile stacked cards -->
+    <div class="comparison-mobile">
+      <div class="compare-card featured">
+        <h3>Leland</h3>
+        <div class="compare-price featured-price">$599</div>
+        <div class="compare-row"><span class="compare-label">Live sessions</span><span class="compare-value">6 sessions, 90 min</span></div>
+        <div class="compare-row"><span class="compare-label">1:1 coaching</span><span class="compare-value">30-min mock interview</span></div>
+        <div class="compare-row"><span class="compare-label">AI tools training</span><span class="compare-value">Built in</span></div>
+        <div class="compare-row"><span class="compare-label">Platform membership</span><span class="compare-value">3 mo Leland+ FREE</span></div>
+        <div class="compare-row"><span class="compare-label">Community</span><span class="compare-value">Alumni Slack</span></div>
+        <div class="compare-row"><span class="compare-label">Recordings</span><span class="compare-value">All recorded</span></div>
+      </div>
+      <div class="compare-card">
+        <h3>Maven</h3>
+        <div class="compare-price">$1,200</div>
+        <div class="compare-row"><span class="compare-label">Live sessions</span><span class="compare-value">~2 (weekend)</span></div>
+        <div class="compare-row"><span class="compare-label">1:1 coaching</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">AI tools training</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">Platform membership</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">Community</span><span class="compare-value">Discord (limited)</span></div>
+        <div class="compare-row"><span class="compare-label">Recordings</span><span class="compare-value">Yes</span></div>
+      </div>
+      <div class="compare-card">
+        <h3>Pathrise</h3>
+        <div class="compare-price">$6k&ndash;$24k ISA</div>
+        <div class="compare-row"><span class="compare-label">Live sessions</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">1:1 coaching</span><span class="compare-value">Yes (ongoing)</span></div>
+        <div class="compare-row"><span class="compare-label">AI tools training</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">Platform membership</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">Community</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">Recordings</span><span class="compare-value">N/A</span></div>
+      </div>
+      <div class="compare-card">
+        <h3>Udemy</h3>
+        <div class="compare-price">$15</div>
+        <div class="compare-row"><span class="compare-label">Live sessions</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">1:1 coaching</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">AI tools training</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">Platform membership</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">Community</span><span class="compare-value">&mdash;</span></div>
+        <div class="compare-row"><span class="compare-label">Recordings</span><span class="compare-value">Pre-recorded only</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Pricing -->
 <section class="pricing" id="pricing">
   <div class="container">
-    <p class="eyebrow">Pricing</p>
-    <h2 style="text-align: center;">Invest in your career. Not a fortune.</h2>
+    <h2 style="text-align: center;">Invest in your career.</h2>
     <div class="pricing-card">
       <div class="popular-badge">22 Seats Left</div>
       <h3 style="font-size: 1.3rem; margin-top: 12px;">AI-Powered Job Search Bootcamp</h3>
@@ -861,7 +1019,6 @@ footer a:hover { color: var(--white); }
 <!-- FAQ -->
 <section class="faq" id="faq">
   <div class="container">
-    <p class="eyebrow">Questions? We've Got Answers.</p>
     <h2 style="text-align: center;">Frequently Asked Questions</h2>
     <div class="faq-list">
 
