@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Workbook | Leland</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 11pt;
+      line-height: 1.5;
+      color: #333333;
+      background: #FFFFFF;
+    }
+
+    /* Print instructions banner - only visible on screen */
+    .print-instructions {
+      background: #FFF3CD;
+      border: 1px solid #FFE69C;
+      padding: 12px 16px;
+      margin: 0 auto 20px auto;
+      max-width: 7in;
+      border-radius: 6px;
+      font-size: 10pt;
+      line-height: 1.4;
+    }
+
+    .print-instructions strong {
+      color: #856404;
+    }
+
+    @media print {
+      .print-instructions { display: none !important; }
+
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .callout, .callout-light, .key-points, table, .two-col, .card, .exercise-box {
+        page-break-inside: avoid;
+      }
+
+      h2, h3 {
+        page-break-after: avoid;
+      }
+    }
+
+    .page {
+      max-width: 7in;
+      margin: 0 auto;
+      padding: 0.5in 0;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #15B078;
+      margin-bottom: 24px;
+    }
+
+    .logo { color: #15B078; font-size: 14pt; font-weight: 700; letter-spacing: 0.02em; }
+    .doc-type { color: #9B9B9B; font-size: 10pt; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* Title */
+    h1 {
+      font-size: 24pt;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 12pt;
+      color: #707070;
+      margin-bottom: 24px;
+    }
+
+    /* Eyebrow */
+    .eyebrow {
+      color: #15B078;
+      font-size: 10pt;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    /* Section Headers */
+    h2 {
+      font-size: 14pt;
+      font-weight: 700;
+      color: #113A2D;
+      margin: 24px 0 12px 0;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    h3 {
+      font-size: 12pt;
+      font-weight: 600;
+      color: #333333;
+      margin: 16px 0 8px 0;
+    }
+
+    h4 {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #333333;
+      margin: 0 0 6px 0;
+    }
+
+    /* Body Text */
+    p {
+      margin-bottom: 12px;
+      color: #333333;
+    }
+
+    .highlight { color: #15B078; font-weight: 600; }
+
+    /* Tables with dark headers */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 10pt;
+    }
+
+    th {
+      background-color: #113A2D;
+      color: white;
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 12px;
+    }
+
+    td {
+      padding: 10px 12px;
+      border-bottom: 1px solid #E5E5E5;
+    }
+
+    tr:nth-child(even) { background-color: #F8F8F8; }
+
+    .table-header { font-weight: 600; color: #15B078; }
+
+    /* Dark Callout (primary) */
+    .callout {
+      background-color: #113A2D;
+      color: white;
+      padding: 16px 20px;
+      margin: 16px 0;
+      border-radius: 8px;
+    }
+
+    .callout h3, .callout h4 { color: #15B078; margin: 0 0 8px 0; }
+    .callout p { color: white; margin: 0; }
+
+    /* Light Callout (secondary) */
+    .callout-light {
+      background-color: rgba(21, 176, 120, 0.08);
+      padding: 12px 16px;
+      margin: 16px 0;
+      border-radius: 8px;
+    }
+
+    .callout-title {
+      font-weight: 600;
+      color: #15B078;
+      margin-bottom: 4px;
+    }
+
+    /* Key Points (dark) */
+    .key-points {
+      background-color: #113A2D;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      color: white;
+    }
+
+    .key-points h4 {
+      font-size: 10pt;
+      font-weight: 600;
+      color: #15B078;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .key-points ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .key-points li {
+      margin-bottom: 4px;
+    }
+
+    /* Lists */
+    ul, ol {
+      margin: 12px 0 12px 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    ul.plus-list {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    ul.plus-list li {
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 8px;
+      color: #707070;
+    }
+
+    ul.plus-list li::before {
+      content: '+';
+      position: absolute;
+      left: 0;
+      color: #15B078;
+      font-weight: 600;
+    }
+
+    /* Cards */
+    .card {
+      padding: 16px;
+      background: #FFFFFF;
+      border-radius: 8px;
+      border: 1px solid #E5E5E5;
+      margin-bottom: 16px;
+    }
+
+    .card-alt {
+      padding: 16px;
+      background: #F8F8F8;
+      border-radius: 8px;
+    }
+
+    /* Two Column Layout */
+    .two-col {
+      display: flex;
+      gap: 24px;
+    }
+
+    .two-col > div {
+      flex: 1;
+    }
+
+    /* Grid Layout */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    /* Exercise Box */
+    .exercise-box {
+      border: 2px solid #E5E5E5;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .exercise-box h4 {
+      color: #15B078;
+      margin-bottom: 12px;
+    }
+
+    .answer-line {
+      border-bottom: 1px solid #E5E5E5;
+      height: 32px;
+      margin-bottom: 8px;
+    }
+
+    .answer-box {
+      border: 1px solid #E5E5E5;
+      border-radius: 4px;
+      min-height: 80px;
+      padding: 8px;
+      margin-bottom: 12px;
+    }
+
+    /* Type Numbers */
+    .type-num {
+      color: #15B078;
+      font-size: 20pt;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    /* Step Numbers */
+    .step {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .step-num {
+      width: 24px;
+      height: 24px;
+      background-color: #15B078;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      flex-shrink: 0;
+    }
+
+    .step-text { flex: 1; }
+
+    /* Footer */
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #E5E5E5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9pt;
+      color: #9B9B9B;
+    }
+
+    /* Page Break */
+    .page-break {
+      page-break-after: always;
+    }
+
+    /* Utilities */
+    .text-sm { font-size: 10pt; }
+    .text-xs { font-size: 9pt; }
+    .text-muted { color: #9B9B9B; }
+    .text-light { color: #707070; }
+    .text-green { color: #15B078; }
+    .text-center { text-align: center; }
+    .mb-8 { margin-bottom: 8px; }
+    .mb-12 { margin-bottom: 12px; }
+    .mb-16 { margin-bottom: 16px; }
+    .mb-24 { margin-bottom: 24px; }
+
+    /* Formula */
+    .formula {
+      font-family: 'Times New Roman', serif;
+      font-size: 12pt;
+      padding: 8px 12px;
+      background: #F8F8F8;
+      border-radius: 4px;
+      display: inline-block;
+    }
+  </style>
+
+  <!-- KaTeX for math rendering (optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });"></script>
+</head>
+<body>
+
+<div class="print-instructions">
+  <strong>Print Tip:</strong> To print without browser headers/footers, open Print settings → More settings → uncheck "Headers and footers". On Safari: Show Details → uncheck "Print headers and footers".
+</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">Leland</div>
+    <div class="doc-type">Workbook</div>
+  </div>
+
+  <!-- Title -->
+  <h1>Workbook Title</h1>
+  <p class="subtitle">Course Name | Module Name</p>
+
+  <!-- Intro Section -->
+  <h2>Introduction</h2>
+  <p>This workbook accompanies the video lessons. Use it to reinforce concepts, practice problems, and track your progress.</p>
+
+  <div class="callout">
+    <h4>How to Use This Workbook</h4>
+    <ul>
+      <li><strong>Watch first:</strong> Complete the video lesson before attempting exercises</li>
+      <li><strong>Work independently:</strong> Try problems on your own before checking solutions</li>
+      <li><strong>Review mistakes:</strong> Analyze errors to identify patterns and gaps</li>
+    </ul>
+  </div>
+
+  <div class="callout-light">
+    <div class="callout-title">Pro Tip</div>
+    Active practice is more effective than passive review. Struggle with problems before looking at answers.
+  </div>
+
+  <!-- Key Concepts Section -->
+  <h2>Key Concepts</h2>
+
+  <div class="grid-2 mb-24">
+    <div class="card">
+      <div class="type-num mb-8">01</div>
+      <h4>Concept Name</h4>
+      <p class="text-sm text-light">Brief explanation of the first key concept covered in this section.</p>
+    </div>
+    <div class="card">
+      <div class="type-num mb-8">02</div>
+      <h4>Concept Name</h4>
+      <p class="text-sm text-light">Brief explanation of the second key concept covered in this section.</p>
+    </div>
+    <div class="card">
+      <div class="type-num mb-8">03</div>
+      <h4>Concept Name</h4>
+      <p class="text-sm text-light">Brief explanation of the third key concept covered in this section.</p>
+    </div>
+    <div class="card">
+      <div class="type-num mb-8">04</div>
+      <h4>Concept Name</h4>
+      <p class="text-sm text-light">Brief explanation of the fourth key concept covered in this section.</p>
+    </div>
+  </div>
+
+
+</div>
+
+<!-- Page Break -->
+<div class="page-break"></div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">Leland</div>
+    <div class="doc-type">Workbook</div>
+  </div>
+
+  <!-- Practice Exercises Section -->
+  <p class="eyebrow">Practice</p>
+  <h2 style="margin-top: 0;">Exercises</h2>
+
+  <div class="exercise-box">
+    <h4>Exercise 1</h4>
+    <p class="mb-12">Solve the following equation: $2x + 5 = 17$</p>
+    <p class="text-sm text-muted mb-8">Show your work:</p>
+    <div class="answer-box"></div>
+    <p class="text-sm text-muted">Answer: <span class="answer-line" style="display: inline-block; width: 100px;"></span></p>
+  </div>
+
+  <div class="exercise-box">
+    <h4>Exercise 2</h4>
+    <p class="mb-12">If $f(x) = 3x^2 - 2x + 1$, find $f(4)$.</p>
+    <p class="text-sm text-muted mb-8">Show your work:</p>
+    <div class="answer-box"></div>
+    <p class="text-sm text-muted">Answer: <span class="answer-line" style="display: inline-block; width: 100px;"></span></p>
+  </div>
+
+  <div class="exercise-box">
+    <h4>Exercise 3</h4>
+    <p class="mb-12">Simplify: $\frac{x^2 - 9}{x + 3}$</p>
+    <p class="text-sm text-muted mb-8">Show your work:</p>
+    <div class="answer-box"></div>
+    <p class="text-sm text-muted">Answer: <span class="answer-line" style="display: inline-block; width: 100px;"></span></p>
+  </div>
+
+
+</div>
+
+<!-- Page Break -->
+<div class="page-break"></div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">Leland</div>
+    <div class="doc-type">Workbook</div>
+  </div>
+
+  <!-- Answer Key Section -->
+  <p class="eyebrow">Answer Key</p>
+  <h2 style="margin-top: 0;">Solutions</h2>
+
+  <div class="card mb-16">
+    <h4 class="text-green mb-8">Exercise 1</h4>
+    <p class="mb-8">$2x + 5 = 17$</p>
+    <p class="mb-8">$2x = 12$</p>
+    <p><strong>Answer: $x = 6$</strong></p>
+  </div>
+
+  <div class="card mb-16">
+    <h4 class="text-green mb-8">Exercise 2</h4>
+    <p class="mb-8">$f(4) = 3(4)^2 - 2(4) + 1$</p>
+    <p class="mb-8">$f(4) = 3(16) - 8 + 1$</p>
+    <p class="mb-8">$f(4) = 48 - 8 + 1$</p>
+    <p><strong>Answer: $f(4) = 41$</strong></p>
+  </div>
+
+  <div class="card">
+    <h4 class="text-green mb-8">Exercise 3</h4>
+    <p class="mb-8">$\frac{x^2 - 9}{x + 3} = \frac{(x+3)(x-3)}{x + 3}$</p>
+    <p><strong>Answer: $x - 3$ (where $x \neq -3$)</strong></p>
+  </div>
+
+  <div class="key-points" style="margin-top: 32px;">
+    <h4>Key Takeaways</h4>
+    <ul>
+      <li>Always check your answers by substituting back into the original equation</li>
+      <li>Watch for restrictions in the domain (like division by zero)</li>
+      <li>Factor completely before simplifying fractions</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div>Leland Self-Study Course</div>
+    <div>joinleland.com</div>
+  </div>
+
+</div>
+
+</body>
+</html>

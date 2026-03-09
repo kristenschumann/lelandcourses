@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}} - Reference Sheet | Leland</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 9pt;
+      line-height: 1.4;
+      color: #333333;
+      background: #FFFFFF;
+    }
+
+    /* Print instructions banner */
+    .print-instructions {
+      background: #FFF3CD;
+      border: 1px solid #FFE69C;
+      padding: 10px 14px;
+      margin: 0 auto 16px auto;
+      max-width: 7.5in;
+      border-radius: 6px;
+      font-size: 9pt;
+      line-height: 1.4;
+    }
+
+    .print-instructions strong {
+      color: #856404;
+    }
+
+    @media print {
+      .print-instructions { display: none !important; }
+
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .callout, .callout-light, .key-points, .compact-table, .breakdown-box, .two-col, .three-col {
+        page-break-inside: avoid;
+      }
+
+      h2, h3 {
+        page-break-after: avoid;
+      }
+    }
+
+    .page {
+      max-width: 7.5in;
+      margin: 0 auto;
+      padding: 0.25in 0;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #15B078;
+      margin-bottom: 16px;
+    }
+
+    .logo { color: #15B078; font-size: 12pt; font-weight: 700; letter-spacing: 0.02em; }
+    .doc-type { color: #9B9B9B; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.1em; }
+
+    /* Title */
+    h1 {
+      font-size: 20pt;
+      font-weight: 700;
+      color: #000000;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 10pt;
+      color: #707070;
+      margin-bottom: 12px;
+    }
+
+    /* Section Headers - Dark background style */
+    h2 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: #FFFFFF;
+      background-color: #113A2D;
+      padding: 6px 10px;
+      margin: 12px 0 8px 0;
+      border-radius: 4px;
+    }
+
+    h3 {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #15B078;
+      margin: 10px 0 6px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    h4 {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #333333;
+      margin: 0 0 4px 0;
+    }
+
+    p {
+      margin-bottom: 8px;
+    }
+
+    /* Multi-column layouts */
+    .two-col {
+      display: flex;
+      gap: 16px;
+    }
+
+    .two-col > div {
+      flex: 1;
+    }
+
+    .three-col {
+      display: flex;
+      gap: 12px;
+    }
+
+    .three-col > div {
+      flex: 1;
+    }
+
+    /* Compact tables for reference */
+    .compact-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 8pt;
+      margin-bottom: 8px;
+    }
+
+    .compact-table th {
+      background-color: #113A2D;
+      color: white;
+      font-weight: 600;
+      text-align: left;
+      padding: 4px 6px;
+      font-size: 7.5pt;
+    }
+
+    .compact-table td {
+      padding: 3px 6px;
+      border-bottom: 1px solid #F0F0F0;
+    }
+
+    .compact-table tr:nth-child(even) {
+      background-color: #FAFAFA;
+    }
+
+    .compact-table .prefix,
+    .compact-table .root {
+      font-weight: 600;
+      color: #15B078;
+    }
+
+    /* Root tables - slightly larger */
+    .root-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 8px;
+      font-size: 8.5pt;
+    }
+
+    .root-table th {
+      background-color: #F8F8F8;
+      color: #333333;
+      font-weight: 600;
+      text-align: left;
+      padding: 5px 6px;
+      border-bottom: 1px solid #E5E5E5;
+      font-size: 8pt;
+    }
+
+    .root-table td {
+      padding: 4px 6px;
+      border-bottom: 1px solid #F0F0F0;
+      vertical-align: top;
+    }
+
+    .root-table .root {
+      font-weight: 600;
+      color: #15B078;
+      white-space: nowrap;
+    }
+
+    .root-table .meaning {
+      color: #707070;
+      font-style: italic;
+    }
+
+    .root-table .examples {
+      color: #333333;
+      font-size: 8pt;
+    }
+
+    /* Cards - compact */
+    .card-compact {
+      padding: 10px;
+      background: #FFFFFF;
+      border-radius: 6px;
+      border: 1px solid #E5E5E5;
+      margin-bottom: 8px;
+    }
+
+    .card-compact:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-compact h4 {
+      font-size: 9pt;
+      margin-bottom: 4px;
+    }
+
+    .card-compact p {
+      font-size: 8pt;
+      margin-bottom: 2px;
+    }
+
+    /* Colored card backgrounds */
+    .card-green-bg { background: rgba(21, 176, 120, 0.08); border-color: transparent; }
+    .card-orange-bg { background: rgba(239, 133, 9, 0.12); border-color: transparent; }
+    .card-red-bg { background: rgba(251, 90, 66, 0.12); border-color: transparent; }
+    .card-blue-bg { background: rgba(59, 125, 253, 0.12); border-color: transparent; }
+
+    /* Callouts */
+    .callout {
+      background-color: #113A2D;
+      color: white;
+      padding: 10px 12px;
+      margin: 8px 0;
+      border-radius: 6px;
+      font-size: 8.5pt;
+    }
+
+    .callout h4 {
+      color: #15B078;
+      margin-bottom: 4px;
+    }
+
+    .callout p {
+      color: white;
+      margin: 0;
+    }
+
+    .callout-light {
+      background-color: rgba(21, 176, 120, 0.08);
+      padding: 8px 10px;
+      margin: 8px 0;
+      border-radius: 4px;
+      font-size: 8.5pt;
+    }
+
+    .callout-title {
+      font-weight: 600;
+      color: #15B078;
+      margin-bottom: 2px;
+    }
+
+    /* Key Points (dark) */
+    .key-points {
+      background-color: #113A2D;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin: 10px 0;
+      color: white;
+      font-size: 8.5pt;
+    }
+
+    .key-points h4 {
+      font-size: 9pt;
+      font-weight: 600;
+      color: #15B078;
+      margin-bottom: 4px;
+    }
+
+    .key-points ul {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    .key-points li {
+      margin-bottom: 2px;
+    }
+
+    /* Breakdown Box */
+    .breakdown-box {
+      background-color: #F8F8F8;
+      border: 1px solid #E5E5E5;
+      border-radius: 6px;
+      padding: 10px;
+      margin: 8px 0;
+    }
+
+    .breakdown-box h4 {
+      font-size: 8pt;
+      font-weight: 600;
+      color: #15B078;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .breakdown-item {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 4px;
+      font-size: 8pt;
+    }
+
+    .breakdown-item .word {
+      font-weight: 600;
+      color: #333333;
+      min-width: 90px;
+    }
+
+    .breakdown-item .parts {
+      color: #707070;
+    }
+
+    .breakdown-item .def {
+      color: #333333;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 12px;
+      padding-top: 8px;
+      border-top: 1px solid #E5E5E5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8pt;
+      color: #9B9B9B;
+    }
+
+    /* Page Break */
+    .page-break {
+      page-break-after: always;
+    }
+
+    /* Formula */
+    .formula {
+      font-family: 'Times New Roman', serif;
+      font-size: 10pt;
+      padding: 6px 10px;
+      background: #F8F8F8;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    /* Utilities */
+    .text-sm { font-size: 9pt; }
+    .text-xs { font-size: 8pt; }
+    .text-muted { color: #9B9B9B; }
+    .text-light { color: #707070; }
+    .text-green { color: #15B078; }
+    .text-center { text-align: center; }
+    .mb-4 { margin-bottom: 4px; }
+    .mb-8 { margin-bottom: 8px; }
+    .mb-12 { margin-bottom: 12px; }
+    .mb-16 { margin-bottom: 16px; }
+  </style>
+
+  <!-- KaTeX for math rendering (optional) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });"></script>
+</head>
+<body>
+
+<div class="print-instructions">
+  <strong>Print Tip:</strong> To print without browser headers/footers, open Print settings → More settings → uncheck "Headers and footers". On Safari: Show Details → uncheck "Print headers and footers".
+</div>
+
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">Leland</div>
+    <div class="doc-type">Reference Sheet</div>
+  </div>
+
+  <!-- Title -->
+  <h1>Topic Reference Sheet</h1>
+  <p class="subtitle">Quick reference for key concepts and formulas</p>
+
+  <!-- Main content in 3 columns -->
+  <div class="three-col mb-16">
+
+    <!-- Column 1: Formulas -->
+    <div>
+      <h2>Formulas</h2>
+
+      <div class="card-compact">
+        <h4>Quadratic Formula</h4>
+        <p class="formula text-center">$x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Distance Formula</h4>
+        <p class="formula text-center">$d = \sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}$</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Slope Formula</h4>
+        <p class="formula text-center">$m = \frac{y_2 - y_1}{x_2 - x_1}$</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Midpoint Formula</h4>
+        <p class="formula text-center">$M = \left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2}\right)$</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Circle Area & Circumference</h4>
+        <p class="formula text-center">$A = \pi r^2 \quad C = 2\pi r$</p>
+      </div>
+    </div>
+
+    <!-- Column 2: Key Concepts -->
+    <div>
+      <h2>Key Concepts</h2>
+
+      <div class="card-compact card-green-bg">
+        <h4>PEMDAS Order</h4>
+        <p class="text-xs">Parentheses, Exponents, Multiplication/Division (L to R), Addition/Subtraction (L to R)</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Prime Numbers</h4>
+        <p class="text-xs">2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37...</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Perfect Squares</h4>
+        <p class="text-xs">1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144...</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Percent Change</h4>
+        <p class="text-xs">$\frac{\text{New} - \text{Original}}{\text{Original}} \times 100$</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Average (Mean)</h4>
+        <p class="text-xs">$\bar{x} = \frac{\text{Sum of values}}{\text{Number of values}}$</p>
+      </div>
+    </div>
+
+    <!-- Column 3: Watch Out For -->
+    <div>
+      <h2>Watch Out For</h2>
+
+      <div class="card-compact card-red-bg">
+        <h4>Negative Signs</h4>
+        <p class="text-xs">$(-2)^2 = 4$ but $-2^2 = -4$</p>
+      </div>
+
+      <div class="card-compact card-orange-bg">
+        <h4>Fraction Division</h4>
+        <p class="text-xs">$\frac{a}{b} \div \frac{c}{d} = \frac{a}{b} \times \frac{d}{c}$</p>
+      </div>
+
+      <div class="card-compact card-orange-bg">
+        <h4>Zero Exponents</h4>
+        <p class="text-xs">$x^0 = 1$ (for any $x \neq 0$)</p>
+      </div>
+
+      <div class="card-compact">
+        <h4>Negative Exponents</h4>
+        <p class="text-xs">$x^{-n} = \frac{1}{x^n}$</p>
+      </div>
+
+      <div class="card-compact card-blue-bg">
+        <h4>Units Matter</h4>
+        <p class="text-xs">Always check if question asks for different units than given</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Tables Section -->
+  <div class="two-col mb-16">
+    <div>
+      <h2>Special Triangles</h2>
+      <table class="compact-table">
+        <tr>
+          <th>Type</th>
+          <th>Angles</th>
+          <th>Side Ratios</th>
+        </tr>
+        <tr>
+          <td class="root">30-60-90</td>
+          <td>30, 60, 90</td>
+          <td>$1 : \sqrt{3} : 2$</td>
+        </tr>
+        <tr>
+          <td class="root">45-45-90</td>
+          <td>45, 45, 90</td>
+          <td>$1 : 1 : \sqrt{2}$</td>
+        </tr>
+        <tr>
+          <td class="root">3-4-5</td>
+          <td>37, 53, 90</td>
+          <td>$3 : 4 : 5$</td>
+        </tr>
+        <tr>
+          <td class="root">5-12-13</td>
+          <td>23, 67, 90</td>
+          <td>$5 : 12 : 13$</td>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <h2>Common Conversions</h2>
+      <table class="compact-table">
+        <tr>
+          <th>From</th>
+          <th>To</th>
+          <th>Factor</th>
+        </tr>
+        <tr>
+          <td>Feet</td>
+          <td>Inches</td>
+          <td>$\times 12$</td>
+        </tr>
+        <tr>
+          <td>Yards</td>
+          <td>Feet</td>
+          <td>$\times 3$</td>
+        </tr>
+        <tr>
+          <td>Miles</td>
+          <td>Feet</td>
+          <td>$\times 5280$</td>
+        </tr>
+        <tr>
+          <td>Hours</td>
+          <td>Minutes</td>
+          <td>$\times 60$</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Key Points -->
+  <div class="key-points">
+    <h4>Quick Strategy</h4>
+    <ul>
+      <li><strong>Read carefully:</strong> Note what the question is actually asking for</li>
+      <li><strong>Estimate first:</strong> Ballpark answers eliminate obviously wrong choices</li>
+      <li><strong>Check your work:</strong> Substitute answers back into the original problem</li>
+    </ul>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div>Leland Self-Study Course</div>
+    <div>joinleland.com</div>
+  </div>
+
+</div>
+
+</body>
+</html>

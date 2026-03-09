@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en" class="reveal-full-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}</title>
+
+  <!-- Reveal.js Core -->
+  <link rel="stylesheet" href="dist/reset.css">
+  <link rel="stylesheet" href="dist/reveal.css">
+
+  <!-- Leland Theme -->
+  <link rel="stylesheet" href="themes/leland.css">
+
+  <!-- KaTeX for math rendering -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+      delimiters: [
+        {left: '$$', right: '$$', display: true},
+        {left: '$', right: '$', display: false}
+      ]
+    });"></script>
+
+</head>
+<body>
+  <!-- SVG Symbol Definitions (defined once, referenced via <use>) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="leland-logo" viewBox="0 0 200 45">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z"/>
+      <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z"/>
+      <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z"/>
+      <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z"/>
+      <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z"/>
+      <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z"/>
+    </symbol>
+  </svg>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================================ -->
+      <!-- SLIDE 1: Title (Dark) -->
+      <!-- ============================================ -->
+      <section class="title-dark">
+        <svg width="110" height="25" fill="white" class="mb-16"><use href="#leland-logo"/></svg>
+        <p class="eyebrow">GRE Self-Study Course</p>
+        <h1>Title Goes<br><span class="hl">Here</span></h1>
+
+        <aside class="notes">
+          0:00 - 0:10 | Speaker notes go here.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 2: Divider -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 1</div>
+        <h1>Foundations</h1>
+        <p>Core concepts and building blocks</p>
+
+        <aside class="notes">
+          0:10 - 0:15 | Section break.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 3: Content (Basic Paragraph) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Section Label</p>
+          <h2>Content Slide Title</h2>
+        </div>
+
+        <p class="text-lg">Main content paragraph goes here. This demonstrates the base content slide with larger, more readable body text that matches Leland marketing standards.</p>
+
+        <aside class="notes">
+          0:15 - 0:55 | Speaker notes for this slide.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 4: Plus List -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Key Concepts</p>
+          <h2>Study Strategies That Work</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li><strong>Active recall:</strong> Test yourself instead of passively rereading notes</li>
+          <li><strong>Spaced repetition:</strong> Review material at increasing intervals over time</li>
+          <li><strong>Interleaving:</strong> Mix different topics or problem types in each session</li>
+          <li><strong>Error analysis:</strong> Track and categorize your mistakes to find patterns</li>
+          <li><strong>Timed practice:</strong> Simulate test conditions to build pacing skills</li>
+        </ul>
+
+        <aside class="notes">
+          0:55 - 1:30 | Go through each strategy briefly.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 5: Icon List -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">What You Get</p>
+          <h2>Course Resources</h2>
+        </div>
+
+        <ul class="icon-list text-lg">
+          <li>
+            <span class="icon icon-lg icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/ops-tools.svg); mask-image: url(icons/ops-tools.svg)"></span>
+            <span><strong>Practice Tools:</strong> Custom problem sets with adaptive difficulty</span>
+          </li>
+          <li>
+            <span class="icon icon-lg icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/calendar.svg); mask-image: url(icons/calendar.svg)"></span>
+            <span><strong>Study Schedule:</strong> Week-by-week plan tailored to your target score</span>
+          </li>
+          <li>
+            <span class="icon icon-lg icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/video.svg); mask-image: url(icons/video.svg)"></span>
+            <span><strong>Video Lessons:</strong> Concept explanations with worked examples</span>
+          </li>
+          <li>
+            <span class="icon icon-lg icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/arrow-up-chart-growth.svg); mask-image: url(icons/arrow-up-chart-growth.svg)"></span>
+            <span><strong>Progress Tracking:</strong> Monitor your improvement across all sections</span>
+          </li>
+        </ul>
+
+        <aside class="notes">
+          1:30 - 2:00 | Walk through the course resources.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 6: Table -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Score Breakdown</p>
+          <h2>GRE Section Overview</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Section</th>
+              <th>Questions</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Verbal Reasoning (x2)</td>
+              <td>27 questions per section</td>
+              <td>41 minutes per section</td>
+            </tr>
+            <tr>
+              <td>Quantitative Reasoning (x2)</td>
+              <td>27 questions per section</td>
+              <td>47 minutes per section</td>
+            </tr>
+            <tr>
+              <td>Analytical Writing</td>
+              <td>1 essay</td>
+              <td>30 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <aside class="notes">
+          2:00 - 2:30 | Overview of the test structure.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 7: Card Grid (3-Column) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Question Types</p>
+          <h2>Verbal Reasoning Format</h2>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card">
+            <h3>Text Completion</h3>
+            <p class="text-sm text-light">Fill in blanks with the best word or phrase based on context.</p>
+          </div>
+          <div class="card">
+            <h3>Sentence Equivalence</h3>
+            <p class="text-sm text-light">Select two answers that create sentences with equivalent meaning.</p>
+          </div>
+          <div class="card">
+            <h3>Reading Comprehension</h3>
+            <p class="text-sm text-light">Answer questions based on short and long passages.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          2:30 - 3:00 | Three main question types on Verbal.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 8: Card Grid (2-Column 2x2) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Strategies</p>
+          <h2>Four Pillars of Prep</h2>
+        </div>
+
+        <div class="card-grid-2">
+          <div class="card">
+            <h3>Content Mastery</h3>
+            <p class="text-sm text-light">Learn the core concepts and formulas tested on the exam.</p>
+          </div>
+          <div class="card">
+            <h3>Strategy Development</h3>
+            <p class="text-sm text-light">Build efficient approaches for each question type.</p>
+          </div>
+          <div class="card">
+            <h3>Timed Practice</h3>
+            <p class="text-sm text-light">Simulate real test conditions to improve pacing.</p>
+          </div>
+          <div class="card">
+            <h3>Error Analysis</h3>
+            <p class="text-sm text-light">Review mistakes to identify and fix weak areas.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          3:00 - 3:30 | The four pillars of effective test prep.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 9: Card Grid 3-Col with Numbers -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Question Types</p>
+          <h2>Quantitative Formats</h2>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card">
+            <div class="type-num mb-16">01</div>
+            <h3>Comparison</h3>
+            <p class="text-sm text-light">Compare two quantities and determine their relationship.</p>
+          </div>
+          <div class="card">
+            <div class="type-num mb-16">02</div>
+            <h3>Multiple Choice</h3>
+            <p class="text-sm text-light">Select one or more correct answers from given options.</p>
+          </div>
+          <div class="card">
+            <div class="type-num mb-16">03</div>
+            <h3>Numeric Entry</h3>
+            <p class="text-sm text-light">Type your answer directly into a box with no options.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          3:30 - 4:00 | Three quantitative question formats.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 10: Type Box Grid (2x2) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Math Foundations</p>
+          <h2>Core Concept Areas</h2>
+        </div>
+
+        <div class="card-grid-2">
+          <div class="type-box">
+            <div class="type-num">01</div>
+            <div>
+              <h3>Arithmetic</h3>
+              <p>Number properties, fractions, decimals, and percents</p>
+            </div>
+          </div>
+          <div class="type-box">
+            <div class="type-num">02</div>
+            <div>
+              <h3>Algebra</h3>
+              <p>Equations, inequalities, functions, and coordinate geometry</p>
+            </div>
+          </div>
+          <div class="type-box">
+            <div class="type-num">03</div>
+            <div>
+              <h3>Geometry</h3>
+              <p>Triangles, circles, polygons, and 3D figures</p>
+            </div>
+          </div>
+          <div class="type-box">
+            <div class="type-num">04</div>
+            <div>
+              <h3>Data Analysis</h3>
+              <p>Statistics, probability, and data interpretation</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          4:00 - 4:30 | The four math domains on the GRE.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 11: Workflow with Arrows -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Process</p>
+          <h2>Problem-Solving Workflow</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="workflow-step">
+            <div class="step-num mb-16">1</div>
+            <h3 class="text-md">Read</h3>
+            <p class="text-sm text-light">Identify what the question is asking</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/arrow-right.svg); mask-image: url(icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">2</div>
+            <h3 class="text-md">Plan</h3>
+            <p class="text-sm text-light">Choose your approach before calculating</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/arrow-right.svg); mask-image: url(icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">3</div>
+            <h3 class="text-md">Solve</h3>
+            <p class="text-sm text-light">Execute your plan step by step</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/arrow-right.svg); mask-image: url(icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">4</div>
+            <h3 class="text-md">Check</h3>
+            <p class="text-sm text-light">Verify your answer makes sense</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          4:30 - 5:00 | Walk through the 4-step problem solving process.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 12: Timeline -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Study Plan</p>
+          <h2>Your 12-Week Timeline</h2>
+        </div>
+
+        <div style="display: flex; gap: 16px;">
+          <div class="timeline-block light" style="flex: 1;">
+            <div class="timeline-label">Weeks 1-4</div>
+            <h3>Foundation</h3>
+            <p class="text-sm text-light">Build core skills and learn all question types</p>
+          </div>
+          <div class="timeline-block dark" style="flex: 1;">
+            <div class="timeline-label">Weeks 5-8</div>
+            <h3>Practice</h3>
+            <p class="text-sm">Timed drills and error analysis on weak areas</p>
+          </div>
+          <div class="timeline-block highlight" style="flex: 1;">
+            <div class="timeline-label">Weeks 9-12</div>
+            <h3>Peak Performance</h3>
+            <p class="text-sm text-light">Full-length tests and final review</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          5:00 - 5:30 | Overview of the 12-week study plan.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 13: Two Column (Text) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Comparison</p>
+          <h2>Verbal vs Quantitative Prep</h2>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <h3 class="mb-16">Verbal Reasoning</h3>
+            <ul class="plus-list">
+              <li>Build vocabulary with context clues</li>
+              <li>Practice passage-based reading daily</li>
+              <li>Learn sentence structure patterns</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-16">Quantitative Reasoning</h3>
+            <ul class="plus-list">
+              <li>Master core formulas and properties</li>
+              <li>Focus on problem-solving strategies</li>
+              <li>Practice data interpretation skills</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="notes">
+          5:30 - 6:00 | Compare study approaches for each section.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 14: Two Column (Image + Text) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Resources</p>
+          <h2>Official ETS Materials</h2>
+        </div>
+
+        <div class="two-column">
+          <div class="image-placeholder">
+            <span class="text-sm">Image: 400 x 240</span>
+          </div>
+          <div>
+            <h3 class="mb-16">The Official Guide to the GRE</h3>
+            <p class="text-light mb-16">The most authoritative resource for GRE preparation.</p>
+            <ul class="plus-list text-lg">
+              <li>Written by the test makers</li>
+              <li>Real questions from past exams</li>
+              <li>Detailed answer explanations</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="notes">
+          6:00 - 6:30 | Recommend the official guide.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 15: Two Column (Right/Wrong) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Common Mistakes</p>
+          <h2>Avoiding Careless Errors</h2>
+        </div>
+
+        <div class="two-column gap-32">
+          <div class="card">
+            <div class="status-incorrect text-lg mb-16">
+              <span class="icon icon-sm icon-red" style="flex-shrink: 0; -webkit-mask-image: url(icons/x.svg); mask-image: url(icons/x.svg)"></span> Incorrect Approach
+            </div>
+            <p class="text-light mb-16">Rushing through the problem without reading all answer choices.</p>
+            <div class="card-alt">
+              <p class="text-sm">"I picked the first answer that seemed right and moved on."</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="status-correct text-lg mb-16">
+              <span class="icon icon-sm icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/check.svg); mask-image: url(icons/check.svg)"></span> Correct Approach
+            </div>
+            <p class="text-light mb-16">Reading all options before selecting, even if one looks obviously correct.</p>
+            <div class="card-alt-green">
+              <p class="text-sm">"I always check every choice because trap answers exist."</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          6:30 - 7:00 | Contrast good vs. bad test-taking behavior.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 16: Math Problem (KaTeX) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Example 1</p>
+          <h2>Working with Fractions</h2>
+        </div>
+
+        <div class="two-column">
+          <div class="card">
+            <h3 class="text-md mb-16">Problem</h3>
+            <p class="text-lg">Simplify: $\frac{2}{3} + \frac{1}{4}$</p>
+          </div>
+          <div class="card">
+            <h3 class="text-md mb-16">Solution</h3>
+            <p class="text-md mb-16">Find common denominator:</p>
+            <p class="text-lg">$$\frac{2}{3} + \frac{1}{4} = \frac{8}{12} + \frac{3}{12} = \frac{11}{12}$$</p>
+            <p class="text-lg mt-16">Answer: <span class="ans">$\frac{11}{12}$</span></p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          7:00 - 7:30 | Walk through the fraction addition step by step.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 17: Badges in Cards (2x2) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Categories</p>
+          <h2>Color-Coded Badge System</h2>
+        </div>
+
+        <div class="card-grid-2">
+          <div class="card">
+            <span class="badge badge-green self-start mb-16">Success</span>
+            <h3 class="text-md mb-16">Mastered Concepts</h3>
+            <p class="text-sm text-light">Topics you've consistently answered correctly on practice tests.</p>
+          </div>
+          <div class="card">
+            <span class="badge badge-orange self-start mb-16">Warning</span>
+            <h3 class="text-md mb-16">Needs Review</h3>
+            <p class="text-sm text-light">Areas where you're making occasional mistakes.</p>
+          </div>
+          <div class="card">
+            <span class="badge badge-red self-start mb-16">Critical</span>
+            <h3 class="text-md mb-16">Major Gaps</h3>
+            <p class="text-sm text-light">Topics requiring significant additional study time.</p>
+          </div>
+          <div class="card">
+            <span class="badge badge-blue self-start mb-16">Info</span>
+            <h3 class="text-md mb-16">New Material</h3>
+            <p class="text-sm text-light">Content you haven't encountered yet in your prep.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          7:30 - 8:00 | Explain the color coding system.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 18: Study Blocks -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Daily Routine</p>
+          <h2>Sample Study Session</h2>
+        </div>
+
+        <div style="display: flex; gap: 16px;">
+          <div class="study-block">
+            <h3 class="mb-16">Warm-Up (15 min)</h3>
+            <p class="text-sm text-light">Review flashcards and vocabulary from the previous session to activate recall.</p>
+          </div>
+          <div class="study-block highlight">
+            <h3 class="mb-16">Core Practice (45 min)</h3>
+            <p class="text-sm text-light">Work through a timed problem set focusing on your weakest question type.</p>
+          </div>
+          <div class="study-block">
+            <h3 class="mb-16">Review (15 min)</h3>
+            <p class="text-sm text-light">Analyze every wrong answer. Write down the concept you missed and why.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          8:00 - 8:30 | Walk through the ideal daily study session.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 19: Panel Box -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Resources</p>
+          <h2>Recommended Materials</h2>
+        </div>
+
+        <div class="two-column">
+          <div class="panel-box">
+            <div class="panel-title">Official Resources</div>
+            <ul class="plus-list">
+              <li>ETS Official Guide (6th Edition)</li>
+              <li>PowerPrep Online Practice Tests</li>
+              <li>ETS Verbal and Quant Supplements</li>
+            </ul>
+          </div>
+          <div class="panel-box">
+            <div class="panel-title">Supplementary Tools</div>
+            <ul class="plus-list">
+              <li>Vocabulary flashcard apps</li>
+              <li>Math formula reference sheets</li>
+              <li>Timed practice problem sets</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="notes">
+          8:30 - 9:00 | Recommend official and supplementary materials.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 20: Callout (Green Tip) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Tips</p>
+          <h2>Test Day Preparation</h2>
+        </div>
+
+        <div class="card-alt-green mb-24">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span class="icon icon-md icon-green" style="flex-shrink: 0; -webkit-mask-image: url(icons/lightning.svg); mask-image: url(icons/lightning.svg)"></span>
+            <p class="text-md"><strong>Pro Tip:</strong> Use the light green card to highlight positive advice, best practices, or key takeaways that students should remember.</p>
+          </div>
+        </div>
+
+        <p class="text-light">Arrive at the testing center 30 minutes early. Bring a valid photo ID and your confirmation email. You're allowed to bring a small snack for breaks.</p>
+
+        <aside class="notes">
+          9:00 - 9:30 | Test day logistics and tips.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 21: Callout (Grey Note) -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Important</p>
+          <h2>Score Reporting</h2>
+        </div>
+
+        <p class="text-lg" style="margin-bottom: 28px;">Your official scores are available approximately 8-10 days after the test date. You can send scores to up to four graduate programs for free on test day.</p>
+
+        <div class="card-alt compact">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span class="icon icon-md icon-dark" style="flex-shrink: 0; -webkit-mask-image: url(icons/info.svg); mask-image: url(icons/info.svg)"></span>
+            <p class="text-md"><strong>Note:</strong> Additional score reports cost $30 each. Check each program's deadline to ensure scores arrive on time.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          9:30 - 10:00 | Score reporting details.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 22: With-Footer Example (Opt-in) -->
+      <!-- ============================================ -->
+      <section class="content with-footer">
+        <div class="slide-header">
+          <p class="eyebrow">Branding</p>
+          <h2>Slide with Opt-in Footer</h2>
+        </div>
+
+        <p class="text-lg">This content slide has the footer logo because it uses the <code>.with-footer</code> class. Most content slides omit the footer for more content space.</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+
+        <aside class="notes">
+          10:00 - 10:15 | Example of opt-in footer on content slide.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 23: Split Section -->
+      <!-- ============================================ -->
+      <section class="split-section">
+        <div class="split-left">
+          <p class="eyebrow">Part 2</p>
+          <h1>Advanced Strategies</h1>
+        </div>
+        <div class="split-right">
+          <h3 class="mb-16">What You'll Learn</h3>
+          <p class="text-light mb-16">High-impact techniques for maximizing your score on test day.</p>
+          <ul class="plus-list">
+            <li>Time management under pressure</li>
+            <li>Strategic guessing frameworks</li>
+            <li>Score prediction methods</li>
+          </ul>
+        </div>
+
+        <aside class="notes">
+          10:15 - 10:30 | Section intro for advanced strategies.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 24: Coach Bio -->
+      <!-- ============================================ -->
+      <section class="content coach-bio">
+        <div class="coach-photo">
+          <!-- Photo goes here; placeholder shown as empty circle -->
+        </div>
+        <div class="coach-credentials">
+          <p class="eyebrow">Your Coach</p>
+          <h2>Sarah Chen</h2>
+          <p class="text-lg text-light mb-16">99th percentile GRE scorer, 8 years coaching experience</p>
+          <div class="card-alt-green compact">
+            <p class="text-sm"><strong>"Sarah helped me raise my score by 15 points in just 6 weeks."</strong></p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          10:30 - 10:45 | Introduce the course coach.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 25: Comparison Cards -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Candidate Profiles</p>
+          <h2>What Sets Top Scorers Apart</h2>
+        </div>
+
+        <div class="comparison-cards">
+          <div class="comparison-panel strong">
+            <div class="panel-label">Strong Candidate</div>
+            <h3>Structured Practice</h3>
+            <p class="text-sm text-light">Studies with a plan, tracks errors, and adapts strategy based on performance data. Reviews every wrong answer methodically.</p>
+          </div>
+          <div class="comparison-panel average">
+            <div class="panel-label">Average Candidate</div>
+            <h3>Passive Review</h3>
+            <p class="text-sm text-light">Studies without direction, rereads notes without testing, and repeats the same mistakes. Skips error analysis after practice tests.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          10:45 - 11:00 | Compare study habits of strong vs average candidates.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 26: Card Grid 2x3 -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Overview</p>
+          <h2>Six Core Skills to Master</h2>
+        </div>
+
+        <div class="card-grid-2x3">
+          <div class="card">
+            <h3>Vocabulary</h3>
+            <p class="text-xs text-light">High-frequency GRE words and context clues</p>
+          </div>
+          <div class="card">
+            <h3>Reading Speed</h3>
+            <p class="text-xs text-light">Efficient passage analysis techniques</p>
+          </div>
+          <div class="card">
+            <h3>Algebra</h3>
+            <p class="text-xs text-light">Equations, inequalities, and functions</p>
+          </div>
+          <div class="card">
+            <h3>Geometry</h3>
+            <p class="text-xs text-light">Shapes, angles, and coordinate geometry</p>
+          </div>
+          <div class="card">
+            <h3>Data Analysis</h3>
+            <p class="text-xs text-light">Charts, graphs, and statistical reasoning</p>
+          </div>
+          <div class="card">
+            <h3>Essay Writing</h3>
+            <p class="text-xs text-light">Analytical writing structure and argumentation</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          11:00 - 11:15 | Overview of six core skills in a 2x3 grid.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 27: Exhibit (Chart) -->
+      <!-- ============================================ -->
+      <section class="content exhibit">
+        <div class="slide-header">
+          <p class="eyebrow">Data Analysis</p>
+          <h2>Score Distribution by Section</h2>
+        </div>
+
+        <div class="exhibit-visual">
+          <svg class="chart-svg" viewBox="0 0 750 190" xmlns="http://www.w3.org/2000/svg">
+            <text x="50" y="185" font-size="13" font-weight="bold" fill="#333" font-family="Calibre, Inter, Arial, sans-serif">Section</text>
+            <!-- Axis -->
+            <line x1="120" y1="20" x2="120" y2="160" stroke="#E5E5E5" stroke-width="1"/>
+            <line x1="120" y1="160" x2="700" y2="160" stroke="#E5E5E5" stroke-width="1"/>
+            <!-- Bars -->
+            <rect x="160" y="60" width="120" height="100" rx="4" fill="#15B078"/>
+            <text x="220" y="50" text-anchor="middle" font-size="14" font-weight="bold" fill="#333" font-family="Calibre, Inter, Arial, sans-serif">158</text>
+            <text x="220" y="180" text-anchor="middle" font-size="12" fill="#707070" font-family="Calibre, Inter, Arial, sans-serif">Verbal</text>
+            <rect x="340" y="40" width="120" height="120" rx="4" fill="#113A2D"/>
+            <text x="400" y="30" text-anchor="middle" font-size="14" font-weight="bold" fill="#333" font-family="Calibre, Inter, Arial, sans-serif">162</text>
+            <text x="400" y="180" text-anchor="middle" font-size="12" fill="#707070" font-family="Calibre, Inter, Arial, sans-serif">Quant</text>
+            <rect x="520" y="90" width="120" height="70" rx="4" fill="#3B7DFD"/>
+            <text x="580" y="80" text-anchor="middle" font-size="14" font-weight="bold" fill="#333" font-family="Calibre, Inter, Arial, sans-serif">4.5</text>
+            <text x="580" y="180" text-anchor="middle" font-size="12" fill="#707070" font-family="Calibre, Inter, Arial, sans-serif">Writing</text>
+          </svg>
+        </div>
+        <p class="exhibit-caption">Average scores for students completing the full 12-week program</p>
+
+        <aside class="notes">
+          11:15 - 11:30 | Show score outcomes with bar chart.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 28: Engagement -->
+      <!-- ============================================ -->
+      <section class="engagement">
+        <p class="eyebrow">Discussion</p>
+        <h2>Think About It</h2>
+        <p class="engagement-prompt">What's your target score, and what would achieving it mean for your applications?</p>
+        <p class="text-light">Take 30 seconds to reflect before we continue.</p>
+
+        <aside class="notes">
+          11:30 - 12:00 | Pause for audience reflection.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 29: Quote Block -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Essay Review</p>
+          <h2>Using Real Excerpts</h2>
+        </div>
+
+        <p class="text-lg mb-16">The strongest essays open with a specific moment, not a generic statement.</p>
+
+        <div class="quote-block">
+          <p>The morning I received my rejection letter from Stanford, I sat in my car for twenty minutes before driving to work. That silence became the catalyst for everything that followed.</p>
+          <div class="quote-source">Applicant Essay, Round 2</div>
+        </div>
+
+        <aside class="notes">
+          12:00 - 12:30 | Demo of the quote-block pattern with green-tinted background.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 30: Big Statement -->
+      <!-- ============================================ -->
+      <section class="big-statement">
+        <p class="eyebrow">Core Principle</p>
+        <h2>The essay isn't about the experience. It's about what the experience revealed.</h2>
+        <p class="sub-text">Every strong MBA essay centers on self-awareness, not storytelling.</p>
+        <aside class="notes">
+          12:30 - 12:45 | Demo of the big-statement slide type.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 31: Before/After -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Essay Revision</p>
+          <h2>Opening Paragraph Transformation</h2>
+        </div>
+
+        <div class="before-after">
+          <div class="panel draft">
+            <div class="panel-label">Draft</div>
+            <p class="essay-text">I have always been passionate about business and want to get my MBA to advance my career in consulting.</p>
+          </div>
+          <div class="panel final">
+            <div class="panel-label">Final</div>
+            <p class="essay-text">When our team's market entry strategy failed in Brazil, I realized that intuition without frameworks leads to costly mistakes.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          12:45 - 13:15 | Demo of the before-after comparison layout.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 32: Build Items -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Framework</p>
+          <h2>Three Keys to a Strong Essay</h2>
+        </div>
+
+        <div class="build-item fragment fade-up" data-fragment-index="1">
+          <div class="build-num">1</div>
+          <div>
+            <h3>Specificity</h3>
+            <p>Ground every claim in a concrete moment, number, or outcome.</p>
+          </div>
+        </div>
+        <div class="build-item fragment fade-up" data-fragment-index="2">
+          <div class="build-num">2</div>
+          <div>
+            <h3>Self-Awareness</h3>
+            <p>Show what you learned about yourself, not just what happened.</p>
+          </div>
+        </div>
+        <div class="build-item fragment fade-up" data-fragment-index="3">
+          <div class="build-num">3</div>
+          <div>
+            <h3>Forward Vision</h3>
+            <p>Connect past lessons to your future goals and why this program fits.</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          13:15 - 13:45 | Demo of build-item progressive reveal.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 33: Annotation -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Essay Analysis</p>
+          <h2>Identifying Key Elements</h2>
+        </div>
+
+        <div class="annotation-container">
+          <div class="essay-text">When our supply chain collapsed during COVID, I volunteered to lead the emergency response team. Over 72 hours, we rerouted shipments through three backup suppliers, saving $2.1M in potential losses. That experience taught me that leadership isn't about having answers. It's about creating space for your team to find them.</div>
+
+          <div class="annotation-marker" style="top: 10px; right: -140px;">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+            <div class="marker-label">Context</div>
+          </div>
+          <div class="annotation-marker" style="top: 55px; right: -140px;">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+            <div class="marker-label">Impact</div>
+          </div>
+          <div class="annotation-marker" style="top: 100px; right: -140px;">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+            <div class="marker-label">Reflection</div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          13:45 - 14:15 | Demo of the annotation-container pattern.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 34: Example Box -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Strategy</p>
+          <h2>The "So What?" Test</h2>
+        </div>
+
+        <p class="text-lg mb-16">After every paragraph, ask yourself: "So what?" If the reader can't see why this matters for your MBA goals, revise or cut it.</p>
+
+        <div class="example-box">
+          <div class="example-label">Example</div>
+          <p class="text-md">"I managed a team of 12 engineers" becomes "Managing 12 engineers across 3 time zones taught me that clear async communication matters more than perfect plans."</p>
+        </div>
+
+        <aside class="notes">
+          14:15 - 14:45 | Demo of the example-box pattern with green-tinted background.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 35: Full-Bleed Image -->
+      <!-- ============================================ -->
+      <section class="image-bg">
+        <div class="image-placeholder bg-image" style="background: linear-gradient(135deg, #185440 0%, #113A2D 100%);"></div>
+        <div class="bg-overlay"></div>
+        <div class="bg-content">
+          <p class="eyebrow">Campus Visit</p>
+          <h2>Stanford Graduate School of Business</h2>
+          <p>The Knight Management Center opened in 2011 and sits at the heart of Stanford's campus.</p>
+        </div>
+        <aside class="notes">
+          14:45 - 15:00 | Demo of full-bleed background image slide. Replace placeholder with real photo.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 36: Image Gallery -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Campus Life</p>
+          <h2>What to Expect on Visit Day</h2>
+        </div>
+
+        <div class="image-gallery">
+          <div>
+            <div class="gallery-item">
+              <div class="image-placeholder" style="height: 160px;">
+                <span class="text-sm">Photo: Classroom</span>
+              </div>
+            </div>
+            <p class="gallery-caption">Case method classroom seating 90 students</p>
+          </div>
+          <div>
+            <div class="gallery-item">
+              <div class="image-placeholder" style="height: 160px;">
+                <span class="text-sm">Photo: Student lounge</span>
+              </div>
+            </div>
+            <p class="gallery-caption">Spangler Center student commons area</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          15:00 - 15:15 | Demo of the image-gallery grid layout.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 37: Image + Card -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">School Profile</p>
+          <h2>Harvard Business School</h2>
+        </div>
+
+        <div class="image-card-layout">
+          <div class="layout-image">
+            <div class="image-placeholder" style="height: 260px;">
+              <span class="text-sm">Photo: HBS Campus</span>
+            </div>
+          </div>
+          <div class="layout-card">
+            <h3 class="mb-8">Quick Facts</h3>
+            <p class="text-sm text-light mb-16">Class size: 930 students</p>
+            <p class="text-sm text-light mb-16">Acceptance rate: 12%</p>
+            <p class="text-sm text-light mb-16">Median GMAT: 740</p>
+            <p class="text-sm text-light">Average work experience: 5 years</p>
+          </div>
+        </div>
+
+        <aside class="notes">
+          15:15 - 15:30 | Demo of image-card-layout with floating card overlay.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 38: Summary List (Dark) -->
+      <!-- ============================================ -->
+      <section class="content-dark">
+        <div class="slide-header">
+          <p class="eyebrow">Key Takeaways</p>
+          <h2>Summary with Numbered List</h2>
+        </div>
+
+        <ul class="summary-list text-lg">
+          <li><span class="text-green">1.</span> <span class="text-white">Specificity beats generality in every section of your application</span></li>
+          <li><span class="text-green">2.</span> <span class="text-white">The "so what?" test catches weak paragraphs before admissions does</span></li>
+          <li><span class="text-green">3.</span> <span class="text-white">Draft early and revise often with structured feedback loops</span></li>
+          <li><span class="text-green">4.</span> <span class="text-white">Your essay should answer why this school, why now, and why you</span></li>
+        </ul>
+
+        <aside class="notes">
+          15:30 - 15:45 | Demo of summary-list on dark background.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 39: Summary (Dark Background) -->
+      <!-- ============================================ -->
+      <section class="content-dark">
+        <div class="slide-header">
+          <p class="eyebrow">Key Takeaways</p>
+          <h2>What to Remember</h2>
+        </div>
+
+        <div class="flex-col gap-16">
+          <p class="text-lg text-white">First key takeaway point goes here</p>
+          <p class="text-lg text-white">Second key takeaway point goes here</p>
+          <p class="text-lg text-white">Third key takeaway point goes here</p>
+        </div>
+
+        <aside class="notes">
+          15:45 - 16:00 | Wrap up with key takeaways.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js -->
+  <script src="dist/reveal.min.js"></script>
+  <script type="module">
+    import RevealNotes from './plugin/notes/notes.esm.js';
+
+    Reveal.initialize({
+      width: 960,
+      height: 540,
+      margin: 0,
+      minScale: 0.5,
+      maxScale: 3.0,
+      hash: true,
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
+      transition: 'none',
+      backgroundTransition: 'none',
+      disableLayout: false,
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>

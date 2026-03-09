@@ -1,0 +1,167 @@
+# ID12: Integers & Order of Operations
+# YAML content file for generate_slides.py
+#
+# Token syntax for inline colors:
+#   {{neg:-5}}  -> Red colored (negative numbers)
+#   {{ans:9}}   -> Green colored (answers)
+#   {{hl:text}} -> Green highlighted (emphasis)
+
+title: "Integers & Order of Operations"
+course: "GRE Self-Study Course"
+
+slides:
+  # ===========================================================================
+  # SLIDE 1: Title
+  # ===========================================================================
+  - type: title_dark
+    eyebrow: "GRE Self-Study Course"
+    title: "Integers & Order"
+    title_highlight: "of Operations"
+    subtitle: "Master the rules. Stop the careless errors."
+
+  # ===========================================================================
+  # SLIDE 2: Hook
+  # ===========================================================================
+  - type: hook_statement
+    eyebrow: "Why This Matters"
+    statement: "Arithmetic errors are the {{neg:#1 reason}} students lose points they shouldn't on the GRE."
+    description: "Not because the math is hard, but because under pressure, signs get flipped and operations get done in the wrong order."
+
+  # ===========================================================================
+  # SLIDE 3: Section Divider - Signed Numbers
+  # ===========================================================================
+  - type: section_divider
+    part: "01"
+    title: "Signed Number Rules"
+
+  # ===========================================================================
+  # SLIDE 4: Addition Rules
+  # ===========================================================================
+  - type: two_column_rules
+    eyebrow: "Signed Numbers"
+    title: "Addition Rules"
+    columns:
+      - label: "Rule 1"
+        title: "Same Signs"
+        description: "Add the absolute values, keep the sign."
+        examples:
+          - "6 + 3 = {{ans:9}}"
+          - "({{neg:-6}}) + ({{neg:-3}}) = {{neg:-9}}"
+      - label: "Rule 2"
+        title: "Different Signs"
+        description: "Subtract the smaller absolute value from larger. Keep the larger's sign."
+        examples:
+          - "6 + ({{neg:-3}}) = {{ans:3}}"
+          - "({{neg:-6}}) + 3 = {{neg:-3}}"
+
+  # ===========================================================================
+  # SLIDE 5: Section Divider - PEMDAS
+  # ===========================================================================
+  - type: section_divider
+    part: "02"
+    title: "Order of Operations"
+
+  # ===========================================================================
+  # SLIDE 6: Section Divider - Examples
+  # ===========================================================================
+  - type: section_divider
+    part: "03"
+    title: "Worked Examples"
+
+  # ===========================================================================
+  # SLIDE 7: Example 1 - Basic Signed Arithmetic
+  # ===========================================================================
+  - type: problem_solution
+    eyebrow: "Example 1"
+    title: "Basic Signed Arithmetic"
+    problem: "{{neg:-5}} + ({{neg:-6}}) - 8"
+    steps:
+      - title: "Add same signs"
+        formula: "{{neg:-5}} + ({{neg:-6}}) = {{neg:-11}}"
+      - title: "Convert subtraction"
+        formula: "{{neg:-11}} - 8 = {{neg:-11}} + ({{neg:-8}})"
+      - title: "Add same signs again"
+        formula: "{{neg:-11}} + ({{neg:-8}}) = {{neg:-19}}"
+    answer: "{{neg:-19}}"
+
+  # ===========================================================================
+  # SLIDE 8: Example 2 - Mixed Operations
+  # ===========================================================================
+  - type: problem_solution
+    eyebrow: "Example 2"
+    title: "Mixed Operations with Exponents"
+    problem: "8 * 8^2 - 4 * 5^2"
+    steps:
+      - title: "Exponents first"
+        formula: "8 * 64 - 4 * 25"
+      - title: "Multiplication (left to right)"
+        formula: "512 - 100"
+      - title: "Subtraction"
+        formula: "512 - 100 = {{ans:412}}"
+    answer: "{{ans:412}}"
+
+  # ===========================================================================
+  # SLIDE 9: Example 3 - Left-to-Right Trap
+  # ===========================================================================
+  - type: problem_solution
+    eyebrow: "Example 3"
+    title: "The Left-to-Right Trap"
+    problem: "25 / 5 * 5 + 8 - 5"
+    steps:
+      - title: "M/D left to right: 25 / 5 first"
+        formula: "5 * 5 + 8 - 5"
+      - title: "Continue M/D: 5 * 5"
+        formula: "25 + 8 - 5"
+      - title: "A/S left to right"
+        formula: "33 - 5 = {{ans:28}}"
+    answer: "{{ans:28}}"
+
+  # ===========================================================================
+  # SLIDE 10: Example 4 - Nested Grouping
+  # ===========================================================================
+  - type: problem_solution
+    eyebrow: "Example 4"
+    title: "Nested Grouping Symbols"
+    problem: "4[6 + (6 / 2)^2] - 1"
+    steps:
+      - title: "Innermost first"
+        formula: "6 / 2 = 3"
+      - title: "Exponent"
+        formula: "3^2 = 9"
+      - title: "Brackets"
+        formula: "[6 + 9] = 15"
+      - title: "Multiply, then subtract"
+        formula: "4 * 15 = 60, then 60 - 1 = {{ans:59}}"
+    answer: "{{ans:59}}"
+
+  # ===========================================================================
+  # SLIDE 11: Summary Table - Sign Rules
+  # ===========================================================================
+  - type: summary_table
+    eyebrow: "Quick Reference"
+    title: "Sign Rules Summary"
+    headers:
+      - "Operation"
+      - "Same Signs"
+      - "Different Signs"
+    rows:
+      - ["Add", "Add absolutes, keep sign", "Subtract absolutes, keep larger's sign"]
+      - ["Subtract", "Convert to addition", "Convert to addition"]
+      - ["Multiply", "Positive", "Negative"]
+      - ["Divide", "Positive", "Negative"]
+
+  # ===========================================================================
+  # SLIDE 12: Three Traps Summary
+  # ===========================================================================
+  - type: three_card_summary
+    eyebrow: "Traps to Avoid"
+    title: "Three GRE Traps"
+    type_alert: true  # Red styling
+    cards:
+      - title: "The M/D Trap"
+        description: "Multiplication and division have EQUAL priority. Go left to right, not multiplication first."
+      - title: "Negative-Squared"
+        description: "(-3)^2 = 9, but -3^2 = -9. Parentheses matter!"
+      - title: "Division by Zero"
+        description: "x / 0 is undefined, not zero. The GRE tests this."
+    bottom_text: "Next up: Put these skills to work in the Order of Operations Drill"

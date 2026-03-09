@@ -1,0 +1,1424 @@
+/**
+ * Leland PDF Stylesheet
+ * For workbooks, reference sheets, and printed materials
+ * Modeled after GRE production PDF patterns
+ */
+
+/* ===== CALIBRE FONT (PRIMARY) ===== */
+@font-face {
+  font-family: 'Calibre';
+  src: url('../reveal/fonts/Calibre-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../reveal/fonts/Calibre-RegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../reveal/fonts/Calibre-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../reveal/fonts/Calibre-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../reveal/fonts/Calibre-Semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('../reveal/fonts/Calibre-SemiboldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ===== INTER FONT (FALLBACK via Google Fonts) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* ===== BRAND COLORS ===== */
+:root {
+  /* Primary */
+  --leland-green: #15B078;
+  --leland-dark: #113A2D;
+  --leland-medium: #185440;
+
+  /* Neutrals */
+  --leland-offwhite: #F8F8F8;
+  --leland-white: #FFFFFF;
+  --leland-black: #000000;
+  --leland-text-dark: #333333;
+  --leland-text-light: #707070;
+  --leland-text-muted: #9B9B9B;
+  --leland-stroke: #E5E5E5;
+
+  /* Accents */
+  --leland-orange: #EF8509;
+  --leland-red: #FB5A42;
+  --leland-blue: #3B7DFD;
+  --leland-purple: #2D25A6;
+
+  /* Accent Backgrounds */
+  --leland-green-bg: rgba(21, 176, 120, 0.08);
+  --leland-orange-bg: rgba(239, 133, 9, 0.12);
+  --leland-red-bg: rgba(251, 90, 66, 0.12);
+  --leland-blue-bg: rgba(59, 125, 253, 0.12);
+  --leland-purple-bg: rgba(45, 37, 166, 0.12);
+}
+
+
+/* ===== PAGE SETUP ===== */
+@page {
+  size: letter;
+  margin: 0.6in 0.75in;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Calibre', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 11pt;
+  line-height: 1.5;
+  color: var(--leland-text-dark);
+  background: var(--leland-white);
+}
+
+
+/* ===== PRINT INSTRUCTIONS BANNER ===== */
+.print-instructions {
+  background: #FFF3CD;
+  border: 1px solid #FFE69C;
+  padding: 12px 16px;
+  margin: 0 auto 20px auto;
+  max-width: 7in;
+  border-radius: 6px;
+  font-size: 10pt;
+  line-height: 1.4;
+}
+
+.print-instructions strong {
+  color: #856404;
+}
+
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  /* Hide print instructions when printing */
+  .print-instructions { display: none !important; }
+
+  /* Remove browser margins */
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure colors print */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Prevent page breaks inside elements */
+  .callout, .callout-dark, .callout-light, .key-points, table, .two-col, .card, .toc, .metrics-row {
+    page-break-inside: avoid;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  /* Section spacing for print */
+  .section {
+    padding: 16px 0 24px 0;
+  }
+}
+
+
+/* ===== PAGE STRUCTURE ===== */
+.page {
+  max-width: 7in;
+  margin: 0 auto;
+  padding: 0.5in 0;
+}
+
+
+/* ===== HEADER WITH GREEN UNDERLINE ===== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--leland-green);
+  margin-bottom: 24px;
+}
+
+.logo {
+  color: var(--leland-green);
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.doc-type {
+  color: var(--leland-text-muted);
+  font-size: 10pt;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+
+/* ===== TYPOGRAPHY ===== */
+h1 {
+  font-size: 24pt;
+  font-weight: 700;
+  color: var(--leland-black);
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 14pt;
+  font-weight: 700;
+  color: var(--leland-dark);
+  margin: 24px 0 12px 0;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--leland-stroke);
+}
+
+h3 {
+  font-size: 12pt;
+  font-weight: 600;
+  color: var(--leland-text-dark);
+  margin: 16px 0 8px 0;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--leland-text-dark);
+  margin: 0 0 6px 0;
+}
+
+p {
+  margin-bottom: 12px;
+  color: var(--leland-text-dark);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.subtitle {
+  font-size: 12pt;
+  color: var(--leland-text-light);
+  margin-bottom: 24px;
+}
+
+.highlight {
+  color: var(--leland-green);
+  font-weight: 600;
+}
+
+.warning {
+  color: var(--leland-red);
+  font-weight: 600;
+}
+
+
+/* ===== EYEBROW LABEL ===== */
+.eyebrow {
+  color: var(--leland-green);
+  font-size: 10pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+}
+
+
+/* ===== TABLES WITH DARK HEADERS ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 10pt;
+}
+
+th {
+  background-color: var(--leland-dark);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 12px;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--leland-stroke);
+}
+
+tr:nth-child(even) {
+  background-color: var(--leland-offwhite);
+}
+
+.table-header {
+  font-weight: 600;
+  color: var(--leland-green);
+}
+
+
+/* ===== CALLOUT BOXES ===== */
+
+/* Callout (green-tinted card, no border-left per design guide) */
+.callout, .callout-dark {
+  background-color: var(--leland-green-bg);
+  color: var(--leland-text-dark);
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.callout h3, .callout-dark h3,
+.callout h4, .callout-dark h4 {
+  color: var(--leland-green);
+  margin: 0 0 8px 0;
+}
+
+.callout p, .callout-dark p {
+  color: var(--leland-text-dark);
+  margin: 0;
+}
+
+.callout-title {
+  font-weight: 600;
+  color: var(--leland-green);
+  margin-bottom: 4px;
+}
+
+/* Light callout (secondary style) */
+.callout-light, .callout-green {
+  background-color: var(--leland-green-bg);
+  border-left: 4px solid var(--leland-green);
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.callout-light .callout-title,
+.callout-green .callout-title {
+  font-weight: 600;
+  color: var(--leland-green);
+  margin-bottom: 4px;
+}
+
+/* Info callout */
+.callout-info {
+  background-color: var(--leland-blue-bg);
+  border-left: 4px solid var(--leland-blue);
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* Warning callout */
+.callout-warning {
+  background-color: var(--leland-orange-bg);
+  border-left: 4px solid var(--leland-orange);
+  padding: 12px 16px;
+  margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+}
+
+
+/* ===== KEY POINTS BOX ===== */
+.key-points {
+  background-color: var(--leland-green-bg);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  color: var(--leland-text-dark);
+}
+
+.key-points h4 {
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--leland-green);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.key-points ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.key-points li {
+  margin-bottom: 4px;
+}
+
+
+/* ===== LAYOUT: TWO COLUMN ===== */
+.two-col {
+  display: flex;
+  gap: 24px;
+}
+
+.two-col > div {
+  flex: 1;
+}
+
+
+/* ===== LAYOUT: THREE COLUMN ===== */
+.three-col {
+  display: flex;
+  gap: 16px;
+}
+
+.three-col > div {
+  flex: 1;
+}
+
+
+/* ===== GRIDS ===== */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Zero card margins inside grids (grid gap handles spacing) */
+.grid-2 > .card,
+.grid-3 > .card,
+.grid-4 > .card {
+  margin-bottom: 0;
+}
+
+
+/* ===== LISTS ===== */
+ul, ol {
+  margin: 12px 0 12px 20px;
+}
+
+li {
+  margin-bottom: 6px;
+}
+
+/* Plus list */
+ul.plus-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+ul.plus-list li {
+  padding-left: 20px;
+  position: relative;
+  margin-bottom: 8px;
+  color: var(--leland-text-light);
+}
+
+ul.plus-list li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--leland-green);
+  font-weight: 600;
+}
+
+/* Bullet list */
+ul.bullet-list {
+  list-style: none;
+  margin-left: 0;
+}
+
+ul.bullet-list li {
+  padding-left: 16px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+ul.bullet-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  background: var(--leland-green);
+  border-radius: 50%;
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  margin-left: 0;
+}
+
+.checklist li {
+  padding-left: 24px;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.checklist li::before {
+  content: "☐";
+  position: absolute;
+  left: 0;
+  color: var(--leland-green);
+  font-size: 14pt;
+}
+
+
+/* ===== CARDS ===== */
+.card {
+  padding: 16px;
+  background: var(--leland-white);
+  border-radius: 8px;
+  border: 1px solid var(--leland-stroke);
+  margin-bottom: 16px;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card-alt {
+  padding: 16px;
+  background: var(--leland-offwhite);
+  border-radius: 8px;
+}
+
+/* Colored card backgrounds */
+.card-green-bg { background: var(--leland-green-bg); border-color: transparent; }
+.card-orange-bg { background: var(--leland-orange-bg); border-color: transparent; }
+.card-red-bg { background: var(--leland-red-bg); border-color: transparent; }
+.card-blue-bg { background: var(--leland-blue-bg); border-color: transparent; }
+.card-purple-bg { background: var(--leland-purple-bg); border-color: transparent; }
+
+
+/* ===== COMPACT CARDS (for reference sheets) ===== */
+.card-compact {
+  padding: 12px;
+  background: var(--leland-white);
+  border-radius: 6px;
+  border: 1px solid var(--leland-stroke);
+  margin-bottom: 10px;
+}
+
+.card-compact:last-child {
+  margin-bottom: 0;
+}
+
+.card-compact h3 {
+  font-size: 10pt;
+  margin: 0 0 4px 0;
+}
+
+.card-compact p {
+  font-size: 9pt;
+  margin-bottom: 4px;
+}
+
+
+/* ===== STEP NUMBERS ===== */
+.step {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.step-num {
+  width: 24px;
+  height: 24px;
+  background-color: var(--leland-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.step-text {
+  flex: 1;
+}
+
+.type-num {
+  color: var(--leland-green);
+  font-size: 20pt;
+  font-weight: 600;
+  line-height: 1;
+}
+
+
+/* ===== BADGES ===== */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 9pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-green { background: var(--leland-green-bg); color: var(--leland-green); }
+.badge-orange { background: var(--leland-orange-bg); color: var(--leland-orange); }
+.badge-red { background: var(--leland-red-bg); color: var(--leland-red); }
+.badge-blue { background: var(--leland-blue-bg); color: var(--leland-blue); }
+.badge-purple { background: var(--leland-purple-bg); color: var(--leland-purple); }
+
+
+/* ===== WORKBOOK STYLES ===== */
+.exercise-box {
+  border: 2px solid var(--leland-stroke);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.exercise-box h4 {
+  color: var(--leland-green);
+  margin-bottom: 12px;
+}
+
+.answer-line {
+  border-bottom: 1px solid var(--leland-stroke);
+  height: 32px;
+  margin-bottom: 8px;
+}
+
+.answer-box {
+  border: 1px solid var(--leland-stroke);
+  border-radius: 4px;
+  min-height: 80px;
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+
+/* ===== FORMULAS/MATH ===== */
+.formula {
+  font-family: 'Times New Roman', serif;
+  font-size: 12pt;
+  padding: 8px 12px;
+  background: var(--leland-offwhite);
+  border-radius: 4px;
+  display: inline-block;
+}
+
+
+/* ===== FOOTER ===== */
+.footer {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--leland-stroke);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 9pt;
+  color: var(--leland-text-muted);
+}
+
+/* Simple centered footer */
+.footer-center {
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--leland-stroke);
+  text-align: center;
+  font-size: 9pt;
+  color: var(--leland-text-muted);
+}
+
+
+/* ===== REFERENCE SHEET STYLES ===== */
+.reference-sheet {
+  font-size: 9pt;
+}
+
+.reference-sheet h2 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--leland-white);
+  background-color: var(--leland-dark);
+  padding: 6px 10px;
+  margin: 12px 0 8px 0;
+  border-radius: 4px;
+  border-bottom: none;
+}
+
+.reference-sheet h3 {
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--leland-green);
+  margin: 10px 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+
+/* ===== TEXT UTILITIES ===== */
+.text-lg { font-size: 13pt; }
+.text-md { font-size: 11pt; }
+.text-sm { font-size: 10pt; }
+.text-xs { font-size: 9pt; }
+
+.text-dark { color: var(--leland-text-dark); }
+.text-light { color: var(--leland-text-light); }
+.text-muted { color: var(--leland-text-muted); }
+.text-green { color: var(--leland-green); }
+.text-white { color: white; }
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.font-bold { font-weight: 700; }
+.font-semibold { font-weight: 600; }
+.font-medium { font-weight: 500; }
+
+
+/* ===== SPACING UTILITIES ===== */
+.mb-4 { margin-bottom: 4px; }
+.mb-8 { margin-bottom: 8px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+
+.mt-8 { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+
+.mb-0 { margin-bottom: 0; }
+
+.mt-32 { margin-top: 32px; }
+.mt-48 { margin-top: 48px; }
+
+.gap-8 { gap: 8px; }
+.gap-12 { gap: 12px; }
+.gap-16 { gap: 16px; }
+.gap-24 { gap: 24px; }
+
+
+/* ===== PRIMER STYLES ===== */
+
+/* Cover page */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px;
+}
+
+.cover-dark {
+  background-color: var(--leland-dark);
+  color: white;
+}
+
+.cover .logo {
+  margin-bottom: 48px;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}
+
+.cover .subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14pt;
+  margin-bottom: 32px;
+}
+
+.sector-title {
+  font-size: 36pt;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+  line-height: 1.1;
+}
+
+.meta {
+  color: var(--leland-text-muted);
+  font-size: 10pt;
+}
+
+/* Table of contents */
+.toc {
+  margin: 24px 0;
+}
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--leland-stroke);
+}
+
+.toc-number {
+  color: var(--leland-green);
+  font-weight: 600;
+  font-size: 12pt;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.toc-title {
+  color: var(--leland-text-dark);
+  font-size: 11pt;
+}
+
+/* Key stats grid */
+.metrics-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.metric-box {
+  background: var(--leland-offwhite);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.metric-value {
+  font-size: 20pt;
+  font-weight: 700;
+  color: var(--leland-green);
+  line-height: 1.2;
+}
+
+.metric-label {
+  font-size: 9pt;
+  color: var(--leland-text-muted);
+  margin-top: 4px;
+}
+
+/* Section headers with number */
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  margin: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.section-number {
+  color: var(--leland-green);
+  font-size: 24pt;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Lead paragraph */
+.lead {
+  font-size: 12pt;
+  color: var(--leland-text-light);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Interview question prompt */
+.interview-question {
+  background: var(--leland-green-bg);
+  color: var(--leland-text-dark);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 11pt;
+}
+
+/* Document footer (logo only) */
+.document-footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--leland-stroke);
+  text-align: center;
+  color: var(--leland-text-muted);
+  font-size: 9pt;
+}
+
+/* Compact table variant */
+.compact-table {
+  font-size: 9pt;
+}
+
+.compact-table td,
+.compact-table th {
+  padding: 6px 10px;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--leland-green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Print: primer-specific rules */
+@media print {
+  .cover {
+    page-break-after: always;
+  }
+
+  .interview-question, .metric-box {
+    page-break-inside: avoid;
+  }
+}
+
+
+/* ===== VOCABULARY LIST STYLES ===== */
+
+/* Word entry — no borders per design system */
+.word-entry {
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+}
+
+.word-entry:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.word-name {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--leland-green);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 4px;
+}
+
+.word-row {
+  display: flex;
+  margin-bottom: 2px;
+  font-size: 8.5pt;
+}
+
+.word-label {
+  font-weight: 600;
+  color: var(--leland-text-dark);
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.word-value {
+  color: var(--leland-text-dark);
+  flex: 1;
+}
+
+.word-value.example {
+  font-style: italic;
+}
+
+/* Connotation badges */
+.connotation {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 7.5pt;
+  font-weight: 500;
+}
+
+.connotation.positive {
+  background: rgba(21, 176, 120, 0.15);
+  color: #0D7A4D;
+}
+
+.connotation.negative {
+  background: rgba(220, 53, 69, 0.15);
+  color: #CC3333;
+}
+
+.connotation.neutral {
+  background: var(--leland-offwhite);
+  color: var(--leland-text-light);
+}
+
+/* Word groups */
+.word-group {
+  background: var(--leland-offwhite);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.word-group h4 {
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--leland-green);
+  margin-bottom: 4px;
+}
+
+.word-group p {
+  font-size: 8.5pt;
+  color: var(--leland-text-dark);
+  margin: 0;
+}
+
+
+/* ===== RULE TABLE (Number Properties, etc.) ===== */
+.rule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  font-size: 8.5pt;
+}
+
+.rule-table th {
+  background-color: var(--leland-offwhite);
+  color: var(--leland-text-dark);
+  font-weight: 600;
+  text-align: left;
+  padding: 5px 6px;
+  font-size: 8pt;
+}
+
+.rule-table td {
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+.rule-table .label {
+  font-weight: 600;
+  color: var(--leland-green);
+  white-space: nowrap;
+}
+
+.rule-table .result {
+  font-weight: 600;
+  color: var(--leland-text-dark);
+}
+
+.rule-table tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+
+/* ===== PRIME LIST ===== */
+.prime-list {
+  background-color: var(--leland-offwhite);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 8.5pt;
+  margin: 8px 0;
+}
+
+.prime-list .label {
+  font-weight: 600;
+  color: var(--leland-green);
+  margin-bottom: 4px;
+}
+
+.prime-list .primes {
+  font-family: 'Courier New', monospace;
+  word-spacing: 4px;
+}
+
+
+/* ===== FORMULA BOX ===== */
+.formula-box {
+  background-color: rgba(21, 176, 120, 0.06);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 6px 0;
+  font-size: 8.5pt;
+}
+
+.formula-box .formula {
+  font-weight: 600;
+  color: var(--leland-green);
+  font-size: 9pt;
+}
+
+.formula-box .description {
+  color: var(--leland-text-light);
+  font-size: 8pt;
+  margin-top: 2px;
+}
+
+
+/* ===== CYCLE TABLE ===== */
+.cycle-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+}
+
+.cycle-table th {
+  background-color: var(--leland-offwhite);
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.cycle-table td {
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.cycle-table .base {
+  font-weight: 600;
+  background-color: var(--leland-green-bg);
+}
+
+
+/* ===== DIVISOR COLUMN ===== */
+.compact-table .divisor {
+  font-weight: 600;
+  color: var(--leland-green);
+  text-align: center;
+  width: 30px;
+}
+
+
+/* ===== ROOT WORD TABLE ===== */
+.root-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 8px;
+  font-size: 8.5pt;
+}
+
+.root-table th {
+  background-color: var(--leland-offwhite);
+  color: var(--leland-text-dark);
+  font-weight: 600;
+  text-align: left;
+  padding: 5px 6px;
+  font-size: 8pt;
+}
+
+.root-table td {
+  padding: 4px 6px;
+  vertical-align: top;
+}
+
+.root-table .root {
+  font-weight: 600;
+  color: var(--leland-green);
+  white-space: nowrap;
+}
+
+.root-table .meaning {
+  color: var(--leland-text-light);
+  font-style: italic;
+}
+
+.root-table .examples {
+  color: var(--leland-text-dark);
+  font-size: 8pt;
+}
+
+
+/* ===== PREFIX COLUMN ===== */
+.compact-table .prefix {
+  font-weight: 600;
+  color: var(--leland-green);
+}
+
+
+/* ===== BREAKDOWN BOX ===== */
+.breakdown-box {
+  background-color: var(--leland-offwhite);
+  border-radius: 6px;
+  padding: 10px;
+  margin: 8px 0;
+}
+
+.breakdown-box h4 {
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--leland-green);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.breakdown-item {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-size: 8pt;
+}
+
+.breakdown-item .word {
+  font-weight: 600;
+  color: var(--leland-text-dark);
+  min-width: 90px;
+}
+
+.breakdown-item .parts {
+  color: var(--leland-text-light);
+}
+
+.breakdown-item .def {
+  color: var(--leland-text-dark);
+}
+
+
+/* ===== SCORE DISPLAY ===== */
+.score-range {
+  display: flex;
+  gap: 24px;
+  margin: 16px 0;
+}
+
+.score-box {
+  flex: 1;
+  background-color: var(--leland-offwhite);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.score-box .section {
+  font-size: 10pt;
+  color: var(--leland-text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.score-box .range {
+  font-size: 18pt;
+  font-weight: 700;
+  color: var(--leland-green);
+}
+
+.score-box .desc {
+  font-size: 9pt;
+  color: var(--leland-text-muted);
+  margin-top: 4px;
+}
+
+
+/* ===== PROGRAM CATEGORY ===== */
+.program-category {
+  font-size: 10pt;
+  font-weight: 600;
+  color: var(--leland-dark);
+  background-color: var(--leland-green-bg);
+  padding: 6px 12px;
+  margin: 16px 0 8px 0;
+  border-radius: 4px;
+}
+
+
+/* ===== SOURCE LINK ===== */
+a.source-link {
+  color: var(--leland-text-muted);
+  text-decoration: none;
+  font-size: 9pt;
+}
+
+a.source-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ===== NOTE ===== */
+.note {
+  font-size: 9pt;
+  color: var(--leland-text-light);
+  font-style: italic;
+  margin-top: 8px;
+}
+
+
+/* ===== QUESTION CARD (Vocab Drills) ===== */
+.question-card {
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: var(--leland-offwhite);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.question-number {
+  font-weight: 700;
+  color: var(--leland-text-dark);
+  font-size: 10pt;
+}
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 7.5pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.difficulty-badge.easy {
+  background: rgba(21, 176, 120, 0.15);
+  color: #0D7A4D;
+}
+
+.difficulty-badge.medium {
+  background: rgba(255, 193, 7, 0.2);
+  color: #856404;
+}
+
+.difficulty-badge.hard {
+  background: rgba(220, 53, 69, 0.15);
+  color: #CC3333;
+}
+
+.question-text {
+  font-size: 9.5pt;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  color: var(--leland-text-dark);
+}
+
+.question-text .blank {
+  display: inline-block;
+  width: 80px;
+  border-bottom: 1px solid var(--leland-text-dark);
+}
+
+.answer-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-size: 9pt;
+}
+
+.answer-option {
+  color: var(--leland-text-dark);
+}
+
+.answer-option strong {
+  color: var(--leland-text-dark);
+}
+
+
+/* ===== ANSWER TABLE ===== */
+.answer-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 9pt;
+}
+
+.answer-table th {
+  background-color: var(--leland-dark);
+  color: white;
+  font-weight: 600;
+  text-align: left;
+  padding: 6px 10px;
+  font-size: 8.5pt;
+}
+
+.answer-table td {
+  padding: 6px 10px;
+}
+
+.answer-table tr:nth-child(even) {
+  background-color: #FAFAFA;
+}
+
+.answer-table .answer {
+  font-weight: 600;
+  color: var(--leland-green);
+}
+
+
+/* ===== SOLUTION CARD ===== */
+.solution-card {
+  background: var(--leland-offwhite);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+
+.solution-card .q-num {
+  font-weight: 700;
+  color: var(--leland-green);
+  margin-bottom: 4px;
+}
+
+.solution-card .answer-text {
+  font-weight: 600;
+  color: var(--leland-text-dark);
+}
+
+.solution-card p {
+  font-size: 8.5pt;
+  color: var(--leland-text-dark);
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+/* ===== INSTRUCTIONS BOX ===== */
+.instructions {
+  background: var(--leland-offwhite);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  font-size: 9pt;
+}
+
+
+/* ===== PRINT: DRILL/REFERENCE ADDITIONS ===== */
+@media print {
+  .question-card, .answer-table, .solution-card, .rule-table, .breakdown-box, .formula-box, .score-range {
+    page-break-inside: avoid;
+  }
+}

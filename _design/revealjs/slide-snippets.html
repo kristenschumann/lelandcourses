@@ -1,0 +1,1318 @@
+<!--
+  SLIDE SNIPPETS LIBRARY
+  Pre-validated HTML snippets for the Assembler agent.
+  Each snippet uses only approved CSS classes from leland.css.
+  Replace {{PLACEHOLDER}} tokens with actual content.
+
+  Note: SVG logo <symbol> definition is in template.html.
+  All snippets assume it has been defined.
+
+  Footer: Content slides have NO footer by default (CSS hides it).
+  To opt in, add .with-footer to <section> and include the footer HTML.
+
+  Headline casing: All {{TITLE}} values for h2 elements must use sentence case
+  (capitalize first word + proper nouns/acronyms only). No trailing period.
+-->
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Title Dark -->
+<!-- ============================================ -->
+<!--
+  Use: Opening slide of every video
+  Requires: leland-logo symbol defined in <body>
+-->
+<section class="title-dark">
+  <svg width="110" height="25" fill="white" class="mb-16"><use href="#leland-logo"/></svg>
+  <p class="eyebrow">{{COURSE_NAME}}</p>
+  <h1>{{TITLE}}</h1>
+  <aside class="notes">
+    0:00 - 0:10 | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Divider -->
+<!-- ============================================ -->
+<!--
+  Use: Section break between major parts
+  No footer, no cards
+-->
+<section class="divider">
+  <div class="part-number">{{PART_LABEL}}</div>
+  <h1>{{SECTION_TITLE}}</h1>
+  <p>{{SECTION_DESCRIPTION}}</p>
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Plus List -->
+<!-- ============================================ -->
+<!--
+  Use: 5-6 bullet points, each under 15 words
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <ul class="plus-list text-lg">
+    <li>{{ITEM_1}}</li>
+    <li>{{ITEM_2}}</li>
+    <li>{{ITEM_3}}</li>
+    <li>{{ITEM_4}}</li>
+    <li>{{ITEM_5}}</li>
+  </ul>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Table -->
+<!-- ============================================ -->
+<!--
+  Use: Data comparison, max header + 5 rows
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>{{COL_1}}</th>
+        <th>{{COL_2}}</th>
+        <th>{{COL_3}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ROW_1_COL_1}}</td>
+        <td>{{ROW_1_COL_2}}</td>
+        <td>{{ROW_1_COL_3}}</td>
+      </tr>
+      <!-- Add rows as needed, max 5 -->
+    </tbody>
+  </table>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Card Grid 3-Column -->
+<!-- ============================================ -->
+<!--
+  Use: 3 equal concepts, features, or categories
+  Card titles: 3-5 words. Descriptions: under 25 words.
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="card-grid-3">
+    <div class="card">
+      <h3>{{CARD_1_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_1_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_2_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_2_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_3_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_3_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Card Grid 2-Column (2x2) -->
+<!-- ============================================ -->
+<!--
+  Use: 4 concepts in a 2x2 grid
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="card-grid-2">
+    <div class="card">
+      <h3>{{CARD_1_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_1_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_2_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_2_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_3_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_3_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_4_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_4_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Card Grid 3-Column with Numbers -->
+<!-- ============================================ -->
+<!--
+  Use: 3 numbered concepts in cards
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="card-grid-3">
+    <div class="card">
+      <div class="type-num mb-16">01</div>
+      <h3>{{CARD_1_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_1_DESC}}</p>
+    </div>
+    <div class="card">
+      <div class="type-num mb-16">02</div>
+      <h3>{{CARD_2_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_2_DESC}}</p>
+    </div>
+    <div class="card">
+      <div class="type-num mb-16">03</div>
+      <h3>{{CARD_3_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_3_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Type Box Grid (2x2) -->
+<!-- ============================================ -->
+<!--
+  Use: 4 numbered items with descriptions
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="card-grid-2">
+    <div class="type-box">
+      <div class="type-num">01</div>
+      <div>
+        <h3>{{ITEM_1_TITLE}}</h3>
+        <p>{{ITEM_1_DESC}}</p>
+      </div>
+    </div>
+    <div class="type-box">
+      <div class="type-num">02</div>
+      <div>
+        <h3>{{ITEM_2_TITLE}}</h3>
+        <p>{{ITEM_2_DESC}}</p>
+      </div>
+    </div>
+    <div class="type-box">
+      <div class="type-num">03</div>
+      <div>
+        <h3>{{ITEM_3_TITLE}}</h3>
+        <p>{{ITEM_3_DESC}}</p>
+      </div>
+    </div>
+    <div class="type-box">
+      <div class="type-num">04</div>
+      <div>
+        <h3>{{ITEM_4_TITLE}}</h3>
+        <p>{{ITEM_4_DESC}}</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Workflow (4-Step Process) -->
+<!-- ============================================ -->
+<!--
+  Use: Sequential process, max 4 steps
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="workflow">
+    <div class="workflow-step">
+      <div class="step-num mb-16">1</div>
+      <h3 class="text-md">{{STEP_1_TITLE}}</h3>
+      <p class="text-sm text-light">{{STEP_1_DESC}}</p>
+    </div>
+    <div class="workflow-arrow">
+      <span class="icon icon-md icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/arrow-right.svg); mask-image: url({{ICON_PATH}}/arrow-right.svg)"></span>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num mb-16">2</div>
+      <h3 class="text-md">{{STEP_2_TITLE}}</h3>
+      <p class="text-sm text-light">{{STEP_2_DESC}}</p>
+    </div>
+    <div class="workflow-arrow">
+      <span class="icon icon-md icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/arrow-right.svg); mask-image: url({{ICON_PATH}}/arrow-right.svg)"></span>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num mb-16">3</div>
+      <h3 class="text-md">{{STEP_3_TITLE}}</h3>
+      <p class="text-sm text-light">{{STEP_3_DESC}}</p>
+    </div>
+    <div class="workflow-arrow">
+      <span class="icon icon-md icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/arrow-right.svg); mask-image: url({{ICON_PATH}}/arrow-right.svg)"></span>
+    </div>
+    <div class="workflow-step">
+      <div class="step-num mb-16">4</div>
+      <h3 class="text-md">{{STEP_4_TITLE}}</h3>
+      <p class="text-sm text-light">{{STEP_4_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Timeline -->
+<!-- ============================================ -->
+<!--
+  Use: Phases, periods, or chronological blocks
+  Variants: light, dark, highlight, or no modifier
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div style="display: flex; gap: 16px;">
+    <div class="timeline-block light" style="flex: 1;">
+      <div class="timeline-label">{{PERIOD_1_LABEL}}</div>
+      <h3>{{PERIOD_1_TITLE}}</h3>
+      <p class="text-sm text-light">{{PERIOD_1_DESC}}</p>
+    </div>
+    <div class="timeline-block dark" style="flex: 1;">
+      <div class="timeline-label">{{PERIOD_2_LABEL}}</div>
+      <h3>{{PERIOD_2_TITLE}}</h3>
+      <p class="text-sm">{{PERIOD_2_DESC}}</p>
+    </div>
+    <div class="timeline-block highlight" style="flex: 1;">
+      <div class="timeline-label">{{PERIOD_3_LABEL}}</div>
+      <h3>{{PERIOD_3_TITLE}}</h3>
+      <p class="text-sm text-light">{{PERIOD_3_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Two Column (Text) -->
+<!-- ============================================ -->
+<!--
+  Use: Side-by-side text content, 3-4 items per side
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="two-column">
+    <div>
+      <h3 class="mb-16">{{LEFT_TITLE}}</h3>
+      <ul class="plus-list">
+        <li>{{LEFT_ITEM_1}}</li>
+        <li>{{LEFT_ITEM_2}}</li>
+        <li>{{LEFT_ITEM_3}}</li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="mb-16">{{RIGHT_TITLE}}</h3>
+      <ul class="plus-list">
+        <li>{{RIGHT_ITEM_1}}</li>
+        <li>{{RIGHT_ITEM_2}}</li>
+        <li>{{RIGHT_ITEM_3}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Two Column (Right vs Wrong) -->
+<!-- ============================================ -->
+<!--
+  Use: Correct vs incorrect comparison
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="two-column gap-32">
+    <div class="card">
+      <div class="status-incorrect text-lg mb-16">
+        <span class="icon icon-sm icon-red" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/x.svg); mask-image: url({{ICON_PATH}}/x.svg)"></span> {{INCORRECT_LABEL}}
+      </div>
+      <p class="text-light mb-16">{{INCORRECT_DESC}}</p>
+      <div class="card-alt">
+        <p class="text-sm">{{INCORRECT_EXAMPLE}}</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="status-correct text-lg mb-16">
+        <span class="icon icon-sm icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/check.svg); mask-image: url({{ICON_PATH}}/check.svg)"></span> {{CORRECT_LABEL}}
+      </div>
+      <p class="text-light mb-16">{{CORRECT_DESC}}</p>
+      <div class="card-alt-green">
+        <p class="text-sm">{{CORRECT_EXAMPLE}}</p>
+      </div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Two Column (Image + Text) -->
+<!-- ============================================ -->
+<!--
+  Use: Image on left, text on right
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="two-column">
+    <div class="image-placeholder">
+      <span class="text-sm">Image: {{IMAGE_DIMENSIONS}}</span>
+    </div>
+    <div>
+      <h3 class="mb-16">{{TEXT_TITLE}}</h3>
+      <p class="text-light mb-16">{{TEXT_DESC}}</p>
+      <ul class="plus-list text-lg">
+        <li>{{ITEM_1}}</li>
+        <li>{{ITEM_2}}</li>
+        <li>{{ITEM_3}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Math Problem (Two Column) -->
+<!-- ============================================ -->
+<!--
+  Use: Math problem on left, solution on right
+  Requires: KaTeX loaded in <head>
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="two-column">
+    <div class="card">
+      <h3 class="text-md mb-16">Problem</h3>
+      <p class="text-lg">{{PROBLEM_TEXT}}</p>
+    </div>
+    <div class="card">
+      <h3 class="text-md mb-16">Solution</h3>
+      <p class="text-md mb-16">{{SOLUTION_STEPS}}</p>
+      <p class="text-lg mt-16">Answer: <span class="ans">{{ANSWER}}</span></p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Callout (Green Tip) -->
+<!-- ============================================ -->
+<!--
+  Use: Pro tips, best practices, key insights
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="card-alt-green mb-24">
+    <div style="display: flex; align-items: flex-start; gap: 12px;">
+      <span class="icon icon-md icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/lightning.svg); mask-image: url({{ICON_PATH}}/lightning.svg)"></span>
+      <p class="text-md"><strong>{{CALLOUT_LABEL}}</strong> {{CALLOUT_TEXT}}</p>
+    </div>
+  </div>
+
+  <p class="text-light">{{SUPPORTING_TEXT}}</p>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Callout (Grey Note) -->
+<!-- ============================================ -->
+<!--
+  Use: Secondary info, context, supplementary details
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <p class="text-lg mb-24">{{MAIN_TEXT}}</p>
+
+  <div class="card-alt compact">
+    <div style="display: flex; align-items: flex-start; gap: 12px;">
+      <span class="icon icon-md icon-dark" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/info.svg); mask-image: url({{ICON_PATH}}/info.svg)"></span>
+      <p class="text-md"><strong>{{NOTE_LABEL}}</strong> {{NOTE_TEXT}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Study Blocks -->
+<!-- ============================================ -->
+<!--
+  Use: Study plan activities, 3-4 blocks
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div style="display: flex; gap: 16px;">
+    <div class="study-block">
+      <h3 class="mb-16">{{BLOCK_1_TITLE}}</h3>
+      <p class="text-sm text-light">{{BLOCK_1_DESC}}</p>
+    </div>
+    <div class="study-block highlight">
+      <h3 class="mb-16">{{BLOCK_2_TITLE}}</h3>
+      <p class="text-sm text-light">{{BLOCK_2_DESC}}</p>
+    </div>
+    <div class="study-block">
+      <h3 class="mb-16">{{BLOCK_3_TITLE}}</h3>
+      <p class="text-sm text-light">{{BLOCK_3_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Badges in Cards (2x2) -->
+<!-- ============================================ -->
+<!--
+  Use: Categorized items with color-coded badges
+  Badge colors: badge-green, badge-orange, badge-red, badge-blue, badge-purple
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="card-grid-2">
+    <div class="card">
+      <span class="badge badge-green self-start mb-16">{{BADGE_1}}</span>
+      <h3 class="text-md mb-16">{{CARD_1_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_1_DESC}}</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-orange self-start mb-16">{{BADGE_2}}</span>
+      <h3 class="text-md mb-16">{{CARD_2_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_2_DESC}}</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-red self-start mb-16">{{BADGE_3}}</span>
+      <h3 class="text-md mb-16">{{CARD_3_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_3_DESC}}</p>
+    </div>
+    <div class="card">
+      <span class="badge badge-blue self-start mb-16">{{BADGE_4}}</span>
+      <h3 class="text-md mb-16">{{CARD_4_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_4_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Summary (Dark Background) -->
+<!-- ============================================ -->
+<!--
+  Use: Final slide with key takeaways
+  No card-alt boxes. Plain text with flex-col gap-16.
+  Uses content-dark (top-aligned, same layout as content slides).
+-->
+<section class="content-dark">
+  <div class="slide-header">
+    <p class="eyebrow">Key Takeaways</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="flex-col gap-16">
+    <p class="text-lg text-white">{{TAKEAWAY_1}}</p>
+    <p class="text-lg text-white">{{TAKEAWAY_2}}</p>
+    <p class="text-lg text-white">{{TAKEAWAY_3}}</p>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Panel Box -->
+<!-- ============================================ -->
+<!--
+  Use: Grouped content with a green section label
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="two-column">
+    <div class="panel-box">
+      <div class="panel-title">{{PANEL_1_TITLE}}</div>
+      <ul class="plus-list">
+        <li>{{PANEL_1_ITEM_1}}</li>
+        <li>{{PANEL_1_ITEM_2}}</li>
+        <li>{{PANEL_1_ITEM_3}}</li>
+      </ul>
+    </div>
+    <div class="panel-box">
+      <div class="panel-title">{{PANEL_2_TITLE}}</div>
+      <ul class="plus-list">
+        <li>{{PANEL_2_ITEM_1}}</li>
+        <li>{{PANEL_2_ITEM_2}}</li>
+        <li>{{PANEL_2_ITEM_3}}</li>
+      </ul>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Icon List -->
+<!-- ============================================ -->
+<!--
+  Use: 3-5 items each with a unique icon (32px) and descriptive text
+  Icons: choose from _design/icons/ (production path: {{ICON_PATH}}/filename.svg)
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <ul class="icon-list text-lg">
+    <li>
+      <span class="icon icon-lg icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/{{ICON_1}}); mask-image: url({{ICON_PATH}}/{{ICON_1}})"></span>
+      <span>{{ITEM_1}}</span>
+    </li>
+    <li>
+      <span class="icon icon-lg icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/{{ICON_2}}); mask-image: url({{ICON_PATH}}/{{ICON_2}})"></span>
+      <span>{{ITEM_2}}</span>
+    </li>
+    <li>
+      <span class="icon icon-lg icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/{{ICON_3}}); mask-image: url({{ICON_PATH}}/{{ICON_3}})"></span>
+      <span>{{ITEM_3}}</span>
+    </li>
+    <li>
+      <span class="icon icon-lg icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/{{ICON_4}}); mask-image: url({{ICON_PATH}}/{{ICON_4}})"></span>
+      <span>{{ITEM_4}}</span>
+    </li>
+  </ul>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- NEW SNIPPETS (added in design system overhaul) -->
+<!-- ============================================ -->
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Split Section -->
+<!-- ============================================ -->
+<!--
+  Use: Section intro for bootcamp decks
+  Green left panel (40%), white right panel (60%)
+  No footer needed
+-->
+<section class="split-section">
+  <div class="split-left">
+    <p class="eyebrow">{{PART_LABEL}}</p>
+    <h1>{{SECTION_TITLE}}</h1>
+  </div>
+  <div class="split-right">
+    <h3 class="mb-16">{{RIGHT_TITLE}}</h3>
+    <p class="text-light">{{RIGHT_DESC}}</p>
+    <ul class="plus-list mt-16">
+      <li>{{ITEM_1}}</li>
+      <li>{{ITEM_2}}</li>
+      <li>{{ITEM_3}}</li>
+    </ul>
+  </div>
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Coach Bio -->
+<!-- ============================================ -->
+<!--
+  Use: Coach introduction after title slide
+  Circular photo + credentials
+-->
+<section class="content coach-bio">
+  <div class="coach-photo">
+    <img src="{{PHOTO_URL}}" alt="{{COACH_NAME}}">
+  </div>
+  <div class="coach-credentials">
+    <p class="eyebrow">Your Coach</p>
+    <h2>{{COACH_NAME}}</h2>
+    <p class="text-lg text-light mb-16">{{COACH_TITLE}}</p>
+    <div class="credential-logos mb-16">
+      <!-- Add school/company logo images here -->
+    </div>
+    <div class="card-alt-green compact">
+      <p class="text-sm"><strong>"{{TESTIMONIAL}}"</strong></p>
+    </div>
+  </div>
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Screenshot / Full-width Image -->
+<!-- ============================================ -->
+<!--
+  Use: Screenshots, diagrams, or photos
+  Add .shadow for screenshots, .rounded for photos
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <img src="{{IMAGE_URL}}" alt="{{IMAGE_ALT}}" class="slide-image shadow full-width">
+  <p class="text-xs text-muted mt-16">{{CAPTION}}</p>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Exhibit (Chart) -->
+<!-- ============================================ -->
+<!--
+  Use: Full-width data visualization
+  Reduced padding maximizes chart area
+-->
+<section class="content exhibit">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="exhibit-visual">
+    <!-- Inline SVG chart or <img> goes here -->
+    {{CHART_SVG}}
+  </div>
+  <p class="exhibit-caption">{{CAPTION}}</p>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Comparison Cards -->
+<!-- ============================================ -->
+<!--
+  Use: Strong vs average, before vs after quality comparison
+  Beyond simple right/wrong
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="comparison-cards">
+    <div class="comparison-panel strong">
+      <div class="panel-label">{{STRONG_LABEL}}</div>
+      <h3>{{STRONG_TITLE}}</h3>
+      <p class="text-sm text-light">{{STRONG_DESC}}</p>
+    </div>
+    <div class="comparison-panel average">
+      <div class="panel-label">{{AVERAGE_LABEL}}</div>
+      <h3>{{AVERAGE_TITLE}}</h3>
+      <p class="text-sm text-light">{{AVERAGE_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Case Prompt -->
+<!-- ============================================ -->
+<!--
+  Use: Case scenarios, reading passages, prompts
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="prompt-block">
+    <div class="prompt-label">{{PROMPT_LABEL}}</div>
+    <p>{{PROMPT_TEXT}}</p>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Card Grid 2x3 -->
+<!-- ============================================ -->
+<!--
+  Use: 6-item overview in 3 columns, 2 rows
+  Cards have compact 16px padding by default
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="card-grid-2x3">
+    <div class="card">
+      <h3>{{CARD_1_TITLE}}</h3>
+      <p class="text-xs text-light">{{CARD_1_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_2_TITLE}}</h3>
+      <p class="text-xs text-light">{{CARD_2_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_3_TITLE}}</h3>
+      <p class="text-xs text-light">{{CARD_3_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_4_TITLE}}</h3>
+      <p class="text-xs text-light">{{CARD_4_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_5_TITLE}}</h3>
+      <p class="text-xs text-light">{{CARD_5_DESC}}</p>
+    </div>
+    <div class="card">
+      <h3>{{CARD_6_TITLE}}</h3>
+      <p class="text-xs text-light">{{CARD_6_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Engagement / Interactive -->
+<!-- ============================================ -->
+<!--
+  Use: Audience question, discussion prompt, pause for reflection
+  Centered layout, no slide-header wrapper needed
+-->
+<section class="engagement">
+  <p class="eyebrow">{{EYEBROW}}</p>
+  <h2>{{TITLE}}</h2>
+  <p class="engagement-prompt">{{QUESTION}}</p>
+  <p class="text-light">{{SUPPORTING_TEXT}}</p>
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Scoring Rubric -->
+<!-- ============================================ -->
+<!--
+  Use: Evaluation criteria, scoring frameworks
+  Off-white header (not dark green), bold first column
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <table class="rubric-table">
+    <thead>
+      <tr>
+        <th>{{COL_1}}</th>
+        <th>{{COL_2}}</th>
+        <th>{{COL_3}}</th>
+        <th>{{COL_4}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ROW_1_CRITERIA}}</td>
+        <td>{{ROW_1_COL_2}}</td>
+        <td>{{ROW_1_COL_3}}</td>
+        <td>{{ROW_1_COL_4}}</td>
+      </tr>
+      <!-- Add rows as needed, max 5 -->
+    </tbody>
+  </table>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Tip Callout with Badge -->
+<!-- ============================================ -->
+<!--
+  Use: Tips to succeed pattern with sparkle icon + badge
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="card-alt-green mb-24">
+    <div style="display: flex; align-items: flex-start; gap: 12px;">
+      <span class="icon icon-xl icon-green" style="flex-shrink: 0; -webkit-mask-image: url({{ICON_PATH}}/sparkle.svg); mask-image: url({{ICON_PATH}}/sparkle.svg)"></span>
+      <div>
+        <span class="badge badge-green mb-8">{{BADGE_LABEL}}</span>
+        <p class="text-md mt-16">{{CALLOUT_TEXT}}</p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="plus-list">
+    <li>{{TIP_1}}</li>
+    <li>{{TIP_2}}</li>
+    <li>{{TIP_3}}</li>
+  </ul>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Quote Block -->
+<!-- ============================================ -->
+<!--
+  Use: Essay excerpts, interview quotes, school prompt highlights
+  Green-tinted background, italic text, source attribution
+  No border-left — uses tinted background for visual hierarchy
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <p class="text-lg mb-16">{{INTRO_TEXT}}</p>
+
+  <div class="quote-block">
+    <p>{{QUOTE_TEXT}}</p>
+    <div class="quote-source">{{SOURCE}}</div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Big Statement -->
+<!-- ============================================ -->
+<!--
+  Use: Full-slide centered quote or thesis statement
+  Dark background, large centered type, coach unpacks verbally
+  No cards, no lists — just one big idea
+-->
+<section class="big-statement">
+  <p class="eyebrow">{{EYEBROW}}</p>
+  <h2>{{STATEMENT}}</h2>
+  <p class="sub-text">{{SUB_TEXT}}</p>
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Before/After -->
+<!-- ============================================ -->
+<!--
+  Use: Draft vs final text comparison (essays, resumes, etc.)
+  Left panel: faded draft with strikethrough
+  Right panel: polished final version
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="before-after">
+    <div class="panel draft">
+      <div class="panel-label">{{DRAFT_LABEL}}</div>
+      <p class="essay-text">{{DRAFT_TEXT}}</p>
+    </div>
+    <div class="panel final">
+      <div class="panel-label">{{FINAL_LABEL}}</div>
+      <p class="essay-text">{{FINAL_TEXT}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Build Items -->
+<!-- ============================================ -->
+<!--
+  Use: Progressive reveal of 3-5 numbered items
+  Each item appears on click (fragment)
+  Numbered with green accent, separated by rule lines
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="build-item fragment fade-up" data-fragment-index="1">
+    <div class="build-num">1</div>
+    <div>
+      <h3>{{ITEM_1_TITLE}}</h3>
+      <p>{{ITEM_1_DESC}}</p>
+    </div>
+  </div>
+  <div class="build-item fragment fade-up" data-fragment-index="2">
+    <div class="build-num">2</div>
+    <div>
+      <h3>{{ITEM_2_TITLE}}</h3>
+      <p>{{ITEM_2_DESC}}</p>
+    </div>
+  </div>
+  <div class="build-item fragment fade-up" data-fragment-index="3">
+    <div class="build-num">3</div>
+    <div>
+      <h3>{{ITEM_3_TITLE}}</h3>
+      <p>{{ITEM_3_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Annotation -->
+<!-- ============================================ -->
+<!--
+  Use: Essay text with positioned callout markers
+  Markers point to specific parts of the text
+  Position markers with inline top/right values
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="annotation-container">
+    <div class="essay-text">{{ESSAY_TEXT}}</div>
+
+    <div class="annotation-marker" style="top: {{Y1}}; right: -160px;">
+      <div class="marker-dot"></div>
+      <div class="marker-line"></div>
+      <div class="marker-label">{{LABEL_1}}</div>
+    </div>
+    <div class="annotation-marker" style="top: {{Y2}}; right: -160px;">
+      <div class="marker-dot"></div>
+      <div class="marker-line"></div>
+      <div class="marker-label">{{LABEL_2}}</div>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Example Box -->
+<!-- ============================================ -->
+<!--
+  Use: Worked example within a strategy or concept slide
+  Green-tinted background with labeled example content
+  No border-left — uses tinted background for visual hierarchy
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <p class="text-lg mb-16">{{STRATEGY_TEXT}}</p>
+
+  <div class="example-box">
+    <div class="example-label">Example</div>
+    <p class="text-md">{{EXAMPLE_TEXT}}</p>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Full-Bleed Image -->
+<!-- ============================================ -->
+<!--
+  Use: Hero-style background image with text overlay
+  Gradient overlay ensures text readability
+  No slide-header — content sits at bottom of image
+-->
+<section class="image-bg">
+  <img class="bg-image" src="{{IMAGE_URL}}" alt="{{IMAGE_ALT}}">
+  <div class="bg-overlay"></div>
+  <div class="bg-content">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+    <p>{{DESCRIPTION}}</p>
+  </div>
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Image Gallery -->
+<!-- ============================================ -->
+<!--
+  Use: 2-3 images in a grid with optional captions
+  Add .cols-3 to image-gallery for 3-column layout
+  Images should be similar aspect ratio for best results
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="image-gallery">
+    <div>
+      <div class="gallery-item">
+        <img src="{{IMAGE_1_URL}}" alt="{{IMAGE_1_ALT}}">
+      </div>
+      <p class="gallery-caption">{{CAPTION_1}}</p>
+    </div>
+    <div>
+      <div class="gallery-item">
+        <img src="{{IMAGE_2_URL}}" alt="{{IMAGE_2_ALT}}">
+      </div>
+      <p class="gallery-caption">{{CAPTION_2}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Image + Card -->
+<!-- ============================================ -->
+<!--
+  Use: Large image with floating card overlay
+  Card overlaps the image by 40px for depth effect
+  Good for case studies, campus features, portfolio highlights
+-->
+<section class="content">
+  <div class="slide-header">
+    <p class="eyebrow">{{EYEBROW}}</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <div class="image-card-layout">
+    <div class="layout-image">
+      <img src="{{IMAGE_URL}}" alt="{{IMAGE_ALT}}">
+    </div>
+    <div class="layout-card">
+      <h3 class="mb-8">{{CARD_TITLE}}</h3>
+      <p class="text-sm text-light">{{CARD_DESC}}</p>
+    </div>
+  </div>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
+
+
+<!-- ============================================ -->
+<!-- SNIPPET: Summary List (Dark) -->
+<!-- ============================================ -->
+<!--
+  Use: Takeaway list on dark background with ruled separators
+  Alternative to flex-col gap-16 plain text for summaries
+  Each item has a green number + text
+-->
+<section class="content-dark">
+  <div class="slide-header">
+    <p class="eyebrow">Key Takeaways</p>
+    <h2>{{TITLE}}</h2>
+  </div>
+
+  <ul class="summary-list text-lg">
+    <li><span class="text-green">1.</span> <span class="text-white">{{TAKEAWAY_1}}</span></li>
+    <li><span class="text-green">2.</span> <span class="text-white">{{TAKEAWAY_2}}</span></li>
+    <li><span class="text-green">3.</span> <span class="text-white">{{TAKEAWAY_3}}</span></li>
+    <li><span class="text-green">4.</span> <span class="text-white">{{TAKEAWAY_4}}</span></li>
+  </ul>
+
+  <aside class="notes">
+    {{TIMESTAMP}} | {{SPEAKER_NOTES}}
+  </aside>
+</section>
