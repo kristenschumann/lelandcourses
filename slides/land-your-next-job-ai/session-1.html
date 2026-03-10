@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en" class="reveal-full-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 1: Build Your AI Job-Search Engine — Job Search Bootcamp</title>
+
+  <!-- Reveal.js Core -->
+  <link rel="stylesheet" href="assets/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="assets/revealjs/dist/reveal.css">
+
+  <!-- Leland Theme -->
+  <link rel="stylesheet" href="assets/revealjs/themes/leland.css">
+
+</head>
+<body>
+  <!-- SVG Symbol Definitions (defined once, referenced via <use>) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="leland-logo" viewBox="0 0 200 45">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z"/>
+      <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z"/>
+      <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z"/>
+      <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z"/>
+      <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z"/>
+      <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z"/>
+    </symbol>
+  </svg>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================================ -->
+      <!-- SLIDE 1: Title Dark -->
+      <!-- ============================================ -->
+      <section class="title-dark">
+        <svg width="110" height="25" fill="white" class="mb-16"><use href="#leland-logo"/></svg>
+        <p class="eyebrow">Job Search Bootcamp</p>
+        <h1>Build Your AI<br>Job-Search Engine</h1>
+        <aside class="notes">
+          0:00 - 0:30 | Opening. Energy up. Welcome the cohort.
+COACH: "By the end of tonight, you'll have a working AI agent that finds jobs for you every day. Not a concept. A real tool you'll use tomorrow morning."
+Key point: This is a workshop. You will build something real tonight.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 2: Plus List — Tonight's Agenda -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Tonight's agenda</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li>The strategy problem (why most searches fail)</li>
+          <li>Role-Fit Scorecard (your matching criteria)</li>
+          <li>Live AI demo (job postings, ranked in minutes)</li>
+          <li>Hands-on workshop (build your own agent)</li>
+          <li>Daily automation setup</li>
+        </ul>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          0:30 - 1:00 | Walk through the agenda. Emphasize the deliverable.
+COACH: Quick overview. "Here's where we're headed. We move fast, so stay with me."
+TRANSITION: "But first, let's meet each other."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 3: Exercise — Quick Intros -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Quick intros</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <p class="text-lg mb-16"><strong>Drop in the chat:</strong></p>
+          <ol class="text-md">
+            <li>Your name</li>
+            <li>What role you're targeting</li>
+            <li>How long you've been searching</li>
+          </ol>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          1:00 - 5:00 | Introductions via chat. Read a few aloud to build connection.
+COACH: "Drop your intro in the chat: name, target role, how long you've been searching." Read 3-4 aloud. "Love the range in here. We've got people targeting ops, marketing, sales. That's exactly who this bootcamp is built for."
+TRANSITION: "Great. Now let's talk about why this is so hard."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 4: Divider — The Strategy Problem -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 1</div>
+        <h1>The Strategy Problem</h1>
+        <p>Why most job searches take longer than they should</p>
+        <aside class="notes">
+          5:00 - 5:15 | Section transition. Let the title land.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 5: Big Stat — 5 Months -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>The data</h2>
+        </div>
+
+        <div class="two-column gap-32">
+          <div class="flex-col flex-center">
+            <h1>5 Months</h1>
+            <p class="text-lg text-light">is the average U.S. job search duration</p>
+          </div>
+          <div class="card-alt">
+            <p class="text-md mb-8"><strong>What's going wrong?</strong></p>
+            <ul class="plus-list text-sm">
+              <li>Applying broadly instead of strategically</li>
+              <li>No system for finding high-fit roles</li>
+              <li>Spending time on materials, not targeting</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="slide-footnote">Source: Bureau of Labor Statistics, median unemployment duration, 2024</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          5:15 - 6:30 | Big stat reveal. Show of hands interaction.
+COACH: "Show of hands: who here has been searching for more than three months?" Pause. Let the number sink in. "You're not alone. The average search takes nearly five months. And the reason isn't your resume."
+Key point: The length of the search is a strategy problem, not a resume problem.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 6: Two Column Status — Two Approaches -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Two approaches</h2>
+        </div>
+
+        <div class="two-column gap-32">
+          <div class="card">
+            <div class="status-incorrect text-lg mb-16">
+              <span class="icon icon-sm icon-red" style="--icon: url(assets/revealjs/icons/x.svg)"></span> Spray and Pray
+            </div>
+            <p class="text-light mb-16">Apply to everything. Hope for the best.</p>
+            <div class="card-alt">
+              <p class="text-sm">200 applications, 3 callbacks, 0 offers</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="status-correct text-lg mb-16">
+              <span class="icon icon-sm icon-green" style="--icon: url(assets/revealjs/icons/check.svg)"></span> Strategic Matching
+            </div>
+            <p class="text-light mb-16">Target high-fit roles. Invest in each one.</p>
+            <div class="card-alt-green">
+              <p class="text-sm">25 focused applications, meaningful callbacks, real offers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          6:30 - 8:00 | Contrast the two approaches. Use the numbers to make the case.
+COACH: "Most people default to volume. More applications, more chances, right? Wrong. The data says the opposite."
+Key point: Quality beats quantity. Strategy beats hustle.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 7: Card Grid 3 Numbered — Why Spray-and-Pray Fails -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Why spray-and-pray fails</h2>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card">
+            <div class="type-num mb-16">01</div>
+            <h3>Generic Applications</h3>
+            <p class="text-sm text-light">Same resume, same cover letter. Recruiters notice.</p>
+          </div>
+          <div class="card">
+            <div class="type-num mb-16">02</div>
+            <h3>Decision Fatigue</h3>
+            <p class="text-sm text-light">Too many options drains your energy and focus.</p>
+          </div>
+          <div class="card">
+            <div class="type-num mb-16">03</div>
+            <h3>No Feedback Loop</h3>
+            <p class="text-sm text-light">No way to know what's working or why.</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          8:00 - 9:30 | Three failure modes. Keep it punchy. One sentence per card.
+COACH: Walk through each card. "Sound familiar? This is what happens when you don't have a system."
+TRANSITION: "The fix isn't working harder. It's matching smarter."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 8: Callout Green — The Shift -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>The shift</h2>
+        </div>
+
+        <div class="card-alt-green mb-24">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span class="icon icon-xl icon-green" style="--icon: url(assets/icons/sparkle.svg); flex-shrink: 0"></span>
+            <div>
+              <p class="text-lg"><strong>The best job search starts before you open your resume.</strong></p>
+              <p class="text-sm text-light mt-8">When you know what you're looking for, everything else gets easier: your applications, your outreach, your interviews.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-grid-2 mt-16">
+          <div class="card">
+            <h3 class="text-md mb-8">Most people start here</h3>
+            <p class="text-sm text-light">Update resume → Apply everywhere → Hope for callbacks</p>
+          </div>
+          <div class="card card-green-bg">
+            <h3 class="text-md mb-8">We start here</h3>
+            <p class="text-sm text-light">Define fit → Target roles → Tailor everything to match</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          9:30 - 10:30 | Key insight. Let it land. Pause before moving on.
+COACH: "This is the core insight of the bootcamp. Every session builds on this. Your resume matters, but only after your strategy is right."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 9: Workflow — The Bootcamp System -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>The bootcamp system</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="workflow-step">
+            <div class="step-num mb-16">1</div>
+            <h3 class="text-md">Define Fit</h3>
+            <p class="text-sm text-light">Role-Fit Scorecard</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">2</div>
+            <h3 class="text-md">Source Roles</h3>
+            <p class="text-sm text-light">AI matching agent</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">3</div>
+            <h3 class="text-md">Apply Smart</h3>
+            <p class="text-sm text-light">Tailored outreach</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">4</div>
+            <h3 class="text-md">Close Offers</h3>
+            <p class="text-sm text-light">Interview and negotiate</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          10:30 - 11:30 | Overview of the full system. Point to where Session 1 fits.
+COACH: "Here's the system we'll build over six sessions. Tonight is steps 1 and 2. By the end of the bootcamp, you'll have all four."
+TRANSITION: "Let's start with step 1. What does 'fit' mean?"
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 10: Exercise — Quick Poll -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Quick poll</h2>
+        </div>
+
+        <div class="card-alt-green mb-24">
+          <p class="text-lg"><strong>Drop in chat:</strong> What's the #1 thing you look for in a role?</p>
+          <p class="text-md text-light mt-8">(Title? Comp? Culture? Growth? Location? Something else?)</p>
+        </div>
+
+        <div class="card-alt">
+          <p class="text-sm text-light"><span class="icon icon-sm icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span> Notice how different everyone's answers are. That's why a one-size-fits-all search doesn't work. We're about to build a framework that accounts for <em>your</em> priorities.</p>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          11:30 - 13:00 | Chat poll. Read responses. Bridge to the framework.
+COACH: Live poll in chat. "One word or phrase. What matters most to you?" Read a few responses aloud. "Great. Notice how different everyone's answers are. That's exactly why a generic search doesn't work."
+TRANSITION: "Let's turn those instincts into a scoring system."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 11: Divider — The Role-Fit Scorecard -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 2</div>
+        <h1>The Role-Fit Scorecard</h1>
+        <p>A framework for knowing what you want</p>
+        <aside class="notes">
+          13:00 - 13:15 | Section transition.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 12: Badges in Cards — Four Dimensions of Fit -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Four dimensions of fit</h2>
+        </div>
+
+        <div class="card-grid-2">
+          <div class="card" style="padding: 16px">
+            <span class="badge badge-green self-start mb-16">Function</span>
+            <h3 class="text-md mb-8">Function Fit</h3>
+            <p class="text-sm text-light">Day-to-day work matches your skills and interests</p>
+          </div>
+          <div class="card" style="padding: 16px">
+            <span class="badge badge-blue self-start mb-16">Culture</span>
+            <h3 class="text-md mb-8">Culture Fit</h3>
+            <p class="text-sm text-light">Values, pace, and working style align with yours</p>
+          </div>
+          <div class="card" style="padding: 16px">
+            <span class="badge badge-purple self-start mb-16">Growth</span>
+            <h3 class="text-md mb-8">Growth Trajectory</h3>
+            <p class="text-sm text-light">Clear path to where you want to be in 2-3 years</p>
+          </div>
+          <div class="card" style="padding: 16px">
+            <span class="badge badge-orange self-start mb-16">Comp</span>
+            <h3 class="text-md mb-8">Compensation</h3>
+            <p class="text-sm text-light">Salary, equity, and benefits meet your floor</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          13:15 - 15:00 | Introduce the four dimensions. One sentence each.
+COACH: "These are the four dimensions. Every role gets scored on all four. No single dimension is enough on its own."
+Key point: Fit is multi-dimensional. A great salary with bad culture is still a bad fit.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 13: Table — Scoring Your Criteria -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Scoring your criteria</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Must-Have</th>
+              <th>Nice-to-Have</th>
+              <th>Dealbreaker</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Function</td>
+              <td>Product strategy work</td>
+              <td>Cross-functional team</td>
+              <td>Pure data entry</td>
+            </tr>
+            <tr>
+              <td>Culture</td>
+              <td>Remote-friendly</td>
+              <td>Flat hierarchy</td>
+              <td>Always-on Slack culture</td>
+            </tr>
+            <tr>
+              <td>Growth</td>
+              <td>Path to director in 3 yrs</td>
+              <td>Mentorship program</td>
+              <td>No internal mobility</td>
+            </tr>
+            <tr>
+              <td>Comp</td>
+              <td>$150K+ base</td>
+              <td>Equity upside</td>
+              <td>Below $130K</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          15:00 - 17:00 | Walk through the example. Emphasize that these are personal, not universal.
+COACH: "Here's what a filled-in scorecard looks like. Must-haves are non-negotiable. Nice-to-haves are bonuses. Dealbreakers kill the opportunity."
+Note: Your numbers will look different depending on your career stage. If you're earlier in your career, your comp target might be $55K+ and your growth goal might be 'mentorship from a senior manager.' Adapt the example to where you are.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 14: Plus List — Function Fit -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Function fit</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li>What tasks energize you vs. drain you?</li>
+          <li>Which skills do you want to use daily?</li>
+          <li>What type of problems do you want to solve?</li>
+          <li>What scope of ownership do you want?</li>
+        </ul>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          17:00 - 18:30 | Deep dive on function. Use questions to prompt self-reflection.
+COACH: "Function fit is about the actual work. Not the title, not the company name. The work. If you hate 60% of your day-to-day, the brand doesn't matter."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 15: Plus List — Culture, Growth, and Comp -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Culture, growth, and comp</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li><strong>Culture:</strong> How do decisions get made? What's the pace?</li>
+          <li><strong>Culture:</strong> What does "work-life balance" look like here?</li>
+          <li><strong>Growth:</strong> Where does this role lead in 2-3 years?</li>
+          <li><strong>Comp:</strong> What's your walk-away number? What's your target?</li>
+        </ul>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          18:30 - 20:00 | Rapid coverage of remaining three dimensions.
+COACH: "Culture is the hardest to evaluate from outside. We'll cover how to decode it in Session 3. For now, write down your signals."
+TRANSITION: "Now it's your turn. Fill in your own scorecard."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 16: Exercise — Build Your Role-Fit Scorecard -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Build your role-fit scorecard</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <ol class="text-md">
+            <li>Open the scorecard template (link in chat)</li>
+            <li>Fill in must-haves, nice-to-haves, and dealbreakers for each dimension</li>
+            <li>Be specific. "Good culture" is not a criteria. "Async-first, no meetings before 10am" is.</li>
+          </ol>
+        </div>
+        <p class="text-sm text-muted mt-16">8 minutes. Go.</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          20:00 - 28:00 | Individual exercise. Walk the room (or monitor chat in virtual).
+COACH: Drop the template link in chat. "8 minutes. Fill in all four dimensions. Be as specific as you can. I'll walk around and answer questions." Set a visible timer. At 6 minutes: "Two minutes left. Focus on must-haves if you haven't finished everything."
+Play background music if the vibe calls for it.
+At 4 min remaining, give a time check.
+TRANSITION: "Great work. Now let's see what AI can do with this."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 17: Divider — AI Job Matching -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 3</div>
+        <h1>AI Job Matching</h1>
+        <p>Turning your scorecard into an automated search engine</p>
+        <aside class="notes">
+          28:00 - 28:15 | Section transition. Build anticipation.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 18: Card Grid 3 — What AI Does Well Here -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>What AI does well here</h2>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card card-green-bg">
+            <span class="icon icon-lg icon-green" style="--icon: url(assets/icons/search.svg)"></span>
+            <h3>Pattern Matching</h3>
+            <p class="text-sm text-light">Scans hundreds of postings against your specific criteria</p>
+          </div>
+          <div class="card card-blue-bg">
+            <span class="icon icon-lg icon-blue" style="--icon: url(assets/icons/sort.svg)"></span>
+            <h3>Prioritization</h3>
+            <p class="text-sm text-light">Ranks opportunities by fit score, not just recency</p>
+          </div>
+          <div class="card card-purple-bg">
+            <span class="icon icon-lg icon-purple" style="--icon: url(assets/icons/arrow-recurring.svg)"></span>
+            <h3>Consistency</h3>
+            <p class="text-sm text-light">Runs the same analysis daily without getting tired or distracted</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          28:15 - 29:30 | Set expectations. AI is a multiplier, not a replacement.
+COACH: "AI is not magic. It won't get you a job. But it's very good at three things." Walk through each card.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 19: Demo Setup — Live Demo -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Live demo</h2>
+        </div>
+
+        <div class="card-alt compact">
+          <ul class="plus-list text-md">
+            <li><strong>Input:</strong> 5-10 job postings (product management roles)</li>
+            <li><strong>Criteria:</strong> Sample Role-Fit Scorecard</li>
+            <li><strong>Tool:</strong> Claude / ChatGPT</li>
+            <li><strong>Output:</strong> Ranked shortlist with match rationale</li>
+          </ul>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          29:30 - 30:30 | Set up the demo. Explain what you're about to do before you do it.
+COACH: Screen share. "I'm going to paste a batch of real job postings and my scorecard into Claude. Watch what happens." Open the AI tool. Have the prompt and postings pre-loaded in a text file for speed.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 20: Demo Live — Prompt Structure -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Prompt structure</h2>
+        </div>
+
+        <div class="flex-col gap-16">
+          <div class="card-alt compact">
+            <p class="text-md"><strong>Part 1:</strong> "Here are my role-fit criteria: [paste scorecard]"</p>
+          </div>
+          <div class="card-alt compact">
+            <p class="text-md"><strong>Part 2:</strong> "Here are the job postings: [paste 5-10 listings]"</p>
+          </div>
+          <div class="card-alt compact">
+            <p class="text-md"><strong>Part 3:</strong> "Score each on a 1-10 scale. Return top 10 with reasoning."</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          30:30 - 40:00 | LIVE DEMO. This is the centerpiece. Take your time.
+COACH: Show the prompt structure first, then switch to the AI tool and run it live. Narrate as results come in. "Look at this. It's pulling out the remote-first roles, flagging the ones below comp floor, and ranking by function fit." Highlight one strong match and one surprising miss. "See how it caught that this role says 'product' but is really a project management job? That's why the criteria matter."
+Walk through: paste the prompt, run it, read results together.
+Highlight: 1 strong match (explain why), 1 false positive (show AI isn't perfect), 1 surprise find.
+Key point: The quality of output depends on the quality of your scorecard.
+At 38:00, start wrapping up the demo.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 21: Two Column Text — Prompt Engineering Tips -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Prompt engineering tips</h2>
+        </div>
+
+        <div class="two-column gap-32">
+          <div class="card card-green-bg">
+            <div class="status-correct text-lg mb-16">
+              <span class="icon icon-sm icon-green" style="--icon: url(assets/revealjs/icons/check.svg)"></span> Do
+            </div>
+            <ul class="plus-list">
+              <li>Be specific about your criteria</li>
+              <li>Include dealbreakers explicitly</li>
+              <li>Ask for reasoning, not just scores</li>
+            </ul>
+          </div>
+          <div class="card card-red-bg">
+            <div class="status-incorrect text-lg mb-16">
+              <span class="icon icon-sm icon-red" style="--icon: url(assets/revealjs/icons/x.svg)"></span> Avoid
+            </div>
+            <ul class="plus-list">
+              <li>Vague instructions ("find good jobs")</li>
+              <li>Skipping the scoring rubric</li>
+              <li>Trusting AI scores without reading the posting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          40:00 - 42:00 | Quick prompt engineering tips. Keep it practical.
+COACH: "Three dos and three don'ts. The biggest mistake is being vague. 'Find me good jobs' gets you garbage. 'Score these against my four criteria and explain each score' gets you gold."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 22: Callout Green — The Human Check -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>The human check</h2>
+        </div>
+
+        <div class="card-alt-green mb-24">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span class="icon icon-xl icon-green" style="--icon: url(assets/icons/shield-check-filled.svg); flex-shrink: 0"></span>
+            <div>
+              <p class="text-lg"><strong>AI ranks. You decide.</strong></p>
+              <p class="text-sm text-light mt-8">Always read the top matches yourself. AI catches patterns you miss, but it also misses context you have.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          42:00 - 43:00 | Important caveat. AI is a tool, not an oracle.
+COACH: "AI is your research assistant, not your hiring manager. It narrows the field. You make the call."
+TRANSITION: "Now it's your turn to build this."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 23: Divider — Build Your Agent -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 4</div>
+        <h1>Build Your Agent</h1>
+        <p>Hands-on workshop: create your AI matching prompt</p>
+        <aside class="notes">
+          43:00 - 43:15 | Section transition.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 24: Exercise — Workshop: Build Your Prompt -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Workshop: Build your prompt</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <ol class="text-md">
+            <li>Copy the prompt template (link in chat)</li>
+            <li>Paste your Role-Fit Scorecard into Part 1</li>
+            <li>Paste your 5-10 pre-work job postings into Part 2</li>
+            <li>Run the prompt. Review the output.</li>
+            <li>Refine: adjust criteria, re-run, compare results</li>
+          </ol>
+        </div>
+        <p class="text-sm text-muted mt-16">15 minutes. Start now.</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          43:15 - 58:00 | Individual build time. Circulate actively.
+COACH: Drop template link in chat. "You have 15 minutes. Build your prompt, run it, and see what comes back. If you get stuck, raise your hand or type in chat." Walk the room. Common issues to watch for: vague criteria, forgetting to include dealbreakers, not asking for reasoning.
+At 50:00: "Halfway there. If you haven't run your prompt yet, do it now."
+At 55:00: "Three minutes. Finish your first run. We're about to do peer feedback."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 25: Exercise — Peer Feedback -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Peer feedback</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <ol class="text-md">
+            <li>Groups of 3 (breakout rooms or table groups)</li>
+            <li>Share your top 3 AI-recommended roles</li>
+            <li>Give feedback: "Does this match what you told me about your criteria?"</li>
+            <li>Identify one criteria to sharpen</li>
+          </ol>
+        </div>
+        <p class="text-sm text-muted mt-16">10 minutes</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          58:00 - 68:00 | Breakout rooms. Peer feedback.
+COACH: "Breakout rooms, groups of 3. Share your screen, show your top 3 matches, and get feedback. The question to ask each other is: 'Based on what I said my criteria are, do these results make sense?' If not, your criteria need work." Launch breakout rooms. At 8 minutes: "Start wrapping up. Come back to the main room."
+At 66:00: broadcast "2 minutes, wrap up and return."
+TRANSITION: "Welcome back. Now let's make this run every day."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 26: Divider — Daily Automation -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 5</div>
+        <h1>Daily Automation</h1>
+        <p>Make your agent work for you every morning</p>
+        <aside class="notes">
+          68:00 - 68:15 | Section transition.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 27: Card Grid 3 — Three Ways to Automate -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Three ways to automate</h2>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card card-green-bg">
+            <span class="icon icon-lg icon-green" style="--icon: url(assets/icons/document-file.svg)"></span>
+            <h3>Saved Prompt</h3>
+            <p class="text-sm text-light">Copy your prompt into a note. Run it manually each morning with fresh postings.</p>
+          </div>
+          <div class="card card-blue-bg">
+            <span class="icon icon-lg icon-blue" style="--icon: url(assets/icons/AI-Generate.svg)"></span>
+            <h3>Custom GPT / Project</h3>
+            <p class="text-sm text-light">Create a saved AI assistant with your criteria baked in. Just paste new postings.</p>
+          </div>
+          <div class="card card-purple-bg">
+            <span class="icon icon-lg icon-purple" style="--icon: url(assets/revealjs/icons/lightning.svg)"></span>
+            <h3>Full Automation</h3>
+            <p class="text-sm text-light">Connect job board feeds to your AI tool with Zapier or Make. Runs without you (requires some technical setup — great stretch goal).</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          68:15 - 72:00 | Walk through the three levels. Most people start at level 1.
+COACH: "Start with the saved prompt. It takes 10 minutes a day. Once you trust the output, move to a Custom GPT. Full automation is a stretch goal for those comfortable with no-code tools like Zapier or Make — don't worry about it until the basics are second nature."
+Key point: Consistency matters more than sophistication. 10 min/day beats one big session.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 28: Workflow — Your Daily Routine -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Your daily routine</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="workflow-step">
+            <div class="step-num mb-16">1</div>
+            <h3 class="text-md">Gather</h3>
+            <p class="text-sm text-light">Scan LinkedIn, Indeed (5 min)</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">2</div>
+            <h3 class="text-md">Paste</h3>
+            <p class="text-sm text-light">Feed postings to your AI prompt</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">3</div>
+            <h3 class="text-md">Review</h3>
+            <p class="text-sm text-light">Check top matches (3 min)</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">4</div>
+            <h3 class="text-md">Act</h3>
+            <p class="text-sm text-light">Add best fits to your target list</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          72:00 - 74:00 | The daily workflow. Make it feel doable, not overwhelming.
+COACH: "This is your morning routine. 10 minutes. Coffee and job matching. Do this every day this week."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 29: Callout Green — The Compound Effect -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>The compound effect</h2>
+        </div>
+
+        <div class="card-alt-green mb-24">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span class="icon icon-xl icon-green" style="--icon: url(assets/revealjs/icons/arrow-up-chart-growth.svg); flex-shrink: 0"></span>
+            <div>
+              <p class="text-lg"><strong>7 days x 10 minutes = 5-10 high-fit matches per run, building your pipeline daily.</strong></p>
+              <p class="text-sm text-light mt-8">Most job seekers spend hours scrolling and apply to roles they're not excited about. You'll spend minutes and apply only to strong matches.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          74:00 - 75:30 | Motivational math. Make the commitment feel small and the payoff feel big.
+COACH: "Do the math. If you run this daily with 5-10 postings each time, you'll build a serious pipeline of scored roles by next week. That's more data than most people generate in a month of searching."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 30: Exercise — Set It Up Now -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Set it up now</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <ol class="text-md">
+            <li>Save your prompt somewhere you'll find it tomorrow (Notes, Google Doc, bookmarked chat)</li>
+            <li>Set a daily reminder: "10 min job matching" (phone alarm, calendar block)</li>
+            <li>Bookmark 2-3 job boards you'll pull postings from</li>
+          </ol>
+        </div>
+        <p class="text-sm text-muted mt-16">3 minutes.</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          75:30 - 78:00 | Quick setup exercise. Make sure everyone has their prompt saved and a reminder set.
+COACH: "Do this right now. Don't leave it for later. Save your prompt. Set a reminder on your phone. I'll wait." Walk around to confirm people are doing it.
+TRANSITION: "Perfect. Let's wrap up."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 31: Plus List — What You Built Tonight -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>What you built tonight</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li>A Role-Fit Scorecard with your personal criteria</li>
+          <li>A tested AI matching prompt</li>
+          <li>A daily job-sourcing routine</li>
+          <li>A starting shortlist of target roles</li>
+        </ul>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          78:00 - 79:30 | Recap. Celebrate the deliverable.
+COACH: Celebration moment. "Look at what you built in 90 minutes. You walked in with a job search. You're walking out with a system."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 32: Table — Homework This Week -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Homework this week</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Time</th>
+              <th>Due</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Run your AI agent daily</td>
+              <td>10 min/day</td>
+              <td>Daily</td>
+            </tr>
+            <tr>
+              <td>Refine your Role-Fit Scorecard</td>
+              <td>15 min</td>
+              <td>By Session 2</td>
+            </tr>
+            <tr>
+              <td>Finalize top 10 target roles</td>
+              <td>20 min</td>
+              <td>By Session 2</td>
+            </tr>
+            <tr>
+              <td>Research 3-5 target companies</td>
+              <td>15 min</td>
+              <td>By Session 2</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          79:30 - 82:00 | Homework overview. Emphasize the daily habit above all.
+COACH: "Here's your homework. The most important one is the daily agent. 10 minutes. Every day. That's it."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 33: Timeline — Coming Up: Session 2 -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Coming up: Session 2</h2>
+        </div>
+
+        <div style="display: flex; gap: 16px;">
+          <div class="timeline-block light" style="flex: 1;">
+            <div class="timeline-label">This Week</div>
+            <h3>Build Your List</h3>
+            <p class="text-sm text-light">Run your agent daily. Build your target list.</p>
+          </div>
+          <div class="timeline-block dark" style="flex: 1;">
+            <div class="timeline-label">Session 2</div>
+            <h3>Network Smart</h3>
+            <p class="text-sm">Turn your target list into warm introductions.</p>
+          </div>
+          <div class="timeline-block highlight" style="flex: 1;">
+            <div class="timeline-label">Bring</div>
+            <h3>Your Prep</h3>
+            <p class="text-sm text-light">Top 10 roles + notes on 3-5 target companies</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          82:00 - 83:30 | Preview next session. Create anticipation without overwhelming.
+COACH: "Session 2 is about networking and outreach. Bring your finalized top 10 roles and notes on 3-5 target companies. We'll turn cold leads into warm conversations."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 34: Content Dark — Key Takeaways -->
+      <!-- ============================================ -->
+      <section class="content-dark">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Your job search is now a system</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li class="text-white">Fit is four-dimensional: function, culture, growth, and comp. Score every opportunity.</li>
+          <li class="text-white">AI is your research assistant. It narrows the field. You make the decisions.</li>
+          <li class="text-white">10 minutes a day compounds. Run your agent daily and your target list builds itself.</li>
+        </ul>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="rgba(255,255,255,0.4)"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          83:30 - 85:00 | Final takeaways. End strong and clear.
+COACH: "Three things to remember. Fit has four dimensions. AI helps you search, not decide. And consistency beats intensity. See you next week. Go run your agent."
+Leave 5 min buffer for Q&A or overrun.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js -->
+  <script src="assets/revealjs/dist/reveal.min.js"></script>
+  <script type="module">
+    import RevealNotes from 'assets/revealjs/plugin/notes/notes.esm.js';
+
+    Reveal.initialize({
+      width: 960,
+      height: 540,
+      margin: 0,
+      minScale: 0.5,
+      maxScale: 3.0,
+      hash: true,
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
+      transition: 'none',
+      backgroundTransition: 'none',
+      disableLayout: false,
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>
