@@ -67,6 +67,7 @@ p { color: var(--gray-600); }
 .btn-outline { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.4); }
 .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
 .btn-lg { padding: 18px 40px; font-size: 1.1rem; }
+.btn s { opacity: 0.6; font-weight: 400; margin-right: 4px; }
 
 /* --- Nav --- */
 nav {
@@ -80,7 +81,7 @@ nav .btn { padding: 10px 24px; font-size: 0.875rem; }
 
 /* --- Hero --- */
 .hero {
-  background: linear-gradient(165deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0.30) 50%, rgba(0,0,0,0.30) 100%), url('img/hero-bg.jpg') center 30%/cover no-repeat;
+  background: linear-gradient(165deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.65) 50%, rgba(0,0,0,0.65) 100%), url('img/hero-bg.jpg') center 30%/cover no-repeat;
   padding: 140px 0 100px;
   position: relative;
   overflow: hidden;
@@ -236,8 +237,6 @@ nav .btn { padding: 10px 24px; font-size: 0.875rem; }
 .instructor-avatar img {
   width: 100%; height: 100%; object-fit: cover;
 }
-.instructor-rate { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); }
-.instructor-rate span { font-size: 0.8rem; font-weight: 400; color: var(--gray-500); }
 .instructor-name-row { display: flex; align-items: center; gap: 8px; }
 .instructor-name { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); }
 .instructor-rating { display: inline-flex; align-items: center; gap: 4px; font-size: 0.8rem; color: var(--gray-500); font-weight: 500; white-space: nowrap; }
@@ -539,114 +538,6 @@ footer a:hover { color: var(--white); }
   </div>
 </section>
 
-<!-- Curriculum -->
-<section class="curriculum" id="curriculum">
-  <div class="container">
-    <p class="eyebrow">The Curriculum</p>
-    <h2>Expert-led sessions from hiring managers at companies like Meta, BCG, and J.P. Morgan</h2>
-    <p style="max-width: 640px; font-size: 1.05rem;">Tuesdays &amp; Fridays, 90 minutes each. All sessions are live on Zoom. If you can't make a session, the recordings are always available afterwards.</p>
-    <div class="session-list">
-
-      <div class="session">
-        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="session-num">01</div>
-          <div class="session-info">
-            <h3>Build Your AI Job-Search Engine</h3>
-            <div class="session-date">Tue, Mar 17 &middot; 2:00 PM PT / 5:00 PM ET</div>
-          </div>
-          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="session-body">
-          <p>Build an AI agent that searches the internet to find realistic, high-potential opportunities for you. By the end of the session, you'll have a working tool you can use tomorrow morning.</p>
-          <p>You'll define your role-fit criteria, watch a live demo of AI analyzing 50+ job postings, then build and test your own matching system in a hands-on workshop.</p>
-          <div class="session-deliverable">&#10003; Deliverable: Working AI agent that sources opportunities daily</div>
-        </div>
-      </div>
-
-      <div class="session">
-        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="session-num">02</div>
-          <div class="session-info">
-            <h3>Turn Cold Outreach into Warm Conversations</h3>
-            <div class="session-date">Fri, Mar 20 &middot; 9:00 AM PT / 12:00 PM ET</div>
-          </div>
-          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="session-body">
-          <p>Up to 70% of roles are filled through connections before they're ever posted.<sup>3</sup> Learn how to find the right people, write messages that get replies, and have informational interviews that lead to referrals.</p>
-          <p>You'll send 5 real outreach messages before you leave and practice a live informational interview role-play.</p>
-          <div class="session-deliverable">&#10003; Deliverable: 5 real outreach messages sent + live role-play completed</div>
-        </div>
-      </div>
-
-      <div class="session">
-        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="session-num">03</div>
-          <div class="session-info">
-            <h3>Craft a Resume &amp; LinkedIn to Impress Humans</h3>
-            <div class="session-date">Tue, Mar 24 &middot; 2:00 PM PT / 5:00 PM ET</div>
-          </div>
-          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="session-body">
-          <p>Optimize your resume for ATS systems, rebuild your LinkedIn profile for recruiter visibility, and publish your first brand-building post. Three deliverables in 90 minutes.</p>
-          <p>Includes live AI demo of resume gap analysis: feed in your resume and a target job posting and watch it identify the exact gaps to fix.</p>
-          <div class="session-deliverable">&#10003; Deliverable: ATS-optimized resume + refreshed LinkedIn + published post</div>
-        </div>
-      </div>
-
-      <div class="session">
-        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="session-num">04</div>
-          <div class="session-info">
-            <h3>Build an AI Project That Gets You Hired</h3>
-            <div class="session-date">Fri, Mar 27 &middot; 9:00 AM PT / 12:00 PM ET</div>
-          </div>
-          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="session-body">
-          <p>90% of companies are investing in AI,<sup>4</sup> but fewer than 25% of candidates<sup>4</sup> can demonstrate hands-on work. You'll build a portfolio-ready AI project that proves you can do the work.</p>
-          <p>Watch the coach build a real project from scratch, then build your own in pairs, publish it to GitHub, and draft a LinkedIn showcase post.</p>
-          <div class="session-deliverable">&#10003; Deliverable: Working AI project on GitHub + LinkedIn showcase post</div>
-        </div>
-      </div>
-
-      <div class="session">
-        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="session-num">05</div>
-          <div class="session-info">
-            <h3>Sell Your Story in Behavioral Interviews</h3>
-            <div class="session-date">Tue, Mar 31 &middot; 2:00 PM PT / 5:00 PM ET</div>
-          </div>
-          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="session-body">
-          <p>Craft a compelling personal narrative and build a bank of polished behavioral answers using the STAR method. This is the most interactive session yet.</p>
-          <p>You'll workshop your "tell me about yourself" answer, practice mock interviews in small groups, and get real-time feedback on structure, specificity, and energy.</p>
-          <div class="session-deliverable">&#10003; Deliverable: Polished TMAY script + 5 STAR-format answers</div>
-        </div>
-      </div>
-
-      <div class="session">
-        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
-          <div class="session-num">06</div>
-          <div class="session-info">
-            <h3>Ace Cases, Take-Homes &amp; Live Challenges</h3>
-            <div class="session-date">Fri, Apr 3 &middot; 9:00 AM PT / 12:00 PM ET</div>
-          </div>
-          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <div class="session-body">
-          <p>Master the final hurdle between you and the offer: skills assessments. Learn the 5-step framework for approaching any assessment with confidence, then complete a timed practice with peer feedback.</p>
-          <p>You'll assemble your complete job search playbook linking all 6 session deliverables and build a 30-day execution plan.</p>
-          <div class="session-deliverable">&#10003; Deliverable: Practice assessment + complete playbook + 30-day plan</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
 <!-- Comparison -->
 <section class="comparison">
   <div class="container">
@@ -843,6 +734,114 @@ footer a:hover { color: var(--white); }
   </div>
 </section>
 
+<!-- Curriculum -->
+<section class="curriculum" id="curriculum">
+  <div class="container">
+    <p class="eyebrow">The Curriculum</p>
+    <h2>Expert-led sessions from hiring managers at companies like Meta, BCG, and J.P. Morgan</h2>
+    <p style="max-width: 640px; font-size: 1.05rem;">Tuesdays &amp; Fridays, 90 minutes each. All sessions are live on Zoom. If you can't make a session, the recordings are always available afterwards.</p>
+    <div class="session-list">
+
+      <div class="session">
+        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="session-num">01</div>
+          <div class="session-info">
+            <h3>Build Your AI Job-Search Engine</h3>
+            <div class="session-date">Tue, Mar 17 &middot; 2:00 PM PT / 5:00 PM ET</div>
+          </div>
+          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="session-body">
+          <p>Build an AI agent that searches the internet to find realistic, high-potential opportunities for you. By the end of the session, you'll have a working tool you can use tomorrow morning.</p>
+          <p>You'll define your role-fit criteria, watch a live demo of AI analyzing 50+ job postings, then build and test your own matching system in a hands-on workshop.</p>
+          <div class="session-deliverable">&#10003; Deliverable: Working AI agent that sources opportunities daily</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="session-num">02</div>
+          <div class="session-info">
+            <h3>Turn Cold Outreach into Warm Conversations</h3>
+            <div class="session-date">Fri, Mar 20 &middot; 9:00 AM PT / 12:00 PM ET</div>
+          </div>
+          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="session-body">
+          <p>Up to 70% of roles are filled through connections before they're ever posted.<sup>3</sup> Learn how to find the right people, write messages that get replies, and have informational interviews that lead to referrals.</p>
+          <p>You'll send 5 real outreach messages before you leave and practice a live informational interview role-play.</p>
+          <div class="session-deliverable">&#10003; Deliverable: 5 real outreach messages sent + live role-play completed</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="session-num">03</div>
+          <div class="session-info">
+            <h3>Craft a Resume &amp; LinkedIn to Impress Humans</h3>
+            <div class="session-date">Tue, Mar 24 &middot; 2:00 PM PT / 5:00 PM ET</div>
+          </div>
+          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="session-body">
+          <p>Optimize your resume for ATS systems, rebuild your LinkedIn profile for recruiter visibility, and publish your first brand-building post. Three deliverables in 90 minutes.</p>
+          <p>Includes live AI demo of resume gap analysis: feed in your resume and a target job posting and watch it identify the exact gaps to fix.</p>
+          <div class="session-deliverable">&#10003; Deliverable: ATS-optimized resume + refreshed LinkedIn + published post</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="session-num">04</div>
+          <div class="session-info">
+            <h3>Build an AI Project That Gets You Hired</h3>
+            <div class="session-date">Fri, Mar 27 &middot; 9:00 AM PT / 12:00 PM ET</div>
+          </div>
+          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="session-body">
+          <p>90% of companies are investing in AI,<sup>4</sup> but fewer than 25% of candidates<sup>4</sup> can demonstrate hands-on work. You'll build a portfolio-ready AI project that proves you can do the work.</p>
+          <p>Watch the coach build a real project from scratch, then build your own in pairs, publish it to GitHub, and draft a LinkedIn showcase post.</p>
+          <div class="session-deliverable">&#10003; Deliverable: Working AI project on GitHub + LinkedIn showcase post</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="session-num">05</div>
+          <div class="session-info">
+            <h3>Sell Your Story in Behavioral Interviews</h3>
+            <div class="session-date">Tue, Mar 31 &middot; 2:00 PM PT / 5:00 PM ET</div>
+          </div>
+          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="session-body">
+          <p>Craft a compelling personal narrative and build a bank of polished behavioral answers using the STAR method. This is the most interactive session yet.</p>
+          <p>You'll workshop your "tell me about yourself" answer, practice mock interviews in small groups, and get real-time feedback on structure, specificity, and energy.</p>
+          <div class="session-deliverable">&#10003; Deliverable: Polished TMAY script + 5 STAR-format answers</div>
+        </div>
+      </div>
+
+      <div class="session">
+        <div class="session-header" onclick="this.parentElement.classList.toggle('open')">
+          <div class="session-num">06</div>
+          <div class="session-info">
+            <h3>Ace Cases, Take-Homes &amp; Live Challenges</h3>
+            <div class="session-date">Fri, Apr 3 &middot; 9:00 AM PT / 12:00 PM ET</div>
+          </div>
+          <svg class="session-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="session-body">
+          <p>Master the final hurdle between you and the offer: skills assessments. Learn the 5-step framework for approaching any assessment with confidence, then complete a timed practice with peer feedback.</p>
+          <p>You'll assemble your complete job search playbook linking all 6 session deliverables and build a 30-day execution plan.</p>
+          <div class="session-deliverable">&#10003; Deliverable: Practice assessment + complete playbook + 30-day plan</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Instructors -->
 <section class="instructors">
   <div class="container">
@@ -851,122 +850,115 @@ footer a:hover { color: var(--white); }
     <p style="max-width: 640px; font-size: 1.05rem;">Each session is led by a top-rated Leland coach with deep expertise in that topic. You'll get coaching from multiple perspectives across the bootcamp.</p>
     <div class="instructor-grid">
 
-      <a href="https://www.joinleland.com/coach/grant-r/career-development" class="instructor-card-link" target="_blank">
+      <a href="https://www.joinleland.com/coach/lee-b" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-card-top">
           <div class="instructor-avatar">
-            <img src="https://leland.imgix.net/profile-photos/697da49f01d0dc53f674c54e.jpg?w=128&h=128&fit=crop" alt="Grant R" onerror="this.style.display='none';this.parentElement.textContent='GR';">
+            <img src="https://leland.imgix.net/profile-photos/68e407c2a1294d4c8d96cf11.png?w=128&h=128&fit=crop" alt="Lee B" onerror="this.style.display='none';this.parentElement.textContent='LB';">
           </div>
-          <div class="instructor-rate">$250<span>/hr</span></div>
         </div>
         <div class="instructor-name-row">
-          <div class="instructor-name">Grant R.</div>
-          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (53)</span>
+          <div class="instructor-name">Lee B.</div>
+          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (167)</span>
         </div>
-        <div class="instructor-tagline">Science-Based Coaching | Top Leland Coach '26</div>
+        <div class="instructor-tagline">Session 1: Build Your AI Job-Search Engine</div>
         <div class="instructor-tags">
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-Google</div>
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Northwestern MS</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-Barclays</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> UNC Kenan-Flagler</div>
         </div>
       </div>
       </a>
 
-      <a href="https://www.joinleland.com/coach/kevin-a/career-development" class="instructor-card-link" target="_blank">
+      <a href="https://www.joinleland.com/coach/david-h-8" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-card-top">
           <div class="instructor-avatar">
-            <img src="https://leland.imgix.net/profile-photos/674ea59af06ab3249f197d35.jpg?w=128&h=128&fit=crop" alt="Kevin A" onerror="this.style.display='none';this.parentElement.textContent='KA';">
+            <img src="https://leland.imgix.net/profile-photos/686346a3b7cb23c51f64ed61.jpg?w=128&h=128&fit=crop" alt="David H" onerror="this.style.display='none';this.parentElement.textContent='DH';">
           </div>
-          <div class="instructor-rate">$449<span>/hr</span></div>
         </div>
         <div class="instructor-name-row">
-          <div class="instructor-name">Kevin A.</div>
-          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (78)</span>
+          <div class="instructor-name">David H.</div>
+          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (48)</span>
         </div>
-        <div class="instructor-tagline">Certified Career Coach | Product Tech Exec</div>
+        <div class="instructor-tagline">Session 2: Turn Cold Outreach into Warm Conversations</div>
         <div class="instructor-tags">
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-LinkedIn, ex-PayPal</div>
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Kellogg MBA</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-Meta, ex-a16z</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Wharton</div>
         </div>
       </div>
       </a>
 
-      <a href="https://www.joinleland.com/coach/faith-b/career-development" class="instructor-card-link" target="_blank">
+      <a href="https://www.joinleland.com/coach/andrew-c-3" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-card-top">
           <div class="instructor-avatar">
-            <img src="https://leland.imgix.net/profile-photos/6897e8dd52bfe4ff5a1748fd.jpg?w=128&h=128&fit=crop" alt="Faith B" onerror="this.style.display='none';this.parentElement.textContent='FB';">
+            <img src="https://leland.imgix.net/profile-photos/67897e1d58d7b4514abf293a.jpg?w=128&h=128&fit=crop" alt="Andrew C" onerror="this.style.display='none';this.parentElement.textContent='AC';">
           </div>
-          <div class="instructor-rate">$185<span>/hr</span></div>
         </div>
         <div class="instructor-name-row">
-          <div class="instructor-name">Faith B.</div>
-          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (16)</span>
+          <div class="instructor-name">Andrew C.</div>
+          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (30)</span>
         </div>
-        <div class="instructor-tagline">Career Growth Strategist | Ex-McKinsey Associate Partner</div>
+        <div class="instructor-tagline">Session 3: Craft a Resume &amp; LinkedIn to Impress Humans</div>
         <div class="instructor-tags">
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-McKinsey</div>
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> HBS MBA</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-JPMorgan</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Harding BBA</div>
         </div>
       </div>
       </a>
 
-      <a href="https://www.joinleland.com/coach/nick-e/career-development" class="instructor-card-link" target="_blank">
+      <a href="https://www.joinleland.com/coach/nick-s-2" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-card-top">
           <div class="instructor-avatar">
-            <img src="https://leland.imgix.net/profile-photos/6823adc04112f1d024f82264.jpg?w=128&h=128&fit=crop" alt="Nick E" onerror="this.style.display='none';this.parentElement.textContent='NE';">
+            <img src="https://leland.imgix.net/profile-photos/68fedde464ce2b15d5bddac9.jpg?w=128&h=128&fit=crop" alt="Nick S" onerror="this.style.display='none';this.parentElement.textContent='NS';">
           </div>
-          <div class="instructor-rate">$259<span>/hr</span></div>
         </div>
         <div class="instructor-name-row">
-          <div class="instructor-name">Nick E.</div>
-          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (15)</span>
+          <div class="instructor-name">Nick S.</div>
+          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 4.9 (8)</span>
         </div>
-        <div class="instructor-tagline">Career Transition Coach | Build a career you thrive in</div>
+        <div class="instructor-tagline">Session 4: Build an AI Project That Gets You Hired</div>
         <div class="instructor-tags">
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> Manager @ Bain</div>
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> ICF Certified Coach</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> AI Workflow Expert, ClipTraining</div>
         </div>
       </div>
       </a>
 
-      <a href="https://www.joinleland.com/coach/aleesha-p/career-development" class="instructor-card-link" target="_blank">
+      <a href="https://www.joinleland.com/coach/matthew-m" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-card-top">
           <div class="instructor-avatar">
-            <img src="https://leland.imgix.net/profile-photos/urn:user:6564e9587b67b833695ab8bf/LINKEDIN3zHFMcsZPzoH518IkNyTJx.jpg?w=128&h=128&fit=crop" alt="Aleesha P" onerror="this.style.display='none';this.parentElement.textContent='AP';">
+            <img src="https://leland.imgix.net/profile-photos/648753e3c1dc3814f1cd23d1.jpeg?w=128&h=128&fit=crop" alt="Matthew M" onerror="this.style.display='none';this.parentElement.textContent='MM';">
           </div>
-          <div class="instructor-rate">$200<span>/hr</span></div>
         </div>
         <div class="instructor-name-row">
-          <div class="instructor-name">Aleesha P.</div>
-          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (16)</span>
+          <div class="instructor-name">Matthew M.</div>
+          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (2)</span>
         </div>
-        <div class="instructor-tagline">Helping you explore, transition, &amp; advance your career</div>
+        <div class="instructor-tagline">Session 5: Sell Your Story in Behavioral Interviews</div>
         <div class="instructor-tags">
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-LinkedIn, ex-NYU Stern</div>
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> NYU Stern</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-BCG</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Stanford MBA</div>
         </div>
       </div>
       </a>
 
-      <a href="https://www.joinleland.com/coach/michelle-w-3/career-development" class="instructor-card-link" target="_blank">
+      <a href="https://www.joinleland.com/coach/logan-k" class="instructor-card-link" target="_blank">
       <div class="instructor-card">
         <div class="instructor-card-top">
           <div class="instructor-avatar">
-            <img src="https://leland.imgix.net/profile-photos/6823df12b7ca1cbc26a5bcb9.jpeg?w=128&h=128&fit=crop" alt="Michelle W" onerror="this.style.display='none';this.parentElement.textContent='MW';">
+            <img src="https://leland.imgix.net/profile-photos/690049a2da766e20d70685da.jpg?w=128&h=128&fit=crop" alt="Logan K" onerror="this.style.display='none';this.parentElement.textContent='LK';">
           </div>
-          <div class="instructor-rate">$139<span>/hr</span></div>
         </div>
         <div class="instructor-name-row">
-          <div class="instructor-name">Michelle W.</div>
-          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (17)</span>
+          <div class="instructor-name">Logan K.</div>
+          <span class="instructor-rating"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#f59e0b"/></svg> 5.0 (27)</span>
         </div>
-        <div class="instructor-tagline">Career Clarity for Burned-Out Professionals</div>
+        <div class="instructor-tagline">Session 6: Ace Cases, Take-Homes &amp; Live Challenges</div>
         <div class="instructor-tags">
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> ex-Amazon</div>
-          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Penn State MPS</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 7V5C16 3.89543 15.1046 3 14 3H10C8.89543 3 8 3.89543 8 5V7" stroke="currentColor" stroke-width="1.5"/></svg> AI @ Fabletics</div>
+          <div class="instructor-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Stanford BS</div>
         </div>
       </div>
       </a>
@@ -1077,7 +1069,7 @@ footer a:hover { color: var(--white); }
         <li><span class="pf-check">&#10003;</span> Templates, prompts, and worksheets</li>
         <li><span class="pf-check">&#10003;</span> 100+ example resumes &amp; 10 digital courses</li>
       </ul>
-      <a href="https://www.joinleland.com/checkout?bootcampCohort=urn%3AbootcampCohort%3A%28urn%3Abootcamp%3A699779d8c2ec09adf671d195%2C69977ac4fb849dee85cba70d%29&order=urn%3Aorder%3A699f84220964e44c2c47f7d9" class="btn btn-primary btn-lg" style="width: 100%;">Enroll Now, $599</a>
+      <a href="https://www.joinleland.com/checkout?bootcampCohort=urn%3AbootcampCohort%3A%28urn%3Abootcamp%3A699779d8c2ec09adf671d195%2C69977ac4fb849dee85cba70d%29&order=urn%3Aorder%3A699f84220964e44c2c47f7d9" class="btn btn-primary btn-lg" style="width: 100%;">Enroll Now, <s>$699</s> $599</a>
       <p class="pricing-dates">Cohort: Mar 17 &ndash; Apr 3, 2026 &middot; Tuesdays &amp; Fridays</p>
     </div>
   </div>
@@ -1162,7 +1154,7 @@ footer a:hover { color: var(--white); }
   <div class="container">
     <h2>Your next job is closer than you think.</h2>
     <p>22 seats left. Mar 17 cohort starts soon. Use code <strong style="color: var(--green);">MARCH100</strong> for $100 off.</p>
-    <a href="https://www.joinleland.com/checkout?bootcampCohort=urn%3AbootcampCohort%3A%28urn%3Abootcamp%3A699779d8c2ec09adf671d195%2C69977ac4fb849dee85cba70d%29&order=urn%3Aorder%3A699f84220964e44c2c47f7d9" class="btn btn-primary btn-lg">Enroll Now, $599 with MARCH100</a>
+    <a href="https://www.joinleland.com/checkout?bootcampCohort=urn%3AbootcampCohort%3A%28urn%3Abootcamp%3A699779d8c2ec09adf671d195%2C69977ac4fb849dee85cba70d%29&order=urn%3Aorder%3A699f84220964e44c2c47f7d9" class="btn btn-primary btn-lg">Enroll Now, <s>$699</s> $599 with MARCH100</a>
     <p class="reassurance">All sessions recorded &middot; Full refund after Session 1 if not satisfied</p>
   </div>
 </section>
