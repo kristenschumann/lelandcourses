@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 1: Build Your AI Job-Search Engine | Leland Job Search Bootcamp</title>
+  <meta name="description" content="Session 1 of the Leland Job Search Bootcamp. Build a Role-Fit Scorecard and an AI agent that finds high-match job opportunities daily.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: 'Inter', Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #333333; background: #ffffff; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .header { background: #113A2D; color: #ffffff; padding: 48px 0 56px; }
+    .header .logo { margin-bottom: 32px; }
+    .header .logo svg { width: 120px; height: auto; }
+    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .nav-link { font-size: 15px; font-weight: 600; color: #15B078; text-decoration: none; }
+    .nav-link:hover { opacity: 0.8; }
+    .nav-link.disabled { color: rgba(255,255,255,0.3); pointer-events: none; }
+    .eyebrow { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #15B078; margin-bottom: 12px; }
+    .header h1 { font-size: 40px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+    .header .subtitle { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 640px; margin-bottom: 24px; }
+    .deliverable-tag { display: inline-block; font-size: 14px; font-weight: 600; color: #15B078; background: rgba(21, 176, 120, 0.12); padding: 6px 14px; border-radius: 6px; }
+    .session-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px; }
+    .session-meta span { font-size: 14px; color: rgba(255,255,255,0.6); }
+    .session-meta strong { color: rgba(255,255,255,0.9); }
+
+    /* Section Labels */
+    .section-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #707070; margin-bottom: 12px; }
+
+    /* Content Sections */
+    .content-section { padding: 48px 0; border-bottom: 1px solid #E5E5E5; }
+    .content-section:last-child { border-bottom: none; }
+    .content-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+
+    /* Pre-Work */
+    .prework { background: #F8F8F8; border-radius: 10px; padding: 24px; }
+    .prework-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .prework-total { font-size: 14px; color: #707070; }
+    .prework-item { margin-bottom: 20px; }
+    .prework-item:last-child { margin-bottom: 0; }
+    .prework-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .prework-item h4 .time { font-size: 13px; font-weight: 500; color: #707070; white-space: nowrap; }
+    .prework-item p { font-size: 15px; color: #707070; line-height: 1.5; }
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #15B078; color: #fff; font-size: 12px; font-weight: 700; margin-right: 8px; flex-shrink: 0; }
+
+    /* Checklist */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0 8px 32px; position: relative; font-size: 16px; line-height: 1.5; }
+    .checklist li::before { content: ""; position: absolute; left: 0; top: 14px; width: 18px; height: 18px; border: 2px solid #E5E5E5; border-radius: 4px; }
+
+    /* Objectives */
+    .objectives ul { list-style: none; padding: 0; }
+    .objectives li { padding-left: 24px; position: relative; margin-bottom: 8px; font-size: 16px; line-height: 1.5; }
+    .objectives li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: #15B078; }
+
+    /* Agenda */
+    .agenda-item { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+    .agenda-item:last-child { border-bottom: none; }
+    .agenda-time { font-size: 14px; font-weight: 600; color: #15B078; padding-top: 2px; }
+    .agenda-segment h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .agenda-segment p { font-size: 15px; color: #707070; line-height: 1.5; }
+
+    /* Deliverables */
+    .deliverable-card { background: rgba(21, 176, 120, 0.06); border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; }
+    .deliverable-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .deliverable-card p { font-size: 15px; color: #707070; line-height: 1.5; }
+    .template-note { font-size: 14px; color: #15B078; font-weight: 500; margin-top: 4px; }
+
+    /* Homework */
+    .homework { background: #F8F8F8; border-radius: 10px; padding: 24px; }
+    .homework-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .homework-total { font-size: 14px; color: #707070; }
+    .homework-item { margin-bottom: 20px; }
+    .homework-item:last-child { margin-bottom: 0; }
+    .homework-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .homework-item h4 .time { font-size: 13px; font-weight: 500; color: #707070; white-space: nowrap; }
+    .homework-item p { font-size: 15px; color: #707070; line-height: 1.5; }
+
+    /* Resources */
+    .resource-list { list-style: none; padding: 0; }
+    .resource-list li { padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+    .resource-list li:last-child { border-bottom: none; }
+    .resource-list a { text-decoration: none; color: #333; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .resource-list a:hover { color: #15B078; }
+    .resource-title { font-size: 16px; font-weight: 500; }
+    .resource-type { font-size: 13px; font-weight: 600; color: #707070; background: #F0F0F0; padding: 2px 10px; border-radius: 4px; white-space: nowrap; }
+
+    /* Connection / Next Session */
+    .connection { font-size: 15px; color: #333; padding: 16px 20px; border-left: 3px solid #15B078; background: rgba(21, 176, 120, 0.04); border-radius: 0 8px 8px 0; }
+    .connection strong { color: #15B078; }
+
+    /* Footer */
+    .footer { padding: 32px 0; background: #0D2E23; text-align: center; }
+    .footer svg { width: 80px; height: auto; opacity: 0.5; margin-bottom: 8px; }
+    .footer p { font-size: 14px; color: rgba(255,255,255,0.35); }
+
+    /* Bottom Nav */
+    .bottom-nav { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; }
+    .bottom-nav a { font-size: 15px; font-weight: 600; color: #15B078; text-decoration: none; }
+    .bottom-nav a:hover { opacity: 0.8; }
+    .bottom-nav .disabled { color: #ccc; pointer-events: none; }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .header h1 { font-size: 28px; }
+      .nav-row { flex-direction: column; gap: 8px; align-items: flex-start; }
+      .agenda-item { grid-template-columns: 56px 1fr; }
+      .session-meta { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+          <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+          <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+          <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+          <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+          <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+        </svg>
+      </div>
+
+      <div class="nav-row">
+        <a href="index.html" class="nav-link">&larr; Back to Syllabus</a>
+        <a href="session-2.html" class="nav-link">Session 2 &rarr;</a>
+      </div>
+
+      <p class="eyebrow">Session 1 of 6</p>
+      <h1>Build Your AI Job-Search Engine</h1>
+      <p class="subtitle">Build an AI agent that searches the internet to find realistic, high-potential opportunities for you. By the end of tonight, you'll have a working tool you can use tomorrow morning.</p>
+      <span class="deliverable-tag">Deliverable: A working AI agent that sources opportunities daily</span>
+      <div class="session-meta">
+        <span><strong>90 min</strong> live session</span>
+        <span><strong>~1.5 hrs</strong> homework</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- WHAT TO BRING -->
+      <div class="content-section">
+        <h2>Come Prepared With</h2>
+        <ul class="checklist">
+          <li>Your career criteria notes (function, culture, growth, comp)</li>
+          <li>5-10 saved job postings in a document you can copy-paste from</li>
+          <li>A laptop with your AI tool (Claude or ChatGPT) logged in and ready</li>
+          <li>Something to take notes (digital or paper)</li>
+        </ul>
+      </div>
+
+      <!-- SESSION OVERVIEW -->
+      <div class="content-section">
+        <h2>Session Overview</h2>
+
+        <div class="objectives" style="margin-bottom: 32px;">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Define personal role-fit criteria across function, culture, growth, and comp dimensions</li>
+            <li>Use AI to batch-analyze job postings and identify high-match opportunities</li>
+            <li>Build a reusable AI agent/prompt for daily job matching</li>
+            <li>Create a curated shortlist of 10 target roles with rationale</li>
+          </ul>
+        </div>
+
+        <p class="section-label">90-Minute Agenda</p>
+        <div class="agenda-item">
+          <span class="agenda-time">5 min</span>
+          <div class="agenda-segment">
+            <h4>Welcome and Introductions</h4>
+            <p>Meet your cohort. Quick intros: your name, target role, and how long you've been searching.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">10 min</span>
+          <div class="agenda-segment">
+            <h4>The Strategy Problem</h4>
+            <p>Why spray-and-pray fails. 59% of job seekers search 3+ months. The shift from "fix my resume" to "fix my strategy."</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">15 min</span>
+          <div class="agenda-segment">
+            <h4>The Role-Fit Scorecard</h4>
+            <p>Four dimensions of fit: function, culture, growth, compensation. You'll fill in your own scorecard with must-haves, nice-to-haves, and dealbreakers.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">20 min</span>
+          <div class="agenda-segment">
+            <h4>Live AI Demo: Job Matching</h4>
+            <p>Watch AI analyze 50+ postings against a Role-Fit Scorecard in real time. See how it ranks, scores, and explains its reasoning.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">25 min</span>
+          <div class="agenda-segment">
+            <h4>Hands-On Workshop</h4>
+            <p>Build your own AI matching prompt. Test it with your pre-work job postings. Refine criteria in real time. Peer feedback in breakout rooms.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">10 min</span>
+          <div class="agenda-segment">
+            <h4>Daily Automation Setup</h4>
+            <p>Three ways to automate your search: saved prompt, custom GPT, or full automation. Set up your daily 10-minute routine before you leave.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">5 min</span>
+          <div class="agenda-segment">
+            <h4>Wrap-Up and Preview</h4>
+            <p>Review what you built. Homework assignments. Preview Session 2.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DELIVERABLES -->
+      <div class="content-section">
+        <h2>What You'll Build</h2>
+
+        <div class="deliverable-card">
+          <h4>Role-Fit Scorecard</h4>
+          <p>Your personal criteria across function, culture, growth, and compensation. Each dimension includes must-haves, nice-to-haves, and dealbreakers.</p>
+          <a href="https://docs.google.com/spreadsheets/d/1QDoDojYScgNZnVMezqC6TPYXUUrRjGcdavJex3W0Lnk/copy" target="_blank" class="template-note">Template: Role-Fit Scorecard (Google Sheet) →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>AI Job-Matching Prompt</h4>
+          <p>A tested, reusable prompt that takes job postings as input and returns ranked matches with reasoning based on your scorecard.</p>
+          <a href="materials/ai-job-matching-prompt.html" class="template-note">Template: AI Job-Matching Prompt →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>Daily Job-Sourcing Routine</h4>
+          <p>A 10-minute daily workflow: gather postings, run your AI prompt, review top matches, add best fits to your target list.</p>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>Starting Shortlist</h4>
+          <p>Your first batch of AI-scored target roles with match rationale. You'll grow this to 10 roles by Session 2.</p>
+        </div>
+      </div>
+
+      <!-- HOMEWORK -->
+      <div class="content-section">
+        <h2>Homework</h2>
+        <p style="font-size: 16px; color: #707070; margin-bottom: 20px;">Here's what to do between Session 1 and Session 2. The daily agent is the most important one.</p>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">This Week's Assignments</p>
+            <span class="homework-total">~1.5 hrs over the week</span>
+          </div>
+
+          <div class="homework-item">
+            <h4>Run your AI agent daily <span class="time">10 min/day</span></h4>
+            <p>Every morning, paste fresh job postings into your prompt and review the top matches. This is the habit that compounds. 7 days x 10 minutes = 70 matched roles by next session.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Refine your Role-Fit Scorecard <span class="time">15 min</span></h4>
+            <p>After a few days of running your agent, adjust your criteria. Too many matches? Tighten your requirements. Too few? Broaden one dimension. Your scorecard should feel sharp by Session 2.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Finalize your top 10 target roles <span class="time">20 min</span></h4>
+            <p>Lock in your shortlist of 10 roles from your agent's output. For each, note why it scored high on your scorecard.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Identify 5 people at target companies <span class="time">15 min</span></h4>
+            <p>For your top 3-5 companies, find one person at each you'd like to connect with. Look for peers in similar roles, hiring managers, or alumni from your school. We'll use this list in Session 2.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LELAND+ RESOURCES -->
+      <div class="content-section">
+        <h2>Recommended Leland+ Resources</h2>
+        <p style="font-size: 16px; color: #707070; margin-bottom: 20px;">This session covers novel AI job-search content. For related career coaching resources, explore Leland+ content on job search strategy and career planning.</p>
+        <p style="font-size: 15px; color: #707070;">More Leland+ resources specific to networking and outreach are linked in the <a href="session-2.html" style="color: #15B078;">Session 2</a> page.</p>
+      </div>
+
+      <!-- NEXT SESSION PREVIEW -->
+      <div class="content-section">
+        <h2>Coming Up: Session 2</h2>
+        <div class="connection">
+          <strong>Next session: Turn Cold Outreach into Warm Conversations.</strong> You'll learn how to find the right people at your target companies, write messages that get replies, and practice informational interview conversations through live role-play. Bring your finalized top 10 roles and a list of 5 people at target companies.
+        </div>
+      </div>
+
+      <!-- BOTTOM NAV -->
+      <div class="bottom-nav">
+        <a href="index.html">&larr; Back to Syllabus</a>
+        <a href="session-2.html">Session 2: Outreach &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Leland">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+        <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+        <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+        <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+        <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+        <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+      </svg>
+      <p>&copy; 2026 Leland</p>
+    </div>
+  </footer>
+
+</body>
+</html>

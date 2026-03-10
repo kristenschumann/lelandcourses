@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 4: Build an AI Project That Gets You Hired | Leland Job Search Bootcamp</title>
+  <meta name="description" content="Session 4 of the Leland Job Search Bootcamp. Build a portfolio-ready AI project and publish it on GitHub and LinkedIn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: 'Inter', Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #333333; background: #ffffff; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .header { background: #113A2D; color: #ffffff; padding: 48px 0 56px; }
+    .header .logo { margin-bottom: 32px; }
+    .header .logo svg { width: 120px; height: auto; }
+    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .nav-link { font-size: 15px; font-weight: 600; color: #15B078; text-decoration: none; }
+    .nav-link:hover { opacity: 0.8; }
+    .nav-link.disabled { color: rgba(255,255,255,0.3); pointer-events: none; }
+    .eyebrow { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #15B078; margin-bottom: 12px; }
+    .header h1 { font-size: 40px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+    .header .subtitle { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 640px; margin-bottom: 24px; }
+    .deliverable-tag { display: inline-block; font-size: 14px; font-weight: 600; color: #15B078; background: rgba(21, 176, 120, 0.12); padding: 6px 14px; border-radius: 6px; }
+    .session-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px; }
+    .session-meta span { font-size: 14px; color: rgba(255,255,255,0.6); }
+    .session-meta strong { color: rgba(255,255,255,0.9); }
+
+    /* Section Labels */
+    .section-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #707070; margin-bottom: 12px; }
+
+    /* Content Sections */
+    .content-section { padding: 48px 0; border-bottom: 1px solid #E5E5E5; }
+    .content-section:last-child { border-bottom: none; }
+    .content-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+
+    /* Pre-Work */
+    .prework { background: #F8F8F8; border-radius: 10px; padding: 24px; }
+    .prework-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .prework-total { font-size: 14px; color: #707070; }
+    .prework-item { margin-bottom: 20px; }
+    .prework-item:last-child { margin-bottom: 0; }
+    .prework-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .prework-item h4 .time { font-size: 13px; font-weight: 500; color: #707070; white-space: nowrap; }
+    .prework-item p { font-size: 15px; color: #707070; line-height: 1.5; }
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #15B078; color: #fff; font-size: 12px; font-weight: 700; margin-right: 8px; flex-shrink: 0; }
+
+    /* Checklist */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0 8px 32px; position: relative; font-size: 16px; line-height: 1.5; }
+    .checklist li::before { content: ""; position: absolute; left: 0; top: 14px; width: 18px; height: 18px; border: 2px solid #E5E5E5; border-radius: 4px; }
+
+    /* Objectives */
+    .objectives ul { list-style: none; padding: 0; }
+    .objectives li { padding-left: 24px; position: relative; margin-bottom: 8px; font-size: 16px; line-height: 1.5; }
+    .objectives li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: #15B078; }
+
+    /* Agenda */
+    .agenda-item { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+    .agenda-item:last-child { border-bottom: none; }
+    .agenda-time { font-size: 14px; font-weight: 600; color: #15B078; padding-top: 2px; }
+    .agenda-segment h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .agenda-segment p { font-size: 15px; color: #707070; line-height: 1.5; }
+
+    /* Deliverables */
+    .deliverable-card { background: rgba(21, 176, 120, 0.06); border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; }
+    .deliverable-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .deliverable-card p { font-size: 15px; color: #707070; line-height: 1.5; }
+    .template-note { font-size: 14px; color: #15B078; font-weight: 500; margin-top: 4px; }
+
+    /* Homework */
+    .homework { background: #F8F8F8; border-radius: 10px; padding: 24px; }
+    .homework-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .homework-total { font-size: 14px; color: #707070; }
+    .homework-item { margin-bottom: 20px; }
+    .homework-item:last-child { margin-bottom: 0; }
+    .homework-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .homework-item h4 .time { font-size: 13px; font-weight: 500; color: #707070; white-space: nowrap; }
+    .homework-item p { font-size: 15px; color: #707070; line-height: 1.5; }
+
+    /* Resources */
+    .resource-list { list-style: none; padding: 0; }
+    .resource-list li { padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+    .resource-list li:last-child { border-bottom: none; }
+    .resource-list a { text-decoration: none; color: #333; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .resource-list a:hover { color: #15B078; }
+    .resource-title { font-size: 16px; font-weight: 500; }
+    .resource-type { font-size: 13px; font-weight: 600; color: #707070; background: #F0F0F0; padding: 2px 10px; border-radius: 4px; white-space: nowrap; }
+
+    /* Connection / Next Session */
+    .connection { font-size: 15px; color: #333; padding: 16px 20px; border-left: 3px solid #15B078; background: rgba(21, 176, 120, 0.04); border-radius: 0 8px 8px 0; }
+    .connection strong { color: #15B078; }
+
+    /* Footer */
+    .footer { padding: 32px 0; background: #0D2E23; text-align: center; }
+    .footer svg { width: 80px; height: auto; opacity: 0.5; margin-bottom: 8px; }
+    .footer p { font-size: 14px; color: rgba(255,255,255,0.35); }
+
+    /* Bottom Nav */
+    .bottom-nav { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; }
+    .bottom-nav a { font-size: 15px; font-weight: 600; color: #15B078; text-decoration: none; }
+    .bottom-nav a:hover { opacity: 0.8; }
+    .bottom-nav .disabled { color: #ccc; pointer-events: none; }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .header h1 { font-size: 28px; }
+      .nav-row { flex-direction: column; gap: 8px; align-items: flex-start; }
+      .agenda-item { grid-template-columns: 56px 1fr; }
+      .session-meta { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+          <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+          <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+          <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+          <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+          <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+        </svg>
+      </div>
+
+      <div class="nav-row">
+        <a href="session-3.html" class="nav-link">&larr; Session 3</a>
+        <a href="session-5.html" class="nav-link">Session 5 &rarr;</a>
+      </div>
+
+      <p class="eyebrow">Session 4 of 6</p>
+      <h1>Build an AI Project That Gets You Hired</h1>
+      <p class="subtitle">Build a portfolio-ready AI project that demonstrates practical business value to hiring managers. Tonight you build something real, publish it, and learn how to talk about it in interviews.</p>
+      <span class="deliverable-tag">Deliverable: A working AI project on GitHub + LinkedIn showcase post</span>
+      <div class="session-meta">
+        <span><strong>90 min</strong> live session</span>
+        <span><strong>~85 min</strong> homework</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- WHAT TO BRING -->
+      <div class="content-section">
+        <h2>Come Prepared With</h2>
+        <ul class="checklist">
+          <li>Your AI project idea (at least a rough concept of the problem you want to solve)</li>
+          <li>An AI tool ready to go (Claude, ChatGPT, or similar)</li>
+          <li>GitHub account logged in and accessible</li>
+          <li>A sample dataset or input for your project (even a rough example works)</li>
+        </ul>
+      </div>
+
+      <!-- SESSION OVERVIEW -->
+      <div class="content-section">
+        <h2>Session Overview</h2>
+
+        <div class="objectives" style="margin-bottom: 32px;">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Scope an AI project that demonstrates practical business value</li>
+            <li>Build a working automated workflow using Claude Code or similar AI tools</li>
+            <li>Document and present your project for GitHub portfolio and LinkedIn showcase</li>
+            <li>Craft the "tell me about a time you used AI" interview answer using your project</li>
+          </ul>
+        </div>
+
+        <p class="section-label">90-Minute Agenda</p>
+        <div class="agenda-item">
+          <span class="agenda-time">5 min</span>
+          <div class="agenda-segment">
+            <h4>Check-In</h4>
+            <p>Week 3 wins, callback check, momentum building from optimized applications.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">10 min</span>
+          <div class="agenda-segment">
+            <h4>Why AI Projects Win Interviews</h4>
+            <p>The AI experience gap: 90% of companies investing in AI, under 25% of candidates can demonstrate hands-on project work. What hiring managers want in three words: real problem, working solution, clear communication.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">15 min</span>
+          <div class="agenda-segment">
+            <h4>Live Build Demo</h4>
+            <p>Watch the coach build a complete AI workflow from scratch. A meeting notes summarizer, start to finish. See the full process: define the problem, write the prompt, run it, refine once, save for reuse.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">35 min</span>
+          <div class="agenda-segment">
+            <h4>Hands-On: Build Your Project</h4>
+            <p>Choose your project, build in pairs, refine your output, then volunteer demos. Two phases: first run (12 min) and refinement (12 min), plus quick shares at the end.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">15 min</span>
+          <div class="agenda-segment">
+            <h4>Document and Showcase</h4>
+            <p>Three places to showcase your project: GitHub README (5-section template), LinkedIn post (hook + story structure), and interview answer (STAR format). Write all three.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">10 min</span>
+          <div class="agenda-segment">
+            <h4>Wrap-Up and Preview</h4>
+            <p>Celebrate what you built. Homework assignments. Preview Session 5.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DELIVERABLES -->
+      <div class="content-section">
+        <h2>What You'll Build</h2>
+
+        <div class="deliverable-card">
+          <h4>A Working AI Workflow</h4>
+          <p>A real automated workflow that solves a specific problem. Not a toy demo. Something you built, tested, and refined during the session.</p>
+          <a href="materials/starter-ai-project-list.html" class="template-note">Browse: Starter AI Project Ideas →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>GitHub Repository with Professional README</h4>
+          <p>Your project published on GitHub with a 5-section README: problem, solution, how to use it, results, and what you learned.</p>
+          <a href="https://docs.google.com/document/d/1TldkIhcX5gBPh9t3ZIG18BuGi34Sb0UpHOPbLPkjVwc/copy" target="_blank" class="template-note">Template: GitHub README Template (Google Doc) →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>LinkedIn Post Draft</h4>
+          <p>A structured post to showcase your project: hook line, problem, solution, result, and lesson learned. Ready to publish.</p>
+          <a href="materials/linkedin-post-template.html" class="template-note">Template: LinkedIn Post Template →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>Interview-Ready Answer</h4>
+          <p>A concrete response for "Tell me about a time you used AI." Your project becomes a STAR story with a measurable result.</p>
+        </div>
+      </div>
+
+      <!-- HOMEWORK -->
+      <div class="content-section">
+        <h2>Homework</h2>
+        <p style="font-size: 16px; color: #707070; margin-bottom: 20px;">Complete these before Session 5. The accomplishments list is critical prep for interview sessions.</p>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">This Week's Assignments</p>
+            <span class="homework-total">~85 min over the week</span>
+          </div>
+
+          <div class="homework-item">
+            <h4>Polish and publish your AI project <span class="time">30 min</span></h4>
+            <p>Clean up your code, finalize your README, and make sure the GitHub repo is public. A polished project with a clear README makes a stronger impression than a complex project with no documentation.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Publish your LinkedIn post <span class="time">10 min</span></h4>
+            <p>Take the draft you wrote in session and publish it. AI project posts get strong engagement right now. Link to your GitHub repo. Use relevant hashtags.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>List 5 work accomplishments with measurable results <span class="time">20 min</span></h4>
+            <p>Write down five things you've achieved at work that had a measurable impact. Revenue generated, time saved, team grown, process improved. These become the raw material for STAR-format behavioral answers in Session 5.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Draft your "tell me about yourself" answer <span class="time">25 min</span></h4>
+            <p>Write a first draft using whatever structure feels natural. Don't worry about perfecting it. You'll rewrite it with a proven formula in Session 5. Just get something on paper.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LELAND+ RESOURCES -->
+      <div class="content-section">
+        <h2>Recommended Leland+ Resources</h2>
+        <p style="font-size: 16px; color: #707070; margin-bottom: 20px;">This session covers novel AI portfolio project content that doesn't have direct Leland+ matches yet. Your coach will share project examples and starter templates during the live session. For interview prep resources, see the <a href="session-5.html" style="color: #15B078;">Session 5</a> and <a href="session-6.html" style="color: #15B078;">Session 6</a> pages.</p>
+      </div>
+
+      <!-- NEXT SESSION PREVIEW -->
+      <div class="content-section">
+        <h2>Coming Up: Session 5</h2>
+        <div class="connection">
+          <strong>Next session: Sell Your Story in Behavioral Interviews and Networking Convos.</strong> You'll craft a compelling "tell me about yourself" answer using the past/present/future formula, transform your accomplishments into polished STAR-method behavioral answers, and practice delivering them live with peer feedback. Bring your 5 accomplishments with measurable results and your "tell me about yourself" draft. You'll workshop both in class.
+        </div>
+      </div>
+
+      <!-- BOTTOM NAV -->
+      <div class="bottom-nav">
+        <a href="session-3.html">&larr; Session 3: Resume &amp; LinkedIn</a>
+        <a href="session-5.html">Session 5: Interviews &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Leland">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+        <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+        <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+        <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+        <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+        <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+      </svg>
+      <p>&copy; 2026 Leland</p>
+    </div>
+  </footer>
+
+</body>
+</html>

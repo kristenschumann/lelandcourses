@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 2: Turn Cold Outreach into Warm Conversations | Leland Job Search Bootcamp</title>
+  <meta name="description" content="Session 2 of the Leland Job Search Bootcamp. Learn to write outreach messages that get replies, practice informational interviews, and build real connections at target companies.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: 'Inter', Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #333333; background: #ffffff; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    .header { background: #113A2D; color: #ffffff; padding: 48px 0 56px; }
+    .header .logo { margin-bottom: 32px; }
+    .header .logo svg { width: 120px; height: auto; }
+    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .nav-link { font-size: 15px; font-weight: 600; color: #15B078; text-decoration: none; }
+    .nav-link:hover { opacity: 0.8; }
+    .eyebrow { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #15B078; margin-bottom: 12px; }
+    .header h1 { font-size: 40px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+    .header .subtitle { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 640px; margin-bottom: 24px; }
+    .deliverable-tag { display: inline-block; font-size: 14px; font-weight: 600; color: #15B078; background: rgba(21, 176, 120, 0.12); padding: 6px 14px; border-radius: 6px; }
+    .session-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px; }
+    .session-meta span { font-size: 14px; color: rgba(255,255,255,0.6); }
+    .session-meta strong { color: rgba(255,255,255,0.9); }
+
+    .section-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #707070; margin-bottom: 12px; }
+    .content-section { padding: 48px 0; border-bottom: 1px solid #E5E5E5; }
+    .content-section:last-child { border-bottom: none; }
+    .content-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+
+    .prework { background: #F8F8F8; border-radius: 10px; padding: 24px; }
+    .prework-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .prework-total { font-size: 14px; color: #707070; }
+    .prework-item { margin-bottom: 20px; }
+    .prework-item:last-child { margin-bottom: 0; }
+    .prework-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .prework-item h4 .time { font-size: 13px; font-weight: 500; color: #707070; white-space: nowrap; }
+    .prework-item p { font-size: 15px; color: #707070; line-height: 1.5; }
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #15B078; color: #fff; font-size: 12px; font-weight: 700; margin-right: 8px; flex-shrink: 0; }
+
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0 8px 32px; position: relative; font-size: 16px; line-height: 1.5; }
+    .checklist li::before { content: ""; position: absolute; left: 0; top: 14px; width: 18px; height: 18px; border: 2px solid #E5E5E5; border-radius: 4px; }
+
+    .objectives ul { list-style: none; padding: 0; }
+    .objectives li { padding-left: 24px; position: relative; margin-bottom: 8px; font-size: 16px; line-height: 1.5; }
+    .objectives li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: #15B078; }
+
+    .agenda-item { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+    .agenda-item:last-child { border-bottom: none; }
+    .agenda-time { font-size: 14px; font-weight: 600; color: #15B078; padding-top: 2px; }
+    .agenda-segment h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .agenda-segment p { font-size: 15px; color: #707070; line-height: 1.5; }
+
+    .deliverable-card { background: rgba(21, 176, 120, 0.06); border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; }
+    .deliverable-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .deliverable-card p { font-size: 15px; color: #707070; line-height: 1.5; }
+    .template-note { font-size: 14px; color: #15B078; font-weight: 500; margin-top: 4px; }
+
+    .homework { background: #F8F8F8; border-radius: 10px; padding: 24px; }
+    .homework-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .homework-total { font-size: 14px; color: #707070; }
+    .homework-item { margin-bottom: 20px; }
+    .homework-item:last-child { margin-bottom: 0; }
+    .homework-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .homework-item h4 .time { font-size: 13px; font-weight: 500; color: #707070; white-space: nowrap; }
+    .homework-item p { font-size: 15px; color: #707070; line-height: 1.5; }
+
+    .resource-list { list-style: none; padding: 0; }
+    .resource-list li { padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+    .resource-list li:last-child { border-bottom: none; }
+    .resource-list a { text-decoration: none; color: #333; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .resource-list a:hover { color: #15B078; }
+    .resource-title { font-size: 16px; font-weight: 500; }
+    .resource-type { font-size: 13px; font-weight: 600; color: #707070; background: #F0F0F0; padding: 2px 10px; border-radius: 4px; white-space: nowrap; }
+
+    .connection { font-size: 15px; color: #333; padding: 16px 20px; border-left: 3px solid #15B078; background: rgba(21, 176, 120, 0.04); border-radius: 0 8px 8px 0; }
+    .connection strong { color: #15B078; }
+
+    .footer { padding: 32px 0; background: #0D2E23; text-align: center; }
+    .footer svg { width: 80px; height: auto; opacity: 0.5; margin-bottom: 8px; }
+    .footer p { font-size: 14px; color: rgba(255,255,255,0.35); }
+
+    .bottom-nav { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; }
+    .bottom-nav a { font-size: 15px; font-weight: 600; color: #15B078; text-decoration: none; }
+    .bottom-nav a:hover { opacity: 0.8; }
+
+    @media (max-width: 700px) {
+      .header h1 { font-size: 28px; }
+      .nav-row { flex-direction: column; gap: 8px; align-items: flex-start; }
+      .agenda-item { grid-template-columns: 56px 1fr; }
+      .session-meta { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+          <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+          <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+          <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+          <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+          <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+        </svg>
+      </div>
+
+      <div class="nav-row">
+        <a href="session-1.html" class="nav-link">&larr; Session 1</a>
+        <a href="session-3.html" class="nav-link">Session 3 &rarr;</a>
+      </div>
+
+      <p class="eyebrow">Session 2 of 6</p>
+      <h1>Turn Cold Outreach into Warm Conversations</h1>
+      <p class="subtitle">Learn how to find the right people, write messages that get replies, and have informational interviews that lead to referrals. You'll send 5 real messages before you leave tonight.</p>
+      <span class="deliverable-tag">Deliverable: 5 real outreach messages sent + 1 live role-play completed</span>
+      <div class="session-meta">
+        <span><strong>90 min</strong> live session</span>
+        <span><strong>~1.5 hrs</strong> homework</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- WHAT TO BRING -->
+      <div class="content-section">
+        <h2>Come Prepared With</h2>
+        <ul class="checklist">
+          <li>Your finalized top 10 target roles from Session 1 homework</li>
+          <li>Research notes on 5 people at target companies (names, profiles, what caught your attention)</li>
+          <li>Your handwritten outreach message (the one you wrote without AI)</li>
+          <li>A laptop with LinkedIn open and your AI tool ready</li>
+        </ul>
+      </div>
+
+      <!-- SESSION OVERVIEW -->
+      <div class="content-section">
+        <h2>Session Overview</h2>
+
+        <div class="objectives" style="margin-bottom: 32px;">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Identify the right people to contact at target companies (peers, hiring managers, connectors)</li>
+            <li>Write personalized outreach messages that get responses, not ignores</li>
+            <li>Use AI to research people and personalize at scale without sounding robotic</li>
+            <li>Practice informational interview conversations through live role-play</li>
+          </ul>
+        </div>
+
+        <p class="section-label">90-Minute Agenda</p>
+        <div class="agenda-item">
+          <span class="agenda-time">5 min</span>
+          <div class="agenda-segment">
+            <h4>Check-In</h4>
+            <p>How did your AI agent perform this week? Quick wins and surprises from daily matching. Celebrate what your agent surfaced.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">10 min</span>
+          <div class="agenda-segment">
+            <h4>The Networking Mindset Shift</h4>
+            <p>Why networking isn't "using people." Up to 70% of roles are filled through connections before they're posted. The reframe: you're learning from people, not asking for favors.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">15 min</span>
+          <div class="agenda-segment">
+            <h4>Live AI Demo: Personalized Outreach</h4>
+            <p>Side-by-side comparison of AI-only vs. AI-assisted outreach. Watch how adding your research notes transforms a generic message into one that gets replies.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">25 min</span>
+          <div class="agenda-segment">
+            <h4>Hands-On: Craft and Send Your Messages</h4>
+            <p>Write 5 personalized outreach messages using the AI-assisted method. Peer review in breakout rooms. Then hit send. Not drafts. Sent.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">20 min</span>
+          <div class="agenda-segment">
+            <h4>Informational Interview Masterclass + Role-Play</h4>
+            <p>The 5-question framework that leads to referrals. Live role-play practice in pairs. Learn how one conversation turns into three by always asking "who else should I talk to?"</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">15 min</span>
+          <div class="agenda-segment">
+            <h4>Wrap-Up and Preview</h4>
+            <p>Deliverable check: 5 messages sent, role-play completed. Homework assignments. Preview Session 3.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DELIVERABLES -->
+      <div class="content-section">
+        <h2>What You'll Build</h2>
+
+        <div class="deliverable-card">
+          <h4>5 Personalized Outreach Messages (Sent)</h4>
+          <p>Real messages to real people at your target companies. Crafted with AI assistance, edited in your voice, and sent before you leave the session.</p>
+          <a href="https://docs.google.com/document/d/1TBFJTra2AMLLPhBBVP2GvYl0iI_LVfH1ZQAzpmSmAVI/copy" target="_blank" class="template-note">Template: Outreach Message Template (Google Doc) →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>5-Question Informational Interview Framework</h4>
+          <p>A memorized conversation structure that opens doors, gathers insider intel, and always ends with the referral ask: "Who else should I talk to?"</p>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>Live Role-Play Experience</h4>
+          <p>Hands-on practice running an informational interview with a peer. You'll know what feels natural and what needs more rehearsal.</p>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>AI-Assisted Outreach System</h4>
+          <p>A repeatable process for researching people, drafting personalized messages with AI, and editing them in your own voice.</p>
+        </div>
+      </div>
+
+      <!-- HOMEWORK -->
+      <div class="content-section">
+        <h2>Homework</h2>
+        <p style="font-size: 16px; color: #707070; margin-bottom: 20px;">Here's what to do between Session 2 and Session 3. The outreach messages are the priority.</p>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">This Week's Assignments</p>
+            <span class="homework-total">~1.5 hrs over the week</span>
+          </div>
+
+          <div class="homework-item">
+            <h4>Send 5 more outreach messages <span class="time">20 min</span></h4>
+            <p>Expand your outreach to 10 total. Track who responds and who doesn't. Note patterns in what works. You proved tonight that you can do it. Now build the habit.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Conduct 1-2 informational interviews <span class="time">1 hr</span></h4>
+            <p>If any connections respond positively, schedule and complete at least one informational interview using the 5-question framework. Send a thank-you within 24 hours that references something specific they said.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Audit your LinkedIn profile <span class="time">10 min</span></h4>
+            <p>Screenshot your current LinkedIn headline, summary, and experience section. Note what feels outdated or generic. Bring these screenshots to Session 3.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Keep running your AI agent daily <span class="time">10 min/day</span></h4>
+            <p>Don't let the daily habit slip. Your target list should be growing and sharpening each day.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LELAND+ RESOURCES -->
+      <div class="content-section">
+        <h2>Recommended Leland+ Resources</h2>
+        <p style="font-size: 16px; color: #707070; margin-bottom: 20px;">These Leland+ resources cover networking and outreach strategies in more depth. Great for extra practice between sessions.</p>
+
+        <ul class="resource-list">
+          <li>
+            <a href="https://www.joinleland.com/content/item/689b71419339bd36ad147bad" target="_blank">
+              <span class="resource-title">Networking Outreach Message Templates</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.joinleland.com/content/item/689106d09951a9003e87ceb6" target="_blank">
+              <span class="resource-title">Networking: Key Steps & Sample Messages</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.joinleland.com/content/item/68813fe58d3c5d2040662bff" target="_blank">
+              <span class="resource-title">Consulting LinkedIn Outreach Templates</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.joinleland.com/content/item/68950a2518ac47b69a5747c4" target="_blank">
+              <span class="resource-title">Consulting Networking 101</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- NEXT SESSION PREVIEW -->
+      <div class="content-section">
+        <h2>Coming Up: Session 3</h2>
+        <div class="connection">
+          <strong>Next session: Craft a Resume and LinkedIn to Impress Humans.</strong> You'll optimize your resume for ATS systems, rebuild your LinkedIn profile for recruiter visibility, and publish your first brand-building post. Bring your LinkedIn audit screenshots and your current resume in an editable format (Google Doc or Word, not PDF).
+        </div>
+      </div>
+
+      <!-- BOTTOM NAV -->
+      <div class="bottom-nav">
+        <a href="session-1.html">&larr; Session 1: AI Search Engine</a>
+        <a href="session-3.html">Session 3: Resume & LinkedIn &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Leland">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+        <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+        <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+        <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+        <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+        <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+      </svg>
+      <p>&copy; 2026 Leland</p>
+    </div>
+  </footer>
+
+</body>
+</html>

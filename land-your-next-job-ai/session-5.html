@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 5: Sell Your Story in Behavioral Interviews and Networking Convos | Leland Job Search Bootcamp</title>
+  <meta name="description" content="Session 5 of the Leland Job Search Bootcamp. Sell your story in behavioral interviews and networking convos using the STAR method and a proven personal narrative formula.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { font-family: 'Inter', Arial, sans-serif; font-size: 18px; line-height: 1.6; color: #333333; background: #ffffff; }
+    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
+
+    /* Header */
+    .header { background: #113A2D; color: #ffffff; padding: 48px 0 56px; }
+    .header .logo { margin-bottom: 32px; }
+    .header .logo svg { width: 120px; height: auto; }
+    .nav-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .nav-link { font-size: 15px; font-weight: 600; color: #15B078; text-decoration: none; }
+    .nav-link:hover { opacity: 0.8; }
+    .nav-link.disabled { color: rgba(255,255,255,0.3); pointer-events: none; }
+    .eyebrow { font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: #15B078; margin-bottom: 12px; }
+    .header h1 { font-size: 40px; font-weight: 700; line-height: 1.2; margin-bottom: 12px; }
+    .header .subtitle { font-size: 18px; color: rgba(255,255,255,0.7); line-height: 1.6; max-width: 640px; margin-bottom: 24px; }
+    .deliverable-tag { display: inline-block; font-size: 14px; font-weight: 600; color: #15B078; background: rgba(21, 176, 120, 0.12); padding: 6px 14px; border-radius: 6px; }
+    .session-meta { display: flex; gap: 24px; flex-wrap: wrap; margin-top: 20px; }
+    .session-meta span { font-size: 14px; color: rgba(255,255,255,0.6); }
+    .session-meta strong { color: rgba(255,255,255,0.9); }
+
+    /* Section Labels */
+    .section-label { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #707070; margin-bottom: 12px; }
+
+    /* Content Sections */
+    .content-section { padding: 48px 0; border-bottom: 1px solid #E5E5E5; }
+    .content-section:last-child { border-bottom: none; }
+    .content-section h2 { font-size: 24px; font-weight: 700; margin-bottom: 20px; }
+
+    /* Pre-Work */
+    .prework { background: #F8F8F8; border-radius: 10px; padding: 24px; }
+    .prework-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .prework-total { font-size: 14px; color: #707070; }
+    .prework-item { margin-bottom: 20px; }
+    .prework-item:last-child { margin-bottom: 0; }
+    .prework-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .prework-item h4 .time { font-size: 13px; font-weight: 500; color: #707070; white-space: nowrap; }
+    .prework-item p { font-size: 15px; color: #707070; line-height: 1.5; }
+    .step-number { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: #15B078; color: #fff; font-size: 12px; font-weight: 700; margin-right: 8px; flex-shrink: 0; }
+
+    /* Checklist */
+    .checklist { list-style: none; padding: 0; }
+    .checklist li { padding: 8px 0 8px 32px; position: relative; font-size: 16px; line-height: 1.5; }
+    .checklist li::before { content: ""; position: absolute; left: 0; top: 14px; width: 18px; height: 18px; border: 2px solid #E5E5E5; border-radius: 4px; }
+
+    /* Objectives */
+    .objectives ul { list-style: none; padding: 0; }
+    .objectives li { padding-left: 24px; position: relative; margin-bottom: 8px; font-size: 16px; line-height: 1.5; }
+    .objectives li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 8px; border-radius: 50%; background: #15B078; }
+
+    /* Agenda */
+    .agenda-item { display: grid; grid-template-columns: 64px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+    .agenda-item:last-child { border-bottom: none; }
+    .agenda-time { font-size: 14px; font-weight: 600; color: #15B078; padding-top: 2px; }
+    .agenda-segment h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .agenda-segment p { font-size: 15px; color: #707070; line-height: 1.5; }
+
+    /* Deliverables */
+    .deliverable-card { background: rgba(21, 176, 120, 0.06); border-radius: 10px; padding: 20px 24px; margin-bottom: 12px; }
+    .deliverable-card h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .deliverable-card p { font-size: 15px; color: #707070; line-height: 1.5; }
+    .template-note { font-size: 14px; color: #15B078; font-weight: 500; margin-top: 4px; }
+
+    /* Homework */
+    .homework { background: #F8F8F8; border-radius: 10px; padding: 24px; }
+    .homework-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .homework-total { font-size: 14px; color: #707070; }
+    .homework-item { margin-bottom: 20px; }
+    .homework-item:last-child { margin-bottom: 0; }
+    .homework-item h4 { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .homework-item h4 .time { font-size: 13px; font-weight: 500; color: #707070; white-space: nowrap; }
+    .homework-item p { font-size: 15px; color: #707070; line-height: 1.5; }
+
+    /* Callout */
+    .callout { font-size: 15px; color: #333; padding: 16px 20px; border-left: 3px solid #15B078; background: rgba(21, 176, 120, 0.04); border-radius: 0 8px 8px 0; margin-top: 16px; }
+    .callout strong { color: #15B078; }
+
+    /* Resources */
+    .resource-list { list-style: none; padding: 0; }
+    .resource-list li { padding: 12px 0; border-bottom: 1px solid #F0F0F0; }
+    .resource-list li:last-child { border-bottom: none; }
+    .resource-list a { text-decoration: none; color: #333; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .resource-list a:hover { color: #15B078; }
+    .resource-title { font-size: 16px; font-weight: 500; }
+    .resource-type { font-size: 13px; font-weight: 600; color: #707070; background: #F0F0F0; padding: 2px 10px; border-radius: 4px; white-space: nowrap; }
+
+    /* Connection / Next Session */
+    .connection { font-size: 15px; color: #333; padding: 16px 20px; border-left: 3px solid #15B078; background: rgba(21, 176, 120, 0.04); border-radius: 0 8px 8px 0; }
+    .connection strong { color: #15B078; }
+
+    /* Footer */
+    .footer { padding: 32px 0; background: #0D2E23; text-align: center; }
+    .footer svg { width: 80px; height: auto; opacity: 0.5; margin-bottom: 8px; }
+    .footer p { font-size: 14px; color: rgba(255,255,255,0.35); }
+
+    /* Bottom Nav */
+    .bottom-nav { display: flex; justify-content: space-between; align-items: center; padding: 32px 0; }
+    .bottom-nav a { font-size: 15px; font-weight: 600; color: #15B078; text-decoration: none; }
+    .bottom-nav a:hover { opacity: 0.8; }
+    .bottom-nav .disabled { color: #ccc; pointer-events: none; }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .header h1 { font-size: 28px; }
+      .nav-row { flex-direction: column; gap: 8px; align-items: flex-start; }
+      .agenda-item { grid-template-columns: 56px 1fr; }
+      .session-meta { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+          <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+          <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+          <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+          <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+          <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+        </svg>
+      </div>
+
+      <div class="nav-row">
+        <a href="session-4.html" class="nav-link">&larr; Session 4</a>
+        <a href="session-6.html" class="nav-link">Session 6 &rarr;</a>
+      </div>
+
+      <p class="eyebrow">Session 5 of 6</p>
+      <h1>Sell Your Story in Behavioral Interviews and Networking Convos</h1>
+      <p class="subtitle">Craft a compelling personal narrative and build a bank of polished behavioral answers using the STAR method. This is the most interactive session yet.</p>
+      <span class="deliverable-tag">Deliverable: A polished "tell me about yourself" script + 5 STAR-format answers</span>
+      <div class="session-meta">
+        <span><strong>90 min</strong> live session</span>
+        <span><strong>~90 min</strong> homework</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- WHAT TO BRING -->
+      <div class="content-section">
+        <h2>Come Prepared With</h2>
+        <ul class="checklist">
+          <li>Your list of 5 work accomplishments with measurable results</li>
+          <li>Your "tell me about yourself" draft (written out, not just in your head)</li>
+          <li>An AI tool ready (ChatGPT or Claude) for script polishing</li>
+          <li>A quiet space where you can speak out loud during practice rounds</li>
+        </ul>
+        <div class="callout" style="margin-top: 20px;">
+          <strong>This is a speaking session.</strong> You'll be practicing out loud in pairs and small groups throughout the evening. Find a spot where you can talk comfortably without worrying about disturbing others.
+        </div>
+      </div>
+
+      <!-- SESSION OVERVIEW -->
+      <div class="content-section">
+        <h2>Session Overview</h2>
+
+        <div class="objectives" style="margin-bottom: 32px;">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Craft a compelling "tell me about yourself" answer that sets the tone for any interview</li>
+            <li>Transform work accomplishments into polished STAR-method behavioral answers</li>
+            <li>Practice the intangibles that interviewers evaluate: energy, specificity, and presence</li>
+            <li>Build a reusable answer bank for common behavioral interview questions</li>
+          </ul>
+        </div>
+
+        <p class="section-label">90-Minute Agenda</p>
+        <div class="agenda-item">
+          <span class="agenda-time">5 min</span>
+          <div class="agenda-segment">
+            <h4>Check-In</h4>
+            <p>AI project updates, LinkedIn engagement wins, any interviews scheduled.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">15 min</span>
+          <div class="agenda-segment">
+            <h4>"Tell Me About Yourself" Workshop</h4>
+            <p>The 3-part formula: past, present, future. 90 seconds is the target. Live volunteer rewrite to show the transformation from resume recital to narrative arc.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">20 min</span>
+          <div class="agenda-segment">
+            <h4>Polish Your Script</h4>
+            <p>Rewrite your answer with AI assistance (10 min), then pair practice with structured feedback on thread, detail, and energy (10 min).</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">15 min</span>
+          <div class="agenda-segment">
+            <h4>STAR Method Deep Dive</h4>
+            <p>Framework breakdown, weak vs. strong side-by-side comparison, four common mistakes to avoid, and a live STAR demo with a volunteer.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">20 min</span>
+          <div class="agenda-segment">
+            <h4>Mock Interview Rounds</h4>
+            <p>Two rounds of mock interviews in groups of 3. Rotate through interviewer, interviewee, and observer roles. Feedback on structure, specificity, and energy.</p>
+          </div>
+        </div>
+        <div class="agenda-item">
+          <span class="agenda-time">10 min</span>
+          <div class="agenda-segment">
+            <h4>Wrap-Up and Preview</h4>
+            <p>Debrief from mock rounds. Homework assignments. Preview Session 6.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- DELIVERABLES -->
+      <div class="content-section">
+        <h2>What You'll Build</h2>
+
+        <div class="deliverable-card">
+          <h4>Polished "Tell Me About Yourself" Script</h4>
+          <p>A 90-second answer using the past/present/future formula. Rewritten with AI, refined with your voice, and practiced with a partner.</p>
+          <a href="https://docs.google.com/document/d/1l24tJr8JlYh6qvACiOY90C9XI6CTCLOPQT4bTnN0ZU0/copy" target="_blank" class="template-note">Template: "Tell Me About Yourself" Formula (Google Doc) →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>STAR-Method Answer Bank (2+ practiced)</h4>
+          <p>At least two behavioral answers structured in Situation, Task, Action, Result format. Each with specific actions and quantified results. Practiced live with peer feedback.</p>
+          <a href="https://docs.google.com/spreadsheets/d/1tcHZa54iShz_ofl65xFZGowtRZqVglFE7-9Jxm2pEmo/copy" target="_blank" class="template-note">Template: STAR Worksheet (Google Sheet) →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>Behavioral Question Bank</h4>
+          <p>The top 5 behavioral questions mapped to what each one tests: leadership, conflict, failure, initiative, and prioritization. A reference for building your full answer library.</p>
+          <a href="https://docs.google.com/spreadsheets/d/1Rrmy6assUdHuina5XtyGzkWgwLUhPX0p_uHDmp6AjIg/copy" target="_blank" class="template-note">Template: Behavioral Question Bank (Google Sheet) →</a>
+        </div>
+
+        <div class="deliverable-card">
+          <h4>Peer Feedback on Delivery</h4>
+          <p>Structured feedback from your mock interview partners on three dimensions: structure (did it follow STAR?), specificity (were there numbers?), and energy (did it sound confident?).</p>
+        </div>
+      </div>
+
+      <!-- HOMEWORK -->
+      <div class="content-section">
+        <h2>Homework</h2>
+        <p style="font-size: 16px; color: #707070; margin-bottom: 20px;">Complete these before Session 6. The AI mock interviews are the highest-leverage activity this week.</p>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">This Week's Assignments</p>
+            <span class="homework-total">~90 min over the week</span>
+          </div>
+
+          <div class="homework-item">
+            <h4>Complete 2 full mock interviews with AI <span class="time">45 min</span></h4>
+            <p>Use ChatGPT or Claude as your interviewer. Prompt it to ask you behavioral questions, then deliver your STAR answers out loud. Ask it to score you on structure, specificity, and quantification. It's like having a practice partner available 24/7.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Expand your STAR answer bank to 8-10 answers <span class="time">30 min</span></h4>
+            <p>Cover the top behavioral questions: leadership, conflict, failure, going above and beyond, tight deadlines, and more. Same accomplishment can answer multiple questions if framed correctly.</p>
+          </div>
+
+          <div class="homework-item">
+            <h4>Research a practice assessment for your target role <span class="time">15 min</span></h4>
+            <p>Find a sample case study, take-home project, or presentation prompt relevant to your target role. Bring it to Session 6. We'll workshop assessment strategies live.</p>
+          </div>
+        </div>
+
+        <div class="callout" style="margin-top: 20px;">
+          <strong>The gap between knowing and performing.</strong> The biggest difference between a good interview and a great one is repetition. Written answers feel different than spoken ones. Do your AI mock interviews out loud this week. Your delivery will be noticeably sharper by Session 6.
+        </div>
+      </div>
+
+      <!-- LELAND+ RESOURCES -->
+      <div class="content-section">
+        <h2>Recommended Leland+ Resources</h2>
+        <p style="font-size: 16px; color: #707070; margin-bottom: 20px;">These Leland+ guides complement the behavioral interview skills you'll practice in this session.</p>
+
+        <ul class="resource-list">
+          <li>
+            <a href="https://www.joinleland.com/content/item/689628f04e1a80e8ce42176b" target="_blank">
+              <span class="resource-title">Behavioral Interview Worksheet: Ace Your Stories!</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.joinleland.com/content/item/688a59525a8db5be5f72bbf3" target="_blank">
+              <span class="resource-title">Fit Interview Questions</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.joinleland.com/content/item/68880300a23edd5a9d48727e" target="_blank">
+              <span class="resource-title">Fit Interview Questions: Communication and Presentation</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.joinleland.com/content/item/688cdce8cab5c5d1f3be0935" target="_blank">
+              <span class="resource-title">Acing the McKinsey Personal Experience Interview</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.joinleland.com/content/item/6881980ee2ce2a3a170c134d" target="_blank">
+              <span class="resource-title">Comprehensive MBA Interview Guide</span>
+              <span class="resource-type">PDF</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- NEXT SESSION PREVIEW -->
+      <div class="content-section">
+        <h2>Coming Up: Session 6</h2>
+        <div class="connection">
+          <strong>Final session: Ace Case and Take-Home Interviews.</strong> You'll learn a universal framework for tackling any skills assessment, complete a timed practice assessment under real conditions, and assemble your complete job search playbook from everything you've built across all six sessions. Bring a practice assessment example for your target role and your complete interview prep materials from Sessions 1-5.
+        </div>
+      </div>
+
+      <!-- BOTTOM NAV -->
+      <div class="bottom-nav">
+        <a href="session-4.html">&larr; Session 4: AI Project</a>
+        <a href="session-6.html">Session 6: Case &amp; Take-Home &rarr;</a>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Leland">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+        <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+        <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+        <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+        <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+        <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+      </svg>
+      <p>&copy; 2026 Leland</p>
+    </div>
+  </footer>
+
+</body>
+</html>
