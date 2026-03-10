@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en" class="reveal-full-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Session 4: Build an AI Project That Gets You Hired — Job Search Bootcamp</title>
+
+  <!-- Reveal.js Core -->
+  <link rel="stylesheet" href="assets/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="assets/revealjs/dist/reveal.css">
+
+  <!-- Leland Theme -->
+  <link rel="stylesheet" href="assets/revealjs/themes/leland.css">
+
+</head>
+<body>
+  <!-- SVG Symbol Definitions (defined once, referenced via <use>) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="leland-logo" viewBox="0 0 200 45">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z"/>
+      <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z"/>
+      <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z"/>
+      <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z"/>
+      <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z"/>
+      <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z"/>
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z"/>
+    </symbol>
+  </svg>
+
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ============================================ -->
+      <!-- SLIDE 1: Title Dark -->
+      <!-- ============================================ -->
+      <section class="title-dark">
+        <svg width="110" height="25" fill="white" class="mb-16"><use href="#leland-logo"/></svg>
+        <p class="eyebrow">Job Search Bootcamp</p>
+        <h1>Build an AI Project<br>That Gets You Hired</h1>
+        <aside class="notes">
+          0:00 - 0:30 | Opening. Energy up. Frame the deliverable immediately.
+COACH: "Welcome back. Tonight you're going to build something you can show a hiring manager. Not a hypothetical. A real project, on GitHub, that you can talk about in interviews."
+Key point: Tonight is a build session. You leave with a published project.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 2: Exercise — Week 3 Check-In -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Week 3 check-in</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <p class="text-lg mb-16"><strong>Drop in chat:</strong></p>
+          <ol class="text-md">
+            <li>Did you update your resume or LinkedIn this week?</li>
+            <li>Any callbacks or responses from optimized applications?</li>
+            <li>One thing you're proud of from the last week</li>
+          </ol>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          0:30 - 5:00 | Chat check-in. Read responses. Celebrate wins.
+COACH: "Quick check-in. Drop your answers in chat. I want to hear about callbacks, updated resumes, and wins. Even small ones count." Read a few responses. Celebrate any callbacks. "If you got a response from an optimized application, that's the system working. If not yet, tonight's project gives you another edge."
+Keep it to 4 minutes. Don't let it run long.
+TRANSITION: "Great progress. Now let's talk about why AI projects are the fastest way to stand out."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 3: Divider — Why AI Projects Win -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 1</div>
+        <h1>Why AI Projects Win</h1>
+        <p>What hiring managers are looking for right now</p>
+        <aside class="notes">
+          5:00 - 5:15 | Section transition. Let the title land.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 4: Card Grid 3 — The AI Experience Gap -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>The AI experience gap</h2>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card card-green-bg">
+            <h3>72% of Organizations</h3>
+            <p class="text-sm text-light">Now use AI in at least one business function, up from 50% one year prior.</p>
+          </div>
+          <div class="card card-blue-bg">
+            <h3>66% of Business Leaders</h3>
+            <p class="text-sm text-light">Say they would not hire someone without AI skills.</p>
+          </div>
+          <div class="card card-orange-bg">
+            <h3>Only 35% of Workers</h3>
+            <p class="text-sm text-light">Have received any AI training in the past year.</p>
+          </div>
+        </div>
+
+        <p class="slide-footnote">Sources: McKinsey Global AI Survey, 2024 · Microsoft &amp; LinkedIn Work Trend Index, 2024 · Randstad Workmonitor, 2024</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          5:15 - 7:00 | Three stats. Let the gap sink in.
+COACH: "Here's the landscape. 72% of organizations now use AI — that jumped from 50% in just one year. Two-thirds of business leaders say they won't hire someone without AI skills. But only 35% of workers have received any AI training. That gap is your opportunity."
+Key point: Demand is high, supply is low. A single project puts you ahead of the majority.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 5: Two Column Right vs Wrong — Using vs Building -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Using AI vs. building with AI</h2>
+        </div>
+
+        <div class="two-column gap-32">
+          <div class="card">
+            <div class="status-incorrect text-lg mb-16">
+              <span class="icon icon-sm icon-red" style="--icon: url(assets/revealjs/icons/x.svg)"></span> Using AI
+            </div>
+            <p class="text-light mb-16">"I use ChatGPT to help me write emails."</p>
+            <div class="card-alt">
+              <p class="text-sm">Every candidate says this. It doesn't differentiate you.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="status-correct text-lg mb-16">
+              <span class="icon icon-sm icon-green" style="--icon: url(assets/revealjs/icons/check.svg)"></span> Building with AI
+            </div>
+            <p class="text-light mb-16">"I built an automated workflow that saves 3 hours per week."</p>
+            <div class="card-alt-green">
+              <p class="text-sm">This shows initiative, technical fluency, and business impact.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          7:00 - 9:00 | Contrast slide. Emphasize the distinction.
+COACH: "There's a huge difference between using AI and building with AI. Everyone uses ChatGPT. Very few people can say they built something with it. That's what we're doing tonight."
+Key point: Building > using. Tonight you cross that line.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 6: Card Grid 3 Numbered — What Hiring Managers Want -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>What hiring managers want</h2>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card">
+            <div class="type-num mb-16">01</div>
+            <h3>A Real Problem</h3>
+            <p class="text-sm text-light">You identified a workflow worth automating, not a toy demo.</p>
+          </div>
+          <div class="card">
+            <div class="type-num mb-16">02</div>
+            <h3>Working Solution</h3>
+            <p class="text-sm text-light">You built something functional, not theoretical.</p>
+          </div>
+          <div class="card">
+            <div class="type-num mb-16">03</div>
+            <h3>Clear Communication</h3>
+            <p class="text-sm text-light">You can explain what it does, why it matters, and how you built it.</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          9:00 - 11:00 | Walk through each card. Keep it punchy.
+COACH: "Three things. A real problem. A working solution. Clear communication. That's it. You don't need to be an engineer. You need to show you can think about AI as a tool for getting work done."
+TRANSITION: "Let's look at what great AI projects look like."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 7: Table — AI Project Examples -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>AI project examples</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Project</th>
+              <th>Problem Solved</th>
+              <th>Time to Build</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Meeting notes summarizer</td>
+              <td>Turns Zoom transcripts into action items</td>
+              <td>2 hours</td>
+            </tr>
+            <tr>
+              <td>Job posting analyzer</td>
+              <td>Scores postings against your criteria</td>
+              <td>1 hour</td>
+            </tr>
+            <tr>
+              <td>Client email drafter</td>
+              <td>Generates personalized follow-ups from CRM data</td>
+              <td>3 hours</td>
+            </tr>
+            <tr>
+              <td>Weekly report generator</td>
+              <td>Pulls data and writes summaries automatically</td>
+              <td>2 hours</td>
+            </tr>
+            <tr>
+              <td>Competitor research bot</td>
+              <td>Monitors competitors and flags changes</td>
+              <td>3 hours</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          11:00 - 13:00 | Walk through examples. Emphasize that these are achievable tonight.
+COACH: "These are all real projects built by people with no engineering background. Notice the pattern. Each one solves a specific problem and saves real time. None of them required months of work."
+Key point: Small, specific, useful. Not flashy demos.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 8: Callout Green — The Interview Payoff -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>The interview payoff</h2>
+        </div>
+
+        <div class="card-alt-green mb-24">
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span class="icon icon-xl icon-green" style="--icon: url(assets/icons/sparkle.svg); flex-shrink: 0"></span>
+            <div>
+              <p class="text-lg"><strong>Every project becomes a STAR story.</strong></p>
+              <p class="text-sm text-light mt-8">When an interviewer asks "Tell me about a time you used AI," you'll have a specific project with a measurable result. That's the kind of answer that gets second-round invitations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          13:00 - 15:00 | Key insight. Connect the project to interview outcomes.
+COACH: "This is why we're building tonight. Every project you create becomes ammunition for interviews. 'Tell me about a time you used AI' is one of the most common questions right now. After tonight, you'll have a concrete answer."
+TRANSITION: "Now let me show you how to build one. Live."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 9: Divider — Live Build Demo -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 2</div>
+        <h1>Live Build Demo</h1>
+        <p>Building a complete AI workflow from scratch in 15 minutes</p>
+        <aside class="notes">
+          15:00 - 15:15 | Section transition. Build anticipation.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 10: Workflow — The Build Process -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>The build process</h2>
+        </div>
+
+        <div class="workflow">
+          <div class="workflow-step">
+            <div class="step-num mb-16">1</div>
+            <h3 class="text-md">Pick a Problem</h3>
+            <p class="text-sm text-light">A real workflow you do manually</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">2</div>
+            <h3 class="text-md">Prompt the AI</h3>
+            <p class="text-sm text-light">Give it clear instructions and examples</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">3</div>
+            <h3 class="text-md">Test and Refine</h3>
+            <p class="text-sm text-light">Run it, fix edge cases, improve output</p>
+          </div>
+          <div class="workflow-arrow">
+            <span class="icon icon-md icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="workflow-step">
+            <div class="step-num mb-16">4</div>
+            <h3 class="text-md">Document It</h3>
+            <p class="text-sm text-light">README, screenshots, LinkedIn post</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          15:15 - 16:30 | Walk through the four steps. Set up the demo.
+COACH: "This is the process I'm about to follow live. Four steps. And it's the same process you'll follow in the workshop. Watch how simple this is."
+TRANSITION: "Let me show you. I'm going to pick a real problem and build a solution right now."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 11: Demo Setup — Meeting Notes Summarizer -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Demo: Meeting notes summarizer</h2>
+        </div>
+
+        <div style="display: flex; gap: 16px; align-items: stretch;">
+          <div class="card-alt" style="flex: 1; padding: 12px 14px;">
+            <p class="text-xs text-muted mb-8"><strong>INPUT: Zoom Transcript</strong></p>
+            <div style="font-size: 12px; line-height: 1.5; color: #666;">
+              <p style="margin: 0 0 4px;">[00:02] Sarah: Let's review the Q2 pipeline numbers...</p>
+              <p style="margin: 0 0 4px;">[00:14] Mike: Revenue is up 12% but churn spiked...</p>
+              <p style="margin: 0 0 4px;">[00:31] Sarah: We need to fix onboarding by March...</p>
+              <p style="margin: 0; color: #999;">... 45 minutes of transcript ...</p>
+            </div>
+          </div>
+          <div style="display: flex; align-items: center; flex-shrink: 0;">
+            <span class="icon icon-lg icon-green" style="--icon: url(assets/revealjs/icons/arrow-right.svg)"></span>
+          </div>
+          <div class="card-alt-green" style="flex: 1; padding: 12px 14px;">
+            <p class="text-xs mb-8" style="color: var(--leland-green);"><strong>OUTPUT: Structured Summary</strong></p>
+            <div style="font-size: 12px; line-height: 1.5;">
+              <p style="margin: 0 0 4px;"><strong>Action Items:</strong></p>
+              <p style="margin: 0 0 2px; padding-left: 12px;">1. Fix onboarding flow — Sarah, by Mar 15</p>
+              <p style="margin: 0 0 4px; padding-left: 12px;">2. Churn analysis report — Mike, by Friday</p>
+              <p style="margin: 0 0 4px;"><strong>Decisions:</strong> Approved Q2 budget increase</p>
+              <p style="margin: 0;"><strong>Follow-ups:</strong> Reconnect in 2 weeks</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-sm text-light mt-16">Watch the process, not just the result. You'll follow these same steps in 15 minutes.</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          16:30 - 17:30 | Set up the demo. Explain the problem before touching the tool.
+COACH: Screen share. "I'm going to build a meeting notes summarizer. Here's my problem: I have a 45-minute meeting transcript and I need action items. Let me show you how to turn this into a reusable workflow." Have the transcript pre-loaded. Open your AI tool.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 12: Demo Live — Building Live Checklist -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Building live</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <ol class="text-md">
+            <li>Define the input (what data goes in)</li>
+            <li>Write the prompt (what you want the AI to do)</li>
+            <li>Run it and review the output</li>
+            <li>Refine the prompt based on what's missing</li>
+            <li>Save the workflow for reuse</li>
+          </ol>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          17:30 - 28:00 | LIVE DEMO. This is the centerpiece. Go slow — 73% of the audience are AI beginners.
+COACH: Walk through the build live. Narrate EVERY decision out loud like you're teaching a friend. "First, I'm telling it what the input looks like — that's the most important part. Then I'm giving it specific instructions: extract action items, identify who's responsible, and flag deadlines." Run the prompt. Read the output together. "See how it missed this follow-up? That's normal. Let me refine the prompt — I'll add one more instruction." Show one iteration cycle. "Now I have a reusable workflow. I paste any transcript, and I get structured notes in 30 seconds." Total demo: 10-12 minutes.
+Key moments to highlight:
+- How to write clear instructions (not vague) — show the before/after of a vague vs. specific prompt
+- How to handle imperfect first outputs (iterate, don't restart)
+- The "save for reuse" moment (this is what makes it a project, not a one-off)
+At 27:00, start wrapping up the demo.
+IMPORTANT: After the demo, reassure: "If that felt fast, don't worry. You'll have the starter project list with sample prompts you can copy and modify. The goal is to get one run done tonight."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 13: Two Column Text — Demo Takeaways -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Demo takeaways</h2>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <h3 class="mb-16">What Worked</h3>
+            <ul class="plus-list">
+              <li>Specific instructions, not vague asks</li>
+              <li>Example input helped the AI understand format</li>
+              <li>One refinement cycle improved output significantly</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-16">Your Turn</h3>
+            <ul class="plus-list">
+              <li>You'll follow these same steps</li>
+              <li>Pick YOUR problem, not mine</li>
+              <li>Start simple, refine later</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          28:00 - 30:00 | Quick debrief. Bridge to the workshop.
+COACH: "Three things that made this work: specific instructions, example input, and one round of refinement. That's all it takes. Now it's your turn."
+TRANSITION: "You have 35 minutes. Let's build."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 14: Divider — Build Your Project -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 3</div>
+        <h1>Build Your Project</h1>
+        <p>35 minutes to build a working AI workflow</p>
+        <aside class="notes">
+          30:00 - 30:15 | Section transition. Set the energy.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 15: Exercise — Choose Your Project -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Choose your project</h2>
+        </div>
+
+        <div class="card-alt-green mb-24">
+          <ul class="plus-list text-md">
+            <li>If you came with a project idea from pre-work, use it.</li>
+            <li>If you need an idea, pick from the starter list (link in chat).</li>
+            <li>Scope check: Can you explain the problem in one sentence? If not, simplify.</li>
+          </ul>
+        </div>
+
+        <div class="card-alt compact">
+          <p class="text-sm"><strong>Starter ideas:</strong> email drafter, meeting summarizer, research compiler, data formatter, content repurposer</p>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          30:15 - 33:00 | Project selection. Help people scope down, not up.
+COACH: Drop the starter project list in chat. "First 3 minutes: pick your project and write down the problem it solves in one sentence. If you can't say it in one sentence, it's too big. Simplify." Walk around. Help people narrow scope. The most common mistake is picking something too ambitious.
+Key intervention: "What's the one-sentence problem statement?"
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 16: Exercise — Build Phase 1 -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Build phase 1: Prompt + first run</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <ol class="text-md">
+            <li>Open your AI tool (ChatGPT, Claude, or similar)</li>
+            <li>Write your prompt: describe the input, give clear instructions, provide an example</li>
+            <li>Run it with real or sample data</li>
+            <li>Review the output. What's good? What's missing?</li>
+          </ol>
+        </div>
+
+        <div class="card-alt compact mt-16">
+          <p class="text-sm"><strong>Starter prompt if you're stuck:</strong> "I have [type of input, e.g. meeting notes]. Please [action, e.g. extract action items with owners and deadlines]. Format the output as [format, e.g. a numbered list]."</p>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          33:00 - 45:00 | Build phase 1. Pairs in breakout rooms.
+COACH: Drop the starter project list link in chat. "Pairs. If you're comfortable, write your own prompt. If you're newer to AI, start with the starter prompt on screen — just fill in the blanks. Explaining it out loud to your partner catches problems. 12 minutes for your first run." Launch breakout rooms (pairs). Circulate. Common issues: prompts that are too vague, no example input, trying to do too much at once.
+For observers who aren't comfortable building yet: "Follow along with what your partner is doing. Take notes. You can try it at home with the sample prompts doc."
+At 40:00: "Five minutes left in this phase."
+At 44:00: "One minute. Run your prompt if you haven't."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 17: Exercise — Build Phase 2 -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Build phase 2: Refine and improve</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <ol class="text-md">
+            <li>Look at your first output. Identify one thing to improve.</li>
+            <li>Adjust your prompt. Be more specific about what was missing.</li>
+            <li>Run it again. Compare the two outputs.</li>
+            <li>Repeat until you're satisfied with the result.</li>
+          </ol>
+        </div>
+        <p class="text-sm text-muted mt-16">12 minutes. The refinement cycle is what separates a one-off prompt from a reusable tool.</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          45:00 - 57:00 | Build phase 2. Refinement.
+COACH: "Back in your pairs. Phase 2 is about making it better. Look at what your AI produced. What's missing? What's wrong? Fix one thing at a time." Circulate. Help people identify specific improvements rather than starting over.
+At 50:00: "Halfway through phase 2. If your prompt works, start thinking about edge cases."
+At 55:00: "Two minutes. Wrap up your refinement. We're moving to documentation next."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 18: Exercise — Quick Share -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Quick share: 2-minute demos</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <p class="text-lg mb-16"><strong>Volunteers: Show your project in 2 minutes.</strong></p>
+          <ul class="plus-list text-md">
+            <li>What problem does it solve?</li>
+            <li>Show one run.</li>
+            <li>What did you improve?</li>
+          </ul>
+        </div>
+
+        <p class="text-sm text-muted mt-16">3-4 volunteers. This is practice for explaining your project in interviews.</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          57:00 - 65:00 | Volunteer demos. 2 minutes each, 3-4 people.
+COACH: "Who wants to do a quick demo? Two minutes. Tell us the problem, show one run, share what you improved. This is interview practice." Pick 3-4 volunteers. Keep it tight. After each: "Great. Notice how they framed the problem first, then the solution. That's how you'd explain it in an interview."
+Celebrate each one. Connect each demo back to interview framing.
+TRANSITION: "Love it. Now let's make these projects visible to hiring managers."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 19: Divider — Document and Showcase -->
+      <!-- ============================================ -->
+      <section class="divider">
+        <div class="part-number">Part 4</div>
+        <h1>Document and Showcase</h1>
+        <p>Turn your project into a portfolio piece</p>
+        <aside class="notes">
+          65:00 - 65:15 | Section transition.
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 20: Card Grid 3 Numbered — Three Places to Showcase -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Three places to showcase</h2>
+        </div>
+
+        <div class="card-grid-3">
+          <div class="card" style="padding: 16px;">
+            <div class="type-num mb-8">01</div>
+            <h3 class="mb-8">GitHub README</h3>
+            <div class="card-alt" style="padding: 8px 10px; font-size: 12px; line-height: 1.5;">
+              <p style="margin: 0 0 2px; font-weight: bold;">sarahj/meeting-summarizer</p>
+              <p style="margin: 0; color: #999;">AI workflow that turns Zoom transcripts into structured action items</p>
+              <div style="margin-top: 4px; display: flex; gap: 8px; font-size: 11px; color: #999;">
+                <span>&#9733; 12</span><span>Python</span>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding: 16px;">
+            <div class="type-num mb-8">02</div>
+            <h3 class="mb-8">LinkedIn Post</h3>
+            <div class="card-alt" style="padding: 8px 10px; font-size: 12px; line-height: 1.5;">
+              <p style="margin: 0;">"I built an AI workflow that turns 45-min meeting transcripts into action items in 30 seconds..."</p>
+              <div style="margin-top: 4px; font-size: 11px; color: #999;">87 reactions &middot; 14 comments</div>
+            </div>
+          </div>
+          <div class="card" style="padding: 16px;">
+            <div class="type-num mb-8">03</div>
+            <h3 class="mb-8">Interview Answer</h3>
+            <div class="card-alt" style="padding: 8px 10px; font-size: 12px; line-height: 1.5;">
+              <p style="margin: 0;"><em>"I noticed my team spent 2 hrs/week on meeting notes. I built an AI tool that cut it to 30 seconds..."</em></p>
+              <div style="margin-top: 4px; font-size: 11px; color: #999;">STAR format &middot; 90-second answer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          65:15 - 67:00 | Overview of the three showcases. Quick, then we build each one.
+COACH: "Your project needs to live in three places. GitHub for the technical proof. LinkedIn for visibility. And in your interview prep as a ready-to-go story."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 21: Plus List — Writing a Great README -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Writing a great README</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li><strong>Problem:</strong> What manual process does this replace?</li>
+          <li><strong>Solution:</strong> What does the workflow do, in plain language?</li>
+          <li><strong>How to use it:</strong> Step-by-step instructions anyone can follow</li>
+          <li><strong>Results:</strong> Time saved, accuracy improved, or other measurable outcome</li>
+          <li><strong>What I learned:</strong> One insight about building with AI</li>
+        </ul>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          67:00 - 69:00 | Walk through README structure. Emphasize the "results" and "what I learned" sections.
+COACH: "Five sections. That's your README. Problem, solution, how to use it, results, and what you learned. The 'what I learned' section is what makes it personal. Hiring managers love seeing self-awareness."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 22: Two Column Text — LinkedIn Post Template -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>LinkedIn post template</h2>
+        </div>
+
+        <div class="two-column">
+          <div>
+            <h3 class="mb-16">Structure</h3>
+            <ul class="plus-list">
+              <li>Hook: "I built [thing] that [result]."</li>
+              <li>Problem you solved (2 sentences)</li>
+              <li>What you built (2 sentences)</li>
+              <li>Result or time saved (1 sentence)</li>
+              <li>What you learned (1 sentence)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-16">Example</h3>
+            <ul class="plus-list">
+              <li>"I built an AI workflow that turns 45-minute meeting transcripts into structured action items in 30 seconds."</li>
+              <li>Link to GitHub repo</li>
+              <li>#AI #Productivity #CareerGrowth</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          69:00 - 71:00 | LinkedIn post template. Show the structure and example.
+COACH: "LinkedIn posts about AI projects get strong engagement right now. Here's the template. Start with a hook that states what you built and the result. Keep it short. Link to your GitHub."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 23: Exercise — Document Your Project -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Document your project</h2>
+        </div>
+
+        <div class="card-alt-green">
+          <ol class="text-md">
+            <li>Write your README using the 5-section template (5 min)</li>
+            <li>Push to GitHub. If new to GitHub, follow the guide in chat (3 min)</li>
+            <li>Draft your LinkedIn post using the template (2 min)</li>
+          </ol>
+        </div>
+        <p class="text-sm text-muted mt-16">10 minutes total. You don't need to publish the LinkedIn post tonight. Just draft it.</p>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          71:00 - 80:00 | Documentation exercise. Circulate actively.
+COACH: Drop the GitHub quickstart guide in chat for anyone who needs it. "10 minutes. Write your README first. Then push to GitHub. Then draft your LinkedIn post. You don't have to publish the post tonight, but write the draft now while it's fresh." Circulate. Help people with GitHub if they get stuck. Pair experienced Git users with beginners.
+At 74:00: "Halfway. If your README is done, push to GitHub."
+At 77:00: "Three minutes. Start your LinkedIn draft if you haven't."
+At 79:00: "One minute. Wrap up wherever you are."
+TRANSITION: "Great work. Let's bring it all together."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 24: Plus List — What You Built Tonight -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>What you built tonight</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li>A working AI workflow that solves a real problem</li>
+          <li>A GitHub repository with a professional README</li>
+          <li>A LinkedIn post draft to showcase your work</li>
+          <li>An interview-ready answer for "Tell me about a time you used AI"</li>
+        </ul>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          80:00 - 81:30 | Recap. Celebrate the deliverable.
+COACH: Celebration moment. "Look at what you did in 90 minutes. You went from an idea to a published project. That's something most candidates can't say. You can."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 25: Table — Homework This Week -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Homework this week</h2>
+        </div>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Task</th>
+              <th>Time</th>
+              <th>Due</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Polish and publish your AI project</td>
+              <td>30 min</td>
+              <td>By Wednesday</td>
+            </tr>
+            <tr>
+              <td>Publish your LinkedIn post</td>
+              <td>10 min</td>
+              <td>By Thursday</td>
+            </tr>
+            <tr>
+              <td>List 5 work accomplishments with measurable results</td>
+              <td>20 min</td>
+              <td>By Session 5</td>
+            </tr>
+            <tr>
+              <td>Draft your "tell me about yourself" answer</td>
+              <td>25 min</td>
+              <td>By Session 5</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          81:30 - 84:00 | Homework overview. Emphasize the accomplishments list for Session 5.
+COACH: "Four things this week. First, polish your project and publish it. Second, post on LinkedIn. Third, and this is important for next session: write down 5 work accomplishments with measurable results. Fourth, draft a 'tell me about yourself' answer. Sessions 5 and 6 are all about interview prep, and you'll need these."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 26: Timeline — Coming Up: Session 5 -->
+      <!-- ============================================ -->
+      <section class="content">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>Coming up: Session 5</h2>
+        </div>
+
+        <div style="display: flex; gap: 16px;">
+          <div class="timeline-block light" style="flex: 1;">
+            <div class="timeline-label">This Week</div>
+            <h3>Publish Project</h3>
+            <p class="text-sm text-light">Polish your project. Draft accomplishments list.</p>
+          </div>
+          <div class="timeline-block dark" style="flex: 1;">
+            <div class="timeline-label">Session 5</div>
+            <h3>Master Your Interview Story</h3>
+            <p class="text-sm">STAR method, behavioral prep, live practice.</p>
+          </div>
+          <div class="timeline-block highlight" style="flex: 1;">
+            <div class="timeline-label">Bring</div>
+            <h3>Your Prep</h3>
+            <p class="text-sm text-light">5 accomplishments + "tell me about yourself" draft</p>
+          </div>
+        </div>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="#9B9B9B"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          84:00 - 86:00 | Preview next session. Create anticipation.
+COACH: "Session 5 is interview storytelling. We'll turn your accomplishments into compelling STAR answers and practice them live. Bring your 5 accomplishments and your 'tell me about yourself' draft. We'll workshop both."
+        </aside>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SLIDE 27: Content Dark — Key Takeaways -->
+      <!-- ============================================ -->
+      <section class="content-dark">
+        <div class="slide-header">
+          <p class="eyebrow">Job Search Bootcamp</p>
+          <h2>You're a builder now</h2>
+        </div>
+
+        <ul class="plus-list text-lg">
+          <li class="text-white">Building with AI, not just using it, is what sets you apart in interviews.</li>
+          <li class="text-white">A small, specific project with clear results beats a flashy demo every time.</li>
+          <li class="text-white">Your project lives in three places: GitHub, LinkedIn, and your interview answers. Use all three.</li>
+        </ul>
+
+        <div class="leland-footer">
+          <svg width="80" height="18" fill="rgba(255,255,255,0.4)"><use href="#leland-logo"/></svg>
+        </div>
+        <aside class="notes">
+          86:00 - 88:00 | Final takeaways. End strong and clear.
+COACH: "Three things to remember. Build, don't just use. Small and specific beats big and vague. And showcase your work everywhere. See you next week. Go publish that project."
+Leave 2 min buffer for Q&A or overrun.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js -->
+  <script src="assets/revealjs/dist/reveal.min.js"></script>
+  <script type="module">
+    import RevealNotes from 'assets/revealjs/plugin/notes/notes.esm.js';
+
+    Reveal.initialize({
+      width: 960,
+      height: 540,
+      margin: 0,
+      minScale: 0.5,
+      maxScale: 3.0,
+      hash: true,
+      slideNumber: true,
+      controls: true,
+      progress: true,
+      history: true,
+      center: false,
+      transition: 'none',
+      backgroundTransition: 'none',
+      disableLayout: false,
+      plugins: [ RevealNotes ]
+    });
+  </script>
+</body>
+</html>

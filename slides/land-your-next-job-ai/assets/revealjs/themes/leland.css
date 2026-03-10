@@ -1,0 +1,1738 @@
+/* =============================================
+   LELAND THEME FOR REVEAL.JS
+   Brand CSS for Leland educational content
+   ============================================= */
+
+/* ----- Google Fonts Fallback ----- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ----- CSS Custom Properties ----- */
+:root {
+  --leland-green: #15B078;
+  --leland-dark: #113A2D;
+  --leland-medium: #185440;
+  --leland-offwhite: #F8F8F8;
+  --leland-white: #FFFFFF;
+  --leland-black: #000000;
+  --leland-text-dark: #333333;
+  --leland-text-light: #707070;
+  --leland-text-muted: #9B9B9B;
+  --leland-stroke: #E5E5E5;
+  --leland-orange: #EF8509;
+  --leland-red: #FB5A42;
+  --leland-blue: #3B7DFD;
+  --leland-purple: #2D25A6;
+
+  /* Card background colors (12% opacity) */
+  --leland-green-bg: rgba(21, 176, 120, 0.12);
+  --leland-orange-bg: rgba(239, 133, 9, 0.12);
+  --leland-red-bg: rgba(251, 90, 66, 0.12);
+  --leland-blue-bg: rgba(59, 125, 253, 0.12);
+  --leland-purple-bg: rgba(45, 37, 166, 0.12);
+
+  /* Light green background for QC columns */
+  --leland-green-light: rgba(21, 176, 120, 0.08);
+}
+
+/* ----- Base Reveal.js Overrides ----- */
+.reveal {
+  font-family: 'Calibre', 'Inter', Arial, sans-serif;
+  font-size: 18px;
+  color: var(--leland-text-dark);
+}
+
+.reveal .slides section {
+  box-sizing: border-box;
+  padding: 56px 80px 64px;
+  width: 960px;
+  height: 540px;
+  text-align: left;
+  overflow: hidden;
+}
+
+/* Slides with opt-in footer get more bottom padding */
+.reveal .slides section.with-footer {
+  padding-bottom: 82px;
+}
+
+.reveal .slides section.title-dark,
+.reveal .slides section.divider {
+  padding-bottom: 56px;
+}
+
+/* Hide footer on content slides by default; show with .with-footer */
+.reveal .slides section.content .leland-footer,
+.reveal .slides section.content-dark .leland-footer {
+  display: none;
+}
+.reveal .slides section.content.with-footer .leland-footer,
+.reveal .slides section.content-dark.with-footer .leland-footer {
+  display: block;
+}
+
+/* ----- Slide Types ----- */
+
+/* Title (Dark) */
+.reveal .slides section.title-dark {
+  background-color: var(--leland-dark);
+  color: var(--leland-white);
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reveal .slides section.title-dark h1 {
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  color: var(--leland-white);
+}
+
+.reveal .slides section.title-dark h2 {
+  color: var(--leland-white);
+}
+
+.reveal .slides section.title-dark p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.reveal .slides section.title-dark .text-white {
+  color: var(--leland-white);
+}
+
+.reveal .slides section.title-dark .text-muted {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Divider */
+.reveal .slides section.divider {
+  background-color: var(--leland-dark);
+  color: var(--leland-white);
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.reveal .slides section.divider h1 {
+  color: var(--leland-white);
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.reveal .slides section.divider .part-number {
+  color: var(--leland-green);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.reveal .slides section.divider p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Content (Dark) — dark background with top-aligned content like regular slides */
+.reveal .slides section.content-dark {
+  background-color: var(--leland-dark);
+  color: var(--leland-white);
+}
+
+.reveal .slides section.content-dark h1,
+.reveal .slides section.content-dark h2,
+.reveal .slides section.content-dark h3 {
+  color: var(--leland-white);
+}
+
+.reveal .slides section.content-dark p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.reveal .slides section.content-dark .eyebrow {
+  color: var(--leland-green);
+}
+
+.reveal .slides section.content-dark .text-white {
+  color: var(--leland-white);
+}
+
+/* Content (White) */
+.reveal .slides section.content {
+  background-color: var(--leland-white);
+  color: var(--leland-text-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let two-column fill remaining height so cards use available space */
+.reveal .slides section.content .two-column {
+  flex: 1;
+}
+
+/* ----- Typography ----- */
+.reveal h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  color: var(--leland-black);
+  text-transform: none;
+  text-align: left;
+}
+
+.reveal h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  color: var(--leland-black);
+  text-transform: none;
+  text-align: left;
+}
+
+.reveal h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 8px 0;
+  color: var(--leland-black);
+  text-transform: none;
+  text-align: left;
+}
+
+.reveal p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.reveal ul, .reveal ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.reveal li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+/* Eyebrow */
+.reveal .eyebrow {
+  color: var(--leland-green);
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.reveal .slides section.title-dark .eyebrow {
+  color: var(--leland-green);
+}
+
+/* ----- Text Utilities ----- */
+.text-lg { font-size: 22px; }
+.text-md { font-size: 20px; }
+.text-sm { font-size: 16px; }
+.text-xs { font-size: 14px; }
+
+.text-dark { color: var(--leland-text-dark); }
+.text-light { color: var(--leland-text-light); }
+.text-muted { color: var(--leland-text-muted); }
+.text-green { color: var(--leland-green); }
+.text-white { color: var(--leland-white); }
+
+.hl { color: var(--leland-green); }
+.hl-bold { color: var(--leland-green); font-weight: 700; }
+.neg { color: var(--leland-red); }
+.ans { color: var(--leland-green); }
+
+.text-center { text-align: center; }
+
+/* ----- Spacing Utilities ----- */
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+
+.mb-8 { margin-bottom: 8px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+.mb-40 { margin-bottom: 40px; }
+
+.gap-16 { gap: 16px; }
+.gap-20 { gap: 20px; }
+.gap-24 { gap: 24px; }
+.gap-32 { gap: 32px; }
+
+/* ----- Layout Helpers ----- */
+.two-column {
+  display: flex;
+  gap: 32px;
+}
+
+.two-column > * {
+  flex: 1;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-1 { flex: 1; }
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- Cards ----- */
+
+/* Standard Card */
+.card {
+  background: var(--leland-white);
+  border: 1px solid var(--leland-stroke);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Alternate Card (off-white, no border) */
+.card-alt {
+  background: var(--leland-offwhite);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Light green alternate card (replaces inline background styles) */
+.card-alt-green {
+  background: rgba(21, 176, 120, 0.06);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+/* Compact modifier for cards and callouts */
+.compact {
+  padding: 14px 24px;
+  border-radius: 8px;
+}
+
+/* Slide header wrapper (consistent spacing below eyebrow+title) */
+.slide-header {
+  margin-bottom: 20px;
+}
+
+/* Self-start utility (prevents badges from stretching in flex containers) */
+.self-start {
+  align-self: flex-start;
+}
+
+/* Colored Card Backgrounds (no border when tinted) */
+.card.card-green-bg { background: var(--leland-green-bg); border: none; }
+.card.card-orange-bg { background: var(--leland-orange-bg); border: none; }
+.card.card-red-bg { background: var(--leland-red-bg); border: none; }
+.card.card-blue-bg { background: var(--leland-blue-bg); border: none; }
+.card.card-purple-bg { background: var(--leland-purple-bg); border: none; }
+
+/* ----- Card Grids (with footer protection) ----- */
+.card-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+.card-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  padding-bottom: 40px;
+}
+
+.card-grid-2 > .card,
+.card-grid-2 > .type-box,
+.card-grid-3 > .card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Center card content when first child is an icon */
+.card-grid-2 > .card:has(> .icon:first-child),
+.card-grid-3 > .card:has(> .icon:first-child) {
+  align-items: center;
+  text-align: center;
+}
+.card-grid-2 > .card:has(> .icon:first-child) h3,
+.card-grid-3 > .card:has(> .icon:first-child) h3 {
+  text-align: center;
+}
+
+/* ----- Type Box (numbered) ----- */
+.type-box {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--leland-offwhite);
+  border-radius: 12px;
+}
+
+.type-box h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.type-box p {
+  font-size: 16px;
+  color: var(--leland-text-light);
+  line-height: 1.4;
+}
+
+.type-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--leland-green);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ----- Timeline Block ----- */
+.timeline-block {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: var(--leland-white);
+}
+
+.timeline-block.dark {
+  background-color: var(--leland-medium);
+  color: var(--leland-white);
+}
+
+.timeline-block.dark h3 {
+  color: var(--leland-white);
+}
+
+.timeline-block.dark p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.timeline-block.highlight {
+  background-color: rgba(21, 176, 120, 0.12);
+}
+
+.timeline-block.light {
+  background-color: var(--leland-offwhite);
+}
+
+.timeline-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--leland-text-muted);
+  margin-bottom: 8px;
+}
+
+.timeline-block.dark .timeline-label {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.timeline-block.highlight .timeline-label {
+  color: var(--leland-green);
+}
+
+/* ----- Study Block ----- */
+.study-block {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--leland-offwhite);
+  border-radius: 12px;
+}
+
+.study-block.highlight {
+  background-color: rgba(21, 176, 120, 0.08);
+}
+
+/* ----- Panel Box ----- */
+.panel-box {
+  padding: 24px;
+  background: var(--leland-offwhite);
+  border-radius: 12px;
+}
+
+.panel-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--leland-green);
+  margin-bottom: 12px;
+}
+
+/* ----- Workflow (Process Flow) ----- */
+.workflow {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.workflow-step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 16px;
+  background: var(--leland-white);
+  border: 1px solid var(--leland-stroke);
+  border-radius: 12px;
+}
+.workflow-step h3 {
+  text-align: center;
+}
+
+.workflow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  font-size: 20px;
+  color: var(--leland-green);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Step Number Circle */
+.step-num {
+  width: 36px;
+  height: 36px;
+  background: var(--leland-green);
+  color: var(--leland-white);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ----- Badges ----- */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-green {
+  background: var(--leland-green-bg);
+  color: var(--leland-green);
+}
+
+.badge-orange {
+  background: var(--leland-orange-bg);
+  color: var(--leland-orange);
+}
+
+.badge-red {
+  background: var(--leland-red-bg);
+  color: var(--leland-red);
+}
+
+.badge-blue {
+  background: var(--leland-blue-bg);
+  color: var(--leland-blue);
+}
+
+.badge-purple {
+  background: var(--leland-purple-bg);
+  color: var(--leland-purple);
+}
+
+/* ----- Tables ----- */
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+  margin-bottom: 16px;
+}
+
+.reveal table thead th {
+  background: var(--leland-dark);
+  color: var(--leland-white);
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  text-align: left;
+  border: none;
+}
+
+.reveal table thead th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+.reveal table thead th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+.reveal table tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--leland-stroke);
+  color: var(--leland-text-dark);
+}
+
+.reveal table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal table tbody tr:nth-child(even) {
+  background: #EFEFEF;
+}
+
+/* ----- Plus List ----- */
+.plus-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.plus-list li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.plus-list li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--leland-green);
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* ----- Status Indicators ----- */
+.status-correct { color: var(--leland-green); font-weight: 600; }
+.status-incorrect { color: var(--leland-red); font-weight: 600; }
+
+/* ----- Slide Number ----- */
+.reveal .slide-number {
+  background: none;
+  color: var(--leland-text-muted);
+  font-family: 'Calibre', 'Inter', Arial, sans-serif;
+  font-size: calc(14px * var(--slide-scale, 1));
+  line-height: 1;
+  padding: 0;
+}
+
+.reveal .slide-number a {
+  color: var(--leland-text-muted);
+  text-decoration: none;
+}
+
+/* Hide navigation arrows */
+.reveal .controls {
+  display: none !important;
+}
+
+/* Align slide number with footer baseline.
+   .leland-footer is position:absolute inside each <section> at bottom:24px.
+   .slide-number is a child of .reveal (the viewport), not the slide.
+   We use Reveal.js CSS custom properties to convert slide-space coordinates
+   to viewport-space coordinates so both elements align perfectly. */
+.reveal .slide-number {
+  bottom: calc(
+    (var(--viewport-height) - var(--slide-height) * var(--slide-scale, 1)) / 2
+    + 24px * var(--slide-scale, 1)
+  );
+  right: calc(
+    (var(--viewport-width) - var(--slide-width) * var(--slide-scale, 1)) / 2
+    + 48px * var(--slide-scale, 1)
+  );
+}
+
+/* ----- Positioning ----- */
+.leland-footer {
+  position: absolute;
+  bottom: 24px;
+  left: 48px;
+}
+
+.leland-logo-top {
+  position: absolute;
+  top: 32px;
+  left: 48px;
+}
+
+/* ----- Image Placeholder ----- */
+.image-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--leland-stroke);
+  border-radius: 12px;
+  min-height: 200px;
+  color: var(--leland-text-muted);
+}
+
+/* ----- Icon Sizes ----- */
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-mask-image: var(--icon);
+  mask-image: var(--icon);
+  -webkit-mask-mode: alpha;
+  mask-mode: alpha;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+.icon-xs { width: 16px; height: 16px; }
+.icon-sm { width: 20px; height: 20px; }
+.icon-md { width: 24px; height: 24px; }
+.icon-lg { width: 32px; height: 32px; }
+.icon-xl { width: 40px; height: 40px; }
+
+/* Icon Colors (exact match via mask) */
+.icon-green { background-color: var(--leland-green); }
+.icon-white { background-color: var(--leland-white); }
+.icon-dark { background-color: var(--leland-dark); }
+.icon-red { background-color: var(--leland-red); }
+.icon-blue { background-color: var(--leland-blue); }
+.icon-orange { background-color: var(--leland-orange); }
+.icon-purple { background-color: var(--leland-purple); }
+
+/* ----- Firm Logos ----- */
+.firm-logo { height: 24px; display: inline-block; vertical-align: middle; }
+.firm-logo.lg { height: 32px; }
+
+/* ----- Icon List (icon + text rows) ----- */
+.icon-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.icon-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.icon-list li .icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ----- Slide Content Wrapper (max-height protection) ----- */
+.slide-content {
+  max-height: 402px;
+  overflow: hidden;
+}
+
+/* ----- Speaker Notes (80/20 split) ----- */
+.reveal .speaker-notes-container {
+  width: 20%;
+}
+
+/* ----- Dark slide text override for card-alt ----- */
+.title-dark .card-alt {
+  color: var(--leland-white);
+}
+
+.title-dark .card-alt p {
+  color: var(--leland-white);
+}
+
+.content-dark .card-alt {
+  color: var(--leland-white);
+}
+
+.content-dark .card-alt p {
+  color: var(--leland-white);
+}
+
+/* ----- PDF Export ----- */
+/* Use decktape for pixel-perfect PDF export (not browser print):
+   npx decktape reveal --size 960x540 http://localhost:8080/file.html output.pdf
+   Or run: ./export-pdf.sh */
+
+/* ----- Dark Slide Card Overrides ----- */
+.content-dark .card-alt,
+.content-dark .card-alt.compact {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* ----- Dark Slide Table Overrides ----- */
+.content-dark table,
+.content-dark th,
+.content-dark td {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.content-dark th {
+  background: rgba(255, 255, 255, 0.1);
+}
+.content-dark tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+.content-dark tbody td {
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ----- Dark Slide .card Overrides ----- */
+.content-dark .card {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--leland-white);
+}
+.content-dark .card p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ----- Dark Slide .card-alt-green Overrides ----- */
+.content-dark .card-alt-green {
+  background: rgba(21, 176, 120, 0.15);
+  color: var(--leland-white);
+}
+.content-dark .card-alt-green p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.content-dark .text-light {
+  color: rgba(255, 255, 255, 0.6);
+}
+.content-dark .text-muted {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* ----- Answer Choices (MC Grid) ----- */
+.answer-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+  margin-top: 12px;
+}
+.answer-choices .choice {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.answer-choices .choice-letter {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* ----- QC Comparison Columns ----- */
+.qc-columns {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin-top: 12px;
+}
+.qc-columns .qc-col {
+  padding: 16px 24px;
+  text-align: center;
+}
+.qc-columns .qc-col:first-child {
+  background: var(--leland-green-light);
+  border-radius: 8px 0 0 8px;
+}
+.qc-columns .qc-col:last-child {
+  background: var(--leland-offwhite);
+  border-radius: 0 8px 8px 0;
+}
+.qc-columns .qc-vs {
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  font-weight: 600;
+  background: var(--leland-white);
+}
+
+/* ----- Math Step Spacing ----- */
+/* Extra margin + line-height to prevent KaTeX fraction overlap */
+.math-step {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+.math-step:last-child {
+  margin-bottom: 0;
+}
+
+/* ----- Summary List (for dark slides) ----- */
+.summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.summary-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.summary-list li:last-child {
+  border-bottom: none;
+}
+
+/* =============================================
+   MATH CONTENT LAYER
+   Opt-in tighter spacing for math-heavy slides.
+   Usage: <section class="content math-content">
+   ============================================= */
+
+/* Tighter section padding: 48px top (was 56), 64px bottom (was 82) */
+/* Gains 26px content space while keeping 22px clearance above logo */
+/* Flex column so .two-column can expand to fill available height */
+.reveal .slides section.math-content {
+  padding: 48px 80px 64px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Reduce header margin */
+.math-content .slide-header {
+  margin-bottom: 12px;
+}
+
+/* Tighter card padding */
+.math-content .card-alt,
+.math-content .card-alt-green,
+.math-content .card {
+  padding: 12px 20px;
+}
+
+/* Compact becomes even tighter in math context */
+.math-content .compact {
+  padding: 8px 16px;
+}
+
+/* Tighter line-height for math steps */
+.math-content p {
+  line-height: 1.4;
+}
+
+/* Narrower column gap + fill remaining height so cards can be taller */
+.math-content .two-column {
+  gap: 24px;
+  flex: 1;
+}
+
+/* Reduced table cell padding */
+.math-content table tbody td {
+  padding: 8px 12px;
+}
+.math-content table thead th {
+  padding: 8px 12px;
+}
+
+/* Math content gets more room for slide-content wrapper */
+.math-content .slide-content {
+  max-height: 428px;
+}
+
+/* =============================================
+   STRATEGY + EXAMPLE PATTERN
+   Use on strategy slides that contain a worked example.
+   The example gets a left green border for visual hierarchy.
+   ============================================= */
+
+.example-box {
+  background: rgba(21, 176, 120, 0.06);
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-top: 12px;
+}
+
+.example-box .example-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--leland-green);
+  margin-bottom: 4px;
+}
+
+/* Dark slide variant */
+.content-dark .example-box {
+  background: rgba(21, 176, 120, 0.15);
+}
+.content-dark .example-box .example-label {
+  color: var(--leland-green);
+}
+
+/* =============================================
+   FRAGMENT GROUP (step-by-step reveal)
+   Standard pattern for problem walkthrough slides.
+   Outer .solution-steps appears on first click (index=1).
+   Inner steps reveal sequentially (index=2,3,4...).
+   ============================================= */
+
+.solution-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.solution-steps .step {
+  line-height: 1.5;
+}
+
+.solution-steps .step-final {
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* =============================================
+   QUOTE BLOCK
+   Essay excerpt display with source attribution.
+   Green left border, off-white bg, italic text.
+   Usage: real essay excerpts, interview quotes,
+   school-specific prompt highlights.
+   ============================================= */
+
+.quote-block {
+  background: rgba(21, 176, 120, 0.06);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 16px;
+}
+
+.quote-block p {
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.quote-block .quote-source {
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--leland-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 12px;
+}
+
+/* Dark slide variant */
+.content-dark .quote-block {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.content-dark .quote-block p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.content-dark .quote-block .quote-source {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* =============================================
+   BIG STATEMENT SLIDE
+   Full-slide centered quote/thesis. Large type,
+   dark bg, coach unpacks verbally.
+   Usage: <section class="big-statement">
+   ============================================= */
+
+.reveal .slides section.big-statement {
+  background-color: var(--leland-dark);
+  color: var(--leland-white);
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 56px 80px;
+}
+
+.reveal .slides section.big-statement h2 {
+  font-size: 36px;
+  line-height: 1.3;
+  max-width: 720px;
+  margin: 0 auto;
+  color: var(--leland-white);
+  text-align: center;
+  font-weight: 600;
+}
+
+.reveal .slides section.big-statement .sub-text {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 24px;
+  max-width: 600px;
+}
+
+.reveal .slides section.big-statement .eyebrow {
+  color: var(--leland-green);
+  margin-bottom: 24px;
+}
+
+/* =============================================
+   BEFORE/AFTER CONTRAST SLIDE
+   Two-panel layout showing draft vs final text.
+   Left panel faded "draft," right panel clean "final."
+   Usage: <div class="before-after">
+   ============================================= */
+
+.before-after {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+}
+
+.before-after .panel {
+  flex: 1;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.before-after .panel .panel-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.before-after .draft {
+  background: var(--leland-offwhite);
+}
+
+.before-after .draft .panel-label {
+  color: var(--leland-red);
+}
+
+.before-after .draft .essay-text {
+  color: var(--leland-text-light);
+  font-style: italic;
+  text-decoration: line-through;
+  text-decoration-color: rgba(251, 90, 66, 0.3);
+}
+
+.before-after .final {
+  background: rgba(21, 176, 120, 0.06);
+}
+
+.before-after .final .panel-label {
+  color: var(--leland-green);
+}
+
+.before-after .final .essay-text {
+  color: var(--leland-text-dark);
+  font-weight: 500;
+}
+
+/* =============================================
+   ESSAY EXCERPT
+   Displays text styled as realistic essay writing.
+   Slightly different typography to set apart from
+   slide instructional text.
+   ============================================= */
+
+.essay-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--leland-text-dark);
+}
+
+/* =============================================
+   ANNOTATION SLIDE
+   Essay text with positioned callout labels and
+   connector lines. Uses absolute positioning
+   within a relative container.
+   ============================================= */
+
+.annotation-container {
+  position: relative;
+  flex: 1;
+}
+
+.annotation-container .essay-text {
+  background: var(--leland-offwhite);
+  border-radius: 12px;
+  padding: 24px;
+  line-height: 1.8;
+}
+
+.annotation-marker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.annotation-marker .marker-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--leland-green);
+  flex-shrink: 0;
+}
+
+.annotation-marker .marker-line {
+  width: 24px;
+  height: 2px;
+  background: var(--leland-green);
+  flex-shrink: 0;
+}
+
+.annotation-marker .marker-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--leland-green);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* =============================================
+   FRAGMENT ENHANCEMENTS
+   Extra styling for Reveal.js fragment animations.
+   Fragments are built-in; these add visual polish.
+   ============================================= */
+
+/* Smooth fade-up for progressive builds */
+.reveal .slides section .fragment.fade-up {
+  transition: all 0.4s ease;
+}
+
+/* Build items — minimal text items for progressive reveal */
+.build-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--leland-stroke);
+}
+
+.build-item:last-child {
+  border-bottom: none;
+}
+
+.build-item .build-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--leland-green);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 28px;
+}
+
+.build-item h3 {
+  margin-bottom: 4px;
+}
+
+.build-item p {
+  font-size: 16px;
+  color: var(--leland-text-light);
+}
+
+/* Dark slide variants */
+.content-dark .build-item {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
+}
+
+.content-dark .build-item p {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.big-statement .leland-footer svg {
+  fill: rgba(255, 255, 255, 0.4);
+}
+
+/* =============================================
+   CHART UTILITIES
+   Inline SVG charts and chart layout helpers.
+   ============================================= */
+
+/* Base styling for inline SVG charts */
+.chart-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 8px 0;
+}
+
+/* Wrapper for chart + optional caption/legend */
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Side-by-side chart comparison layout */
+.chart-pair {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.chart-pair > * {
+  flex: 1;
+  min-width: 0;
+}
+
+/* =============================================
+   SPLIT SECTION
+   Green-left / white-right section intro.
+   Usage: <section class="split-section">
+   ============================================= */
+
+.reveal .slides section.split-section {
+  display: flex !important;
+  padding: 0;
+}
+.split-section .split-left {
+  width: 40%;
+  background: var(--leland-dark);
+  color: var(--leland-white);
+  padding: 56px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.split-section .split-left h1 {
+  color: var(--leland-white);
+  font-size: 42px;
+  line-height: 1.15;
+}
+.split-section .split-left .eyebrow {
+  color: var(--leland-green);
+}
+.split-section .split-right {
+  width: 60%;
+  background: var(--leland-white);
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* =============================================
+   COACH BIO
+   Photo + credentials two-column layout.
+   Usage: <section class="content coach-bio">
+   ============================================= */
+
+.reveal .slides section.coach-bio {
+  display: flex !important;
+  gap: 40px;
+  align-items: center;
+}
+.coach-bio .coach-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid var(--leland-dark);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.coach-bio .coach-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.coach-bio .coach-credentials {
+  flex: 1;
+}
+.coach-bio .credential-logos {
+  display: flex;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+/* =============================================
+   FLEXIBLE CARD GRIDS
+   ============================================= */
+
+/* 2x3 grid (6 cards) */
+.card-grid-2x3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  padding-bottom: 32px;
+}
+.card-grid-2x3 > .card {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+/* Auto-fill responsive grid */
+.card-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+/* =============================================
+   COMPARISON CARDS
+   Side-by-side quality comparison panels.
+   Usage: strong vs average, before vs after.
+   ============================================= */
+
+.comparison-cards {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+}
+.comparison-cards .comparison-panel {
+  flex: 1;
+  padding: 24px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.comparison-panel.strong {
+  background: rgba(21, 176, 120, 0.06);
+}
+.comparison-panel.strong .panel-label {
+  color: var(--leland-green);
+}
+.comparison-panel.average {
+  background: var(--leland-offwhite);
+}
+.comparison-panel.average .panel-label {
+  color: var(--leland-text-muted);
+}
+.comparison-panel .panel-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+/* =============================================
+   PROMPT BLOCK
+   Gray background text block for case prompts,
+   scenarios, or reading passages.
+   ============================================= */
+
+.prompt-block {
+  background: var(--leland-offwhite);
+  border-radius: 12px;
+  padding: 24px;
+  line-height: 1.7;
+}
+.prompt-block .prompt-label {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--leland-text-muted);
+  margin-bottom: 8px;
+}
+
+/* =============================================
+   EXHIBIT SLIDE
+   Full-width chart/image with maximized area.
+   Usage: <section class="content exhibit">
+   ============================================= */
+
+.reveal .slides section.content.exhibit {
+  padding: 40px 48px 60px;
+}
+.exhibit .exhibit-visual {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+}
+.exhibit .exhibit-caption {
+  font-size: 14px;
+  color: var(--leland-text-muted);
+  margin-top: 8px;
+}
+
+/* =============================================
+   IMAGE UTILITIES
+   ============================================= */
+
+.slide-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+.slide-image.rounded { border-radius: 12px; }
+.slide-image.shadow { box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1); }
+.slide-image.full-width { width: 100%; }
+
+/* =============================================
+   RUBRIC TABLE
+   Alternative table styling for scoring rubrics.
+   ============================================= */
+
+.rubric-table th {
+  background: var(--leland-offwhite);
+  color: var(--leland-text-dark);
+}
+.rubric-table td:first-child {
+  font-weight: 600;
+  background: var(--leland-offwhite);
+}
+
+/* =============================================
+   ENGAGEMENT SLIDE
+   Centered question prompt for interaction.
+   Usage: <section class="engagement">
+   ============================================= */
+
+.reveal .slides section.engagement {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.engagement h2 {
+  text-align: center;
+  max-width: 720px;
+}
+.engagement .engagement-prompt {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 24px 0;
+  color: var(--leland-green);
+}
+
+/* =============================================
+   WIDTH & LAYOUT UTILITIES
+   ============================================= */
+
+.w-40 { width: 40%; }
+.w-50 { width: 50%; }
+.w-60 { width: 60%; }
+.rounded-full { border-radius: 50%; }
+.object-cover { object-fit: cover; }
+.gap-12 { gap: 12px; }
+
+/* =============================================
+   SLIDE FOOTNOTE
+   Small source citation at bottom of slide.
+   Positioned just above the leland-footer.
+   Usage: <p class="slide-footnote">Source: ...</p>
+   ============================================= */
+
+.slide-footnote {
+  position: absolute;
+  bottom: 64px;
+  left: 80px;
+  right: 80px;
+  font-size: 11px;
+  color: var(--leland-text-muted);
+  line-height: 1.3;
+}
+
+/* Adjust for with-footer slides (footer visible, more bottom padding) */
+.with-footer .slide-footnote {
+  bottom: 82px;
+}
+
+/* Dark slide variant */
+.content-dark .slide-footnote,
+.title-dark .slide-footnote {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* =============================================
+   FULL-BLEED BACKGROUND IMAGE
+   Background image with gradient overlay and
+   text content at the bottom.
+   Usage: <section class="image-bg">
+   ============================================= */
+
+.reveal .slides section.image-bg {
+  padding: 0;
+  position: relative;
+  display: flex !important;
+  align-items: flex-end;
+}
+.image-bg .bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.image-bg .bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17, 58, 45, 0.85) 0%, rgba(17, 58, 45, 0.2) 60%, transparent 100%);
+}
+.image-bg .bg-content {
+  position: relative;
+  z-index: 1;
+  padding: 56px 80px;
+  color: var(--leland-white);
+}
+.image-bg .bg-content h2 { color: var(--leland-white); }
+.image-bg .bg-content .eyebrow { color: var(--leland-green); }
+
+/* =============================================
+   IMAGE GALLERY / GRID
+   2-3 column image grid with optional captions.
+   Usage: <div class="image-gallery">
+   ============================================= */
+
+.image-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.image-gallery.cols-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.image-gallery .gallery-item {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.image-gallery .gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.image-gallery .gallery-caption {
+  font-size: 13px;
+  color: var(--leland-text-muted);
+  margin-top: 8px;
+}
+
+/* =============================================
+   IMAGE + FLOATING CARD
+   Large image with an overlapping card panel.
+   Usage: <div class="image-card-layout">
+   ============================================= */
+
+.image-card-layout {
+  display: flex;
+  gap: 0;
+  flex: 1;
+  position: relative;
+}
+.image-card-layout .layout-image {
+  flex: 1;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.image-card-layout .layout-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.image-card-layout .layout-card {
+  width: 340px;
+  background: var(--leland-white);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  margin-left: -40px;
+  align-self: center;
+  z-index: 1;
+}
+
+/* =============================================
+   PILL BADGE EYEBROW
+   Green-circled section label. Replaces .eyebrow
+   where you want more visual weight.
+   Usage: <span class="pill-badge">SECTION NAME</span>
+   ============================================= */
+
+.pill-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--leland-green-bg);
+  color: var(--leland-dark);
+  margin-bottom: 12px;
+}
+
+/* =============================================
+   PASTEL CARD BACKGROUNDS
+   Warm, personality-rich card tints.
+   Usage: <div class="card card-pink-bg">
+   ============================================= */
+
+.card.card-pink-bg { background: #FFE4E4; border: none; }
+.card.card-cyan-bg { background: #D4F5EC; border: none; }
+.card.card-cream-bg { background: #F5E6D0; border: none; }
+
+/* =============================================
+   THIN RULE SEPARATOR
+   Subtle horizontal line between content blocks.
+   Usage: <hr class="thin-rule">
+   ============================================= */
+
+.thin-rule {
+  border: none;
+  border-top: 1px solid var(--leland-text-dark);
+  margin: 16px 0;
+  opacity: 0.15;
+}
+.content-dark .thin-rule,
+.title-dark .thin-rule {
+  border-top-color: var(--leland-white);
+  opacity: 0.2;
+}
+
+/* =============================================
+   DARK GLOW SLIDE
+   Dark bg with green radial gradient at bottom.
+   Centered layout for closing/transition slides.
+   Usage: <section class="dark-glow">
+   ============================================= */
+
+.reveal .slides section.dark-glow {
+  background: var(--leland-dark);
+  background-image: radial-gradient(ellipse 600px 300px at 50% 110%, rgba(21, 176, 120, 0.25) 0%, transparent 70%);
+  color: var(--leland-white);
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.dark-glow h1, .dark-glow h2 { color: var(--leland-white); text-align: center; }
+.dark-glow p { color: rgba(255, 255, 255, 0.6); }
+.dark-glow .eyebrow { color: var(--leland-green); }
