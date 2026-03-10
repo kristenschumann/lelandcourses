@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Syllabus | Leland Career Bootcamp</title>
+  <meta name="description" content="Detailed syllabus for the Leland Career Bootcamp: 6 live sessions covering AI job search, networking, resume optimization, portfolio projects, behavioral interviews, and assessments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 18px;
+      line-height: 1.6;
+      color: #333333;
+      background: #ffffff;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: #113A2D;
+      color: #ffffff;
+      padding: 48px 0 56px;
+    }
+    .header .logo {
+      margin-bottom: 40px;
+    }
+    .header .logo svg {
+      width: 120px;
+      height: auto;
+    }
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #15B078;
+      margin-bottom: 12px;
+    }
+    .header h1 {
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .header .subtitle {
+      font-size: 18px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      max-width: 640px;
+      margin-bottom: 32px;
+    }
+    .overview-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .overview-stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+    }
+    .overview-stat strong {
+      color: #15B078;
+      font-weight: 700;
+    }
+
+    /* ── Session Card ── */
+    .session {
+      padding: 56px 0;
+      border-bottom: 1px solid #E5E5E5;
+    }
+    .session:last-child {
+      border-bottom: none;
+    }
+    .session-header {
+      margin-bottom: 32px;
+    }
+    .session-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #15B078;
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .session-header h2 {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .session-header .session-subtitle {
+      font-size: 16px;
+      color: #707070;
+      line-height: 1.5;
+      margin-bottom: 12px;
+    }
+    .session-header .deliverable-tag {
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #15B078;
+      background: rgba(21, 176, 120, 0.08);
+      padding: 6px 14px;
+      border-radius: 6px;
+    }
+
+    /* ── Sections within session ── */
+    .section-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #707070;
+      margin-bottom: 12px;
+    }
+
+    .objectives {
+      margin-bottom: 32px;
+    }
+    .objectives ul {
+      list-style: none;
+      padding: 0;
+    }
+    .objectives li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .objectives li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #15B078;
+    }
+
+    /* ── Pre-work ── */
+    .prework {
+      background: #F8F8F8;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .prework-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16px;
+    }
+    .prework-total {
+      font-size: 14px;
+      color: #707070;
+    }
+    .prework-item {
+      margin-bottom: 16px;
+    }
+    .prework-item:last-child {
+      margin-bottom: 0;
+    }
+    .prework-item h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .prework-item h4 .time {
+      font-size: 13px;
+      font-weight: 500;
+      color: #707070;
+      white-space: nowrap;
+    }
+    .prework-item p {
+      font-size: 15px;
+      color: #707070;
+      line-height: 1.5;
+    }
+
+    /* ── Agenda ── */
+    .agenda {
+      margin-bottom: 32px;
+    }
+    .agenda-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #F0F0F0;
+    }
+    .agenda-item:last-child {
+      border-bottom: none;
+    }
+    .agenda-time {
+      font-size: 14px;
+      font-weight: 600;
+      color: #15B078;
+      padding-top: 2px;
+    }
+    .agenda-segment h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .agenda-segment p {
+      font-size: 15px;
+      color: #707070;
+      line-height: 1.5;
+    }
+
+    /* ── Homework ── */
+    .homework {
+      background: #F8F8F8;
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .homework-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16px;
+    }
+    .homework-total {
+      font-size: 14px;
+      color: #707070;
+    }
+    .homework-item {
+      margin-bottom: 16px;
+    }
+    .homework-item:last-child {
+      margin-bottom: 0;
+    }
+    .homework-item h4 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+    }
+    .homework-item h4 .time {
+      font-size: 13px;
+      font-weight: 500;
+      color: #707070;
+      white-space: nowrap;
+    }
+    .homework-item p {
+      font-size: 15px;
+      color: #707070;
+      line-height: 1.5;
+    }
+
+    /* ── Connection ── */
+    .connection {
+      font-size: 15px;
+      color: #333;
+      padding: 16px 20px;
+      border-left: 3px solid #15B078;
+      background: rgba(21, 176, 120, 0.04);
+      border-radius: 0 8px 8px 0;
+    }
+    .connection strong {
+      color: #15B078;
+    }
+
+    /* ── Time Summary ── */
+    .time-summary {
+      background: #113A2D;
+      color: #ffffff;
+      padding: 56px 0;
+    }
+    .time-summary h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .time-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .time-card {
+      text-align: center;
+    }
+    .time-card .number {
+      font-size: 36px;
+      font-weight: 700;
+      color: #15B078;
+      margin-bottom: 4px;
+    }
+    .time-card .label {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+    }
+    .time-summary .cta {
+      text-align: center;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #15B078;
+      color: #ffffff;
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      padding: 16px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #12995e;
+      transform: translateY(-1px);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 32px 0;
+      background: #0D2E23;
+      text-align: center;
+    }
+    .footer svg {
+      width: 80px;
+      height: auto;
+      opacity: 0.5;
+      margin-bottom: 8px;
+    }
+    .footer p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.35);
+    }
+    .back-link {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 600;
+      color: #15B078;
+      text-decoration: none;
+      margin-bottom: 24px;
+    }
+    .back-link:hover {
+      opacity: 0.8;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      .header h1 { font-size: 28px; }
+      .overview-stats { flex-direction: column; gap: 12px; }
+      .session-header h2 { font-size: 24px; }
+      .time-grid { grid-template-columns: 1fr; gap: 20px; }
+      .agenda-item { grid-template-columns: 56px 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ HEADER ═══════ -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+          <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+          <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+          <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+          <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+          <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+        </svg>
+      </div>
+
+      <a href="index.html" class="back-link">&larr; Back to landing page</a>
+      <p class="eyebrow">Leland Career Bootcamp</p>
+      <h1>Detailed Syllabus</h1>
+      <p class="subtitle">Everything you'll learn, build, and walk away with across 6 live sessions. Each session includes pre-work, a 90-minute live agenda, a tangible deliverable, and homework to keep momentum between sessions.</p>
+
+      <div class="overview-stats">
+        <div class="overview-stat"><strong>6</strong> live sessions</div>
+        <div class="overview-stat"><strong>90 min</strong> each</div>
+        <div class="overview-stat"><strong>$699</strong> total</div>
+        <div class="overview-stat"><strong>~20 hrs</strong> total commitment</div>
+        <div class="overview-stat"><strong>6</strong> tangible deliverables</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══════ SESSIONS ═══════ -->
+  <main>
+    <div class="container">
+
+      <!-- ── SESSION 1 ── -->
+      <div class="session">
+        <div class="session-header">
+          <span class="session-number">1</span>
+          <h2>Build Your AI Job-Finding Engine</h2>
+          <p class="session-subtitle">Use AI to find the right opportunities intelligently. Build an agent that scans job boards, growth signals, and hiring announcements so you can focus on the roles that actually fit.</p>
+          <span class="deliverable-tag">Deliverable: A working AI agent that sources opportunities daily</span>
+        </div>
+
+        <div class="objectives">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Define personal role-fit criteria across function, culture, growth, and compensation dimensions</li>
+            <li>Use AI to batch-analyze job postings and identify high-match opportunities</li>
+            <li>Build a reusable AI agent/prompt for daily job matching</li>
+            <li>Create a curated shortlist of 10 target roles with rationale</li>
+          </ul>
+        </div>
+
+        <div class="prework">
+          <div class="prework-header">
+            <p class="section-label">Pre-Work</p>
+            <span class="prework-total">~40 min total</span>
+          </div>
+          <div class="prework-item">
+            <h4>Reflect on your career criteria <span class="time">15 min</span></h4>
+            <p>Write down what matters most across four dimensions: function (what work you want to do), culture (what environment you thrive in), growth (where you want to be in 2-3 years), and compensation (your floor and target).</p>
+          </div>
+          <div class="prework-item">
+            <h4>Gather 5-10 job postings you find interesting <span class="time">20 min</span></h4>
+            <p>Browse LinkedIn, Indeed, or your preferred job board. Save postings that caught your eye, even if they're not a perfect fit. We'll use these as raw material for AI analysis.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Set up a free AI tool <span class="time">5 min</span></h4>
+            <p>Create an account on ChatGPT or Claude (free tier) if you don't already have one. No paid subscription needed. Your $20 AI credit covers usage for agent-building sessions.</p>
+          </div>
+        </div>
+
+        <div class="agenda">
+          <p class="section-label">90-Minute Agenda</p>
+          <div class="agenda-item">
+            <span class="agenda-time">5 min</span>
+            <div class="agenda-segment">
+              <h4>Welcome &amp; Introductions</h4>
+              <p>Meet your cohort, bootcamp overview, what you'll walk away with today.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>The Strategy Problem</h4>
+              <p>Why spray-and-pray fails. 59% of job seekers search 3+ months. The shift from "fix my resume" to "fix my strategy."</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Role-Fit Framework</h4>
+              <p>Four dimensions: function fit, culture fit, growth trajectory, compensation. You'll fill in your own criteria worksheet.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">20 min</span>
+            <div class="agenda-segment">
+              <h4>Live AI Demo: Job Matching</h4>
+              <p>Instructor feeds 50+ job postings into AI with role-fit criteria. Walk through prompt engineering. Surface top 5 matches and explain why each scored high.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">25 min</span>
+            <div class="agenda-segment">
+              <h4>Hands-On Workshop</h4>
+              <p>Build your own AI job matching prompt. Test with real job boards. Refine criteria in real time. Peer feedback in breakout rooms.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>Building Your Daily Agent</h4>
+              <p>Set up your prompt to run daily: saved prompts, custom GPTs, automation options. Demo of scheduling.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">5 min</span>
+            <div class="agenda-segment">
+              <h4>Wrap-Up &amp; Preview</h4>
+              <p>Review deliverable checklist. Preview Session 2. Between-session assignments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">Homework</p>
+            <span class="homework-total">~1.5 hrs over the week</span>
+          </div>
+          <div class="homework-item">
+            <h4>Run your AI matching agent daily for one week <span class="time">10 min/day</span></h4>
+            <p>Paste your prompt into ChatGPT or Claude each day with fresh job postings. Note which roles score highest and why.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Refine your role-fit criteria <span class="time">15 min</span></h4>
+            <p>After a few days, adjust your criteria. Too many matches? Tighten your requirements. Too few? Broaden one dimension.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Finalize your top 10 target roles <span class="time">20 min</span></h4>
+            <p>Lock in your shortlist of 10 roles and identify your top 3 dream companies. Research 5 people at these companies you'd like to connect with.</p>
+          </div>
+        </div>
+
+        <div class="connection">
+          <strong>Next session:</strong> Bring your finalized top 10 roles and a list of 5 people at target companies to Session 2, where you'll craft outreach messages and practice networking conversations.
+        </div>
+      </div>
+
+      <!-- ── SESSION 2 ── -->
+      <div class="session">
+        <div class="session-header">
+          <span class="session-number">2</span>
+          <h2>Turn Cold Outreach into Warm Conversations</h2>
+          <p class="session-subtitle">Learn who to connect with, how to write messages that get replies, and how to have conversations that lead to real next steps.</p>
+          <span class="deliverable-tag">Deliverable: 5 real outreach messages sent + 1 live role-play</span>
+        </div>
+
+        <div class="objectives">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Identify the right people to contact at your target companies (peers, hiring managers, connectors)</li>
+            <li>Write personalized outreach messages that get responses, not ignores</li>
+            <li>Use AI to research people and personalize at scale without sounding robotic</li>
+            <li>Practice informational interview conversations through live role-play</li>
+          </ul>
+        </div>
+
+        <div class="prework">
+          <div class="prework-header">
+            <p class="section-label">Pre-Work</p>
+            <span class="prework-total">~40 min total</span>
+          </div>
+          <div class="prework-item">
+            <h4>Research 5 people from your target companies <span class="time">25 min</span></h4>
+            <p>For each of the 5 people you identified in Session 1 homework, spend a few minutes: read their recent LinkedIn posts, note their career path, find something specific you can reference. The best outreach messages reference something real.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Write one outreach message on your own (no AI) <span class="time">10 min</span></h4>
+            <p>Before we teach the AI-assisted approach, write a genuine connection request to one of your targets. We'll compare your natural voice to AI-generated versions in session.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Read: The anatomy of a great cold message <span class="time">5 min</span></h4>
+            <p>Read the provided 3-minute guide on what makes outreach messages get responses vs. get ignored. Focus on the framework: specific hook, clear ask, easy out.</p>
+          </div>
+        </div>
+
+        <div class="agenda">
+          <p class="section-label">90-Minute Agenda</p>
+          <div class="agenda-item">
+            <span class="agenda-time">5 min</span>
+            <div class="agenda-segment">
+              <h4>Check-In</h4>
+              <p>How did your AI agent perform this week? Quick wins and surprises from daily matching. Any standout roles or companies?</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>The Networking Mindset Shift</h4>
+              <p>Why networking isn't "using people." The informational interview as a genuine learning conversation. How 70% of jobs are filled through connections, not applications.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Live AI Demo: Personalized Outreach</h4>
+              <p>Take 3 real profiles from a volunteer's list. Use AI to generate personalized connection messages. Compare AI-only vs. AI-assisted (your research + AI writing). Show the quality difference.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">25 min</span>
+            <div class="agenda-segment">
+              <h4>Hands-On: Craft &amp; Send Your Messages</h4>
+              <p>Write 5 personalized outreach messages using the AI-assisted method. Each must reference something specific about the recipient. Peer review: would you respond to this? Then hit send.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">20 min</span>
+            <div class="agenda-segment">
+              <h4>Informational Interview Masterclass + Live Role-Play</h4>
+              <p>The 5-question framework that gets referrals. How to ask without asking. Role-play practice in pairs with live feedback. AI-generated follow-up templates for after the call.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Wrap-Up</h4>
+              <p>Deliverable check: 5 messages sent, role-play completed. Preview Session 3. Homework assignments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">Homework</p>
+            <span class="homework-total">~1.5 hrs over the week</span>
+          </div>
+          <div class="homework-item">
+            <h4>Send 5 more outreach messages <span class="time">20 min</span></h4>
+            <p>Expand your outreach to 10 total. Track who responds and who doesn't. Note patterns in what works.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Conduct 1-2 informational interviews <span class="time">1 hr</span></h4>
+            <p>If any connections respond positively, schedule and complete at least one informational interview using the 5-question framework. Send a follow-up within 24 hours.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Audit your LinkedIn profile <span class="time">10 min</span></h4>
+            <p>Screenshot your current LinkedIn headline, summary, and experience section. Note what feels outdated or generic. Bring these screenshots to Session 3.</p>
+          </div>
+        </div>
+
+        <div class="connection">
+          <strong>Next session:</strong> Bring your LinkedIn audit screenshots and your current resume to Session 3, where you'll optimize both for ATS algorithms and human readers.
+        </div>
+      </div>
+
+      <!-- ── SESSION 3 ── -->
+      <div class="session">
+        <div class="session-header">
+          <span class="session-number">3</span>
+          <h2>Beat the Bots, Impress the Humans</h2>
+          <p class="session-subtitle">Optimize your resume and LinkedIn for both ATS algorithms and human readers. Find your authentic posting topics and build your personal brand.</p>
+          <span class="deliverable-tag">Deliverable: Refined resume, LinkedIn profile, and a drafted post</span>
+        </div>
+
+        <div class="objectives">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Understand how ATS systems actually filter applications (and debunk the myths)</li>
+            <li>Use AI to perform a gap analysis between your resume and target job postings</li>
+            <li>Optimize your LinkedIn headline, summary, and skills section for recruiter visibility</li>
+            <li>Develop a content strategy and publish your first brand-building LinkedIn post</li>
+          </ul>
+        </div>
+
+        <div class="prework">
+          <div class="prework-header">
+            <p class="section-label">Pre-Work</p>
+            <span class="prework-total">~30 min total</span>
+          </div>
+          <div class="prework-item">
+            <h4>Pick your #1 target role and copy the full posting <span class="time">10 min</span></h4>
+            <p>From your top 10 list, choose the single role you'd most like to apply to. Copy the full job posting text into a document. We'll use this for live resume optimization.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Prepare your current resume <span class="time">5 min</span></h4>
+            <p>Have your resume ready as a Google Doc or Word file (not PDF). We'll be making real edits during the session, so you need an editable format.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Find 3 LinkedIn profiles you admire <span class="time">15 min</span></h4>
+            <p>Look at people in roles similar to your targets. What makes their profiles compelling? Note specific headlines, summary structures, or featured sections that stand out.</p>
+          </div>
+        </div>
+
+        <div class="agenda">
+          <p class="section-label">90-Minute Agenda</p>
+          <div class="agenda-item">
+            <span class="agenda-time">5 min</span>
+            <div class="agenda-segment">
+              <h4>Check-In</h4>
+              <p>Networking wins from the week. Any responses, informational interviews, or surprising connections?</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>ATS Demystified</h4>
+              <p>How ATS systems actually parse resumes. What gets filtered and why. The 80/20 of what recruiters actually scan (data-backed, including the 6-second scan research).</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Live AI Demo: Resume Gap Analysis</h4>
+              <p>Feed a job posting + sample resume into AI. Get a detailed gap analysis: missing keywords, weak bullet points, formatting issues. Walk through the prompt.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">20 min</span>
+            <div class="agenda-segment">
+              <h4>Hands-On: Optimize Your Resume</h4>
+              <p>Run your own resume through AI gap analysis against your target posting. Rewrite top bullet points live. Peer review in breakout rooms. Instructor circulates for feedback.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>LinkedIn Profile Rebuild</h4>
+              <p>AI-powered audit of your headline (the most-scanned element). Summary rewrite for target roles. Skills section alignment with ATS keywords. Before/after examples.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Content Strategy: Draft &amp; Publish</h4>
+              <p>Why posting matters for job seekers. 3 post formats that work: insight, story, question. Use AI to draft your first post from a real work experience. Hit publish live.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>Wrap-Up</h4>
+              <p>Deliverable check: resume optimized, LinkedIn refreshed, post published. Preview Session 4. Homework assignments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">Homework</p>
+            <span class="homework-total">~1 hr 15 min</span>
+          </div>
+          <div class="homework-item">
+            <h4>Finalize your ATS-optimized resume <span class="time">30 min</span></h4>
+            <p>Incorporate all feedback. Run one final AI gap analysis to verify keyword coverage. Save as both editable format and PDF.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Complete your full LinkedIn profile update <span class="time">25 min</span></h4>
+            <p>Finish all sections: headline, summary, experience (top 3 roles), skills (reordered for target role), and featured section. Write and publish a second LinkedIn post.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Brainstorm your AI project idea <span class="time">20 min</span></h4>
+            <p>Think about a workflow in your field that could be automated or improved with AI. Write a 2-3 sentence description of the problem and how AI could help. Bring this to Session 4.</p>
+          </div>
+        </div>
+
+        <div class="connection">
+          <strong>Next session:</strong> Bring your AI project idea and your laptop set up with Claude Code or ChatGPT to Session 4, where you'll build a portfolio-worthy AI project.
+        </div>
+      </div>
+
+      <!-- ── SESSION 4 ── -->
+      <div class="session">
+        <div class="session-header">
+          <span class="session-number">4</span>
+          <h2>Build an AI Project That Gets You Hired</h2>
+          <p class="session-subtitle">Build an automated workflow using Claude Code to demonstrate AI-native skills. Create a portfolio piece that shows what you can do, and learn to talk about it in interviews.</p>
+          <span class="deliverable-tag">Deliverable: A portfolio AI project for GitHub and LinkedIn</span>
+        </div>
+
+        <div class="objectives">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Scope an AI project that demonstrates practical business value, not just technical skill</li>
+            <li>Build a working automated workflow using Claude Code or similar AI tools</li>
+            <li>Document and present your project for a GitHub portfolio and LinkedIn showcase</li>
+            <li>Craft the "tell me about a time you used AI" interview answer using your project</li>
+          </ul>
+        </div>
+
+        <div class="prework">
+          <div class="prework-header">
+            <p class="section-label">Pre-Work</p>
+            <span class="prework-total">~35 min total</span>
+          </div>
+          <div class="prework-item">
+            <h4>Refine your AI project idea <span class="time">15 min</span></h4>
+            <p>Take the idea you brainstormed and flesh it out: What problem does it solve? Who benefits? What does the input look like? What does the output look like? Think about problems in your industry or daily work that involve repetitive information processing.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Set up your tools <span class="time">10 min</span></h4>
+            <p>Ensure Claude Code or ChatGPT is ready. If you want to publish to GitHub, create a free account at github.com. No coding experience required; we'll walk through everything step by step.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Browse 3 example AI projects <span class="time">10 min</span></h4>
+            <p>Review the provided examples of simple but impressive AI projects: email classifiers, report generators, data summarizers. Note what makes each one compelling as a portfolio piece.</p>
+          </div>
+        </div>
+
+        <div class="agenda">
+          <p class="section-label">90-Minute Agenda</p>
+          <div class="agenda-item">
+            <span class="agenda-time">5 min</span>
+            <div class="agenda-segment">
+              <h4>Check-In</h4>
+              <p>Resume and LinkedIn progress. Post engagement updates. Any callbacks or interviews from optimized applications?</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>Why AI Projects Win Interviews</h4>
+              <p>What hiring managers are actually looking for when they say "AI experience." The difference between using AI and building with AI. How to scope a project that's impressive but achievable in 60 minutes.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Live Demo: Building an AI Workflow</h4>
+              <p>Instructor builds a complete AI-automated workflow live from scratch using Claude Code. Walk through: defining the problem, writing the prompt, testing, iterating, and documenting. Template project structure provided.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">35 min</span>
+            <div class="agenda-segment">
+              <h4>Hands-On: Build Your Project</h4>
+              <p>Build your own AI project using the guided template. Instructor and TAs circulate for help. Work in pairs for peer support. Get a working prototype by the end of this block.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Document &amp; Showcase</h4>
+              <p>Write a compelling project README. Post your project to GitHub (guided walkthrough). Draft a LinkedIn post about what you built and why. Frame your project for the interview question: "Tell me about a time you used AI."</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>Wrap-Up</h4>
+              <p>Deliverable check: working project, GitHub repo, LinkedIn draft. Preview Session 5. Homework assignments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">Homework</p>
+            <span class="homework-total">~1 hr 15 min</span>
+          </div>
+          <div class="homework-item">
+            <h4>Polish and publish your AI project <span class="time">30 min</span></h4>
+            <p>Refine your project based on session feedback. Finalize the GitHub README with screenshots or examples. Publish your LinkedIn post about the project.</p>
+          </div>
+          <div class="homework-item">
+            <h4>List 5 work accomplishments you're proud of <span class="time">20 min</span></h4>
+            <p>Think about times you solved a hard problem, led a project, improved a process, or handled a difficult situation. Write 1-2 sentences about each. These become raw material for your behavioral interview answers.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Draft your "tell me about yourself" answer <span class="time">25 min</span></h4>
+            <p>Write a 60-90 second script that covers: where you've been, what you're great at, and why you're excited about what's next. Don't overthink it; we'll refine it in Session 5.</p>
+          </div>
+        </div>
+
+        <div class="connection">
+          <strong>Next session:</strong> Bring your 5 accomplishments and "tell me about yourself" draft to Session 5, where you'll craft polished behavioral interview answers and practice with live feedback.
+        </div>
+      </div>
+
+      <!-- ── SESSION 5 ── -->
+      <div class="session">
+        <div class="session-header">
+          <span class="session-number">5</span>
+          <h2>Own Your Story: Behavioral Interview Excellence</h2>
+          <p class="session-subtitle">Craft the "tell me about yourself" answer that opens doors. Practice the intangibles: energy, specificity, and authentic presence.</p>
+          <span class="deliverable-tag">Deliverable: A polished "tell me about yourself" script</span>
+        </div>
+
+        <div class="objectives">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Craft a compelling "tell me about yourself" answer that sets the tone for any interview</li>
+            <li>Transform work accomplishments into polished STAR-method behavioral answers</li>
+            <li>Practice the intangibles that interviewers actually evaluate: energy, specificity, and presence</li>
+            <li>Build a reusable answer bank for the most common behavioral interview questions</li>
+          </ul>
+        </div>
+
+        <div class="prework">
+          <div class="prework-header">
+            <p class="section-label">Pre-Work</p>
+            <span class="prework-total">~35 min total</span>
+          </div>
+          <div class="prework-item">
+            <h4>Review your 5 accomplishments <span class="time">10 min</span></h4>
+            <p>Re-read the accomplishments you listed in homework. For each one, note: What was the situation? What did you specifically do? What was the measurable result? We'll polish these into STAR answers.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Practice your "tell me about yourself" draft out loud <span class="time">10 min</span></h4>
+            <p>Read your draft aloud 3 times. Time yourself. Note where you stumble or where it feels scripted. Record yourself on your phone if possible. We'll workshop this in session.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Watch: Strong vs. weak behavioral answers <span class="time">15 min</span></h4>
+            <p>Watch the provided video showing examples of strong vs. weak behavioral interview responses. Note the difference between vague answers and specific, structured ones. Pay attention to energy and delivery, not just content.</p>
+          </div>
+        </div>
+
+        <div class="agenda">
+          <p class="section-label">90-Minute Agenda</p>
+          <div class="agenda-item">
+            <span class="agenda-time">5 min</span>
+            <div class="agenda-segment">
+              <h4>Check-In</h4>
+              <p>AI project showcase: anyone publish their project this week? LinkedIn engagement updates. Interview pipeline check.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>"Tell Me About Yourself" Workshop</h4>
+              <p>The 3-part formula: past, present, future. Live rewriting of volunteer scripts. What makes an answer memorable vs. forgettable. The 60-90 second sweet spot.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">20 min</span>
+            <div class="agenda-segment">
+              <h4>Hands-On: Polish Your Script</h4>
+              <p>Rewrite your "tell me about yourself" using AI and the 3-part formula. Practice in pairs with live feedback. Focus on energy and authenticity, not perfection.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>STAR Method Deep Dive</h4>
+              <p>Transform your 5 accomplishments into polished STAR answers using AI. Instructor demos with a volunteer's real accomplishment. The difference between "I was part of" and "I led."</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">20 min</span>
+            <div class="agenda-segment">
+              <h4>Mock Interview Rounds</h4>
+              <p>Live mock behavioral interviews in small groups. Each person answers 2 questions with real-time feedback. Practice handling curveball questions: "Why are you leaving?" and salary questions.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Wrap-Up</h4>
+              <p>Deliverable check: polished script ready. Preview Session 6 (assessments and capstone). Homework assignments.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">Homework</p>
+            <span class="homework-total">~1 hr 30 min</span>
+          </div>
+          <div class="homework-item">
+            <h4>Complete 2 full mock interviews with AI <span class="time">45 min</span></h4>
+            <p>Use the AI mock interview prompt from the session. Do one behavioral interview and one role-specific interview for your #1 target. Record yourself if possible and review.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Expand your STAR answer bank to 8-10 answers <span class="time">30 min</span></h4>
+            <p>Cover the essentials: leadership, conflict, failure, teamwork, initiative, problem-solving, using AI. These should feel natural, not memorized.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Research a practice assessment for your target role <span class="time">15 min</span></h4>
+            <p>Find an example of the kind of assessment your target roles use: case study, take-home project, live coding challenge, or presentation. Bring this to Session 6.</p>
+          </div>
+        </div>
+
+        <div class="connection">
+          <strong>Next session:</strong> Bring your practice assessment example and your complete interview prep materials to Session 6, where you'll master assessments and assemble your complete job search playbook.
+        </div>
+      </div>
+
+      <!-- ── SESSION 6 ── -->
+      <div class="session">
+        <div class="session-header">
+          <span class="session-number">6</span>
+          <h2>Ace Cases, Take-Homes, and Live Challenges</h2>
+          <p class="session-subtitle">Master the universal framework for any skills assessment: take-home projects, case interviews, live challenges, and presentations.</p>
+          <span class="deliverable-tag">Deliverable: A completed practice assessment + reusable framework</span>
+        </div>
+
+        <div class="objectives">
+          <p class="section-label">Learning Objectives</p>
+          <ul>
+            <li>Understand the different assessment types and what each one is really evaluating</li>
+            <li>Apply a universal framework for approaching any skills assessment with confidence</li>
+            <li>Use AI strategically during assessments (when it helps vs. when it hurts)</li>
+            <li>Complete a timed practice assessment and get peer feedback</li>
+          </ul>
+        </div>
+
+        <div class="prework">
+          <div class="prework-header">
+            <p class="section-label">Pre-Work</p>
+            <span class="prework-total">~30 min total</span>
+          </div>
+          <div class="prework-item">
+            <h4>Review your practice assessment example <span class="time">10 min</span></h4>
+            <p>Re-read the assessment you found as homework. Identify: What skills is this testing? What does a great answer look like? Where would you get stuck?</p>
+          </div>
+          <div class="prework-item">
+            <h4>Reflect on your bootcamp journey <span class="time">10 min</span></h4>
+            <p>Review what you've built across Sessions 1-5: AI matching agent, outreach messages sent, optimized resume, LinkedIn profile, AI portfolio project, behavioral answers. Note any gaps you want to strengthen.</p>
+          </div>
+          <div class="prework-item">
+            <h4>Write your biggest remaining job search concern <span class="time">10 min</span></h4>
+            <p>What's the one thing that still makes you nervous? Assessment anxiety? Salary negotiation? Imposter syndrome? We'll address the top concerns in session.</p>
+          </div>
+        </div>
+
+        <div class="agenda">
+          <p class="section-label">90-Minute Agenda</p>
+          <div class="agenda-item">
+            <span class="agenda-time">5 min</span>
+            <div class="agenda-segment">
+              <h4>Check-In</h4>
+              <p>Mock interview learnings. Anyone have a real interview lined up? Celebrate wins from the bootcamp so far.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>The Assessment Landscape</h4>
+              <p>The 4 types: take-home projects, case interviews, live challenges, and presentations. What each one really evaluates. How to ask clarifying questions that impress. When and how to use AI ethically during assessments.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>The Universal Framework</h4>
+              <p>The 5-step approach that works for any assessment: Clarify, Structure, Execute, Polish, Present. Live walkthrough of the framework applied to a sample case study.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">25 min</span>
+            <div class="agenda-segment">
+              <h4>Timed Practice Assessment</h4>
+              <p>Complete a practice assessment under timed conditions. Choose from: a mini case study, a take-home prompt, or a presentation challenge. Apply the framework in real time.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">15 min</span>
+            <div class="agenda-segment">
+              <h4>Peer Review &amp; Feedback</h4>
+              <p>Present your assessment response to a small group. Get structured feedback using a rubric. Learn from seeing how others approached the same challenge.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>Assemble Your Complete Playbook</h4>
+              <p>Walk through all 6 sessions' deliverables. Organize into a weekly system: Monday (run agent + research), Tuesday (apply), Wednesday (network), Thursday (content + prep), Friday (interview practice). Your complete AI job search playbook.</p>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <span class="agenda-time">10 min</span>
+            <div class="agenda-segment">
+              <h4>Celebration &amp; Next Steps</h4>
+              <p>Share one commitment with the group. 30-day challenge kickoff. Alumni community introduction. Metrics to track. Final Q&amp;A.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="homework">
+          <div class="homework-header">
+            <p class="section-label">Homework (Post-Bootcamp)</p>
+            <span class="homework-total">~1 hr</span>
+          </div>
+          <div class="homework-item">
+            <h4>Complete your AI job search playbook <span class="time">30 min</span></h4>
+            <p>Assemble all deliverables into one organized document: matching prompt, resume(s), LinkedIn strategy, outreach templates, AI project, STAR answers, assessment framework, weekly schedule.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Launch your weekly system <span class="time">15 min</span></h4>
+            <p>Block time on your calendar for your first full week following the system. Commit to running it for 30 days.</p>
+          </div>
+          <div class="homework-item">
+            <h4>Set your 30-day targets <span class="time">15 min</span></h4>
+            <p>Define success metrics: applications sent, informational interviews completed, LinkedIn posts published, interviews landed. Share in the alumni channel for accountability.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══════ TIME SUMMARY ═══════ -->
+  <section class="time-summary">
+    <div class="container">
+      <h2>Total Time Commitment</h2>
+      <div class="time-grid">
+        <div class="time-card">
+          <div class="number">9 hrs</div>
+          <div class="label">Live sessions (6 x 90 min)</div>
+        </div>
+        <div class="time-card">
+          <div class="number">~3.5 hrs</div>
+          <div class="label">Pre-work across all sessions</div>
+        </div>
+        <div class="time-card">
+          <div class="number">~8 hrs</div>
+          <div class="label">Homework between sessions</div>
+        </div>
+      </div>
+      <div class="cta">
+        <a href="index.html#reserve" class="btn-primary">Reserve Your Spot for $699</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer class="footer">
+    <div class="container">
+      <svg width="200" height="45" viewBox="0 0 200 45" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Leland">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M41.0778 3.86523L13.0702 12.2675L3.73438 41.2086L32.6755 32.8064L41.0778 3.86523ZM22.4056 27.2048C24.9836 27.2048 27.0735 25.1149 27.0735 22.5369C27.0735 19.9588 24.9836 17.8689 22.4056 17.8689C19.8276 17.8689 17.7377 19.9588 17.7377 22.5369C17.7377 25.1149 19.8276 27.2048 22.4056 27.2048Z" fill="white"/>
+        <path d="M162.705 24.9972V38.1671H169.214V23.5735C169.214 17.675 167.434 13.0986 160.366 13.0986C156.807 13.0986 154.315 14.6749 152.993 17.2682H152.841L152.891 13.5563H146.383V38.1671H152.891V25.9125C152.891 21.7938 154.264 18.4378 158.281 18.4378C162.044 18.4378 162.705 21.3361 162.705 24.9972Z" fill="white"/>
+        <path d="M134.451 35.3196L134.553 38.1671H140.807V24.082C140.807 19.9124 139.892 17.675 138.112 15.9462C136.282 14.2173 133.79 13.0986 129.417 13.0986C125.146 13.0986 121.688 14.5732 119.807 15.6919L121.79 19.8615C122.858 19.0479 125.553 17.8276 128.807 17.8276C132.214 17.8276 134.299 19.3022 134.299 22.4548V23.1158L128.4 23.5226C123.315 23.8786 118.281 25.8617 118.281 30.9974C118.281 36.1331 122.146 38.7264 126.926 38.7264C130.587 38.7264 133.434 37.0993 134.451 35.3196ZM129.926 27.3363L134.349 27.0821V31.6076C133.485 32.828 131.604 34.3026 129.061 34.3026C126.366 34.3026 124.79 32.8788 124.79 30.794C124.79 28.7092 126.468 27.5397 129.926 27.3363Z" fill="white"/>
+        <path d="M84.6788 27.9465H102.781C102.781 27.9465 102.883 25.9125 102.883 24.6413C102.883 18.0818 98.3063 13.0986 90.7298 13.0986C83.7127 13.0986 77.9668 18.3869 77.9668 26.2685C77.9668 34.2009 83.4585 38.7264 90.8824 38.7264C96.8826 38.7264 100.595 36.184 101.967 34.7602L99.425 31.2517C98.2555 32.2686 95.3062 33.7432 92.0011 33.7432C88.2891 33.7432 85.289 31.8618 84.6788 27.9465ZM90.679 17.9293C95.2554 17.9293 96.2724 21.031 96.3741 23.726H84.5771C84.7805 20.6243 86.8145 17.9293 90.679 17.9293Z" fill="white"/>
+        <path d="M63.8193 6.35938V32.6722H76.0738V38.1639H57.2598V6.35938L63.8193 6.35938Z" fill="white"/>
+        <path d="M113.915 6.35938V38.1639H107.457V6.35938L113.915 6.35938Z" fill="white"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M200 6.35938V38.1639H193.847L193.796 34.2994H193.644C191.661 37.452 188.61 38.7232 185.203 38.7232C177.982 38.7232 173.559 33.1298 173.559 25.8076C173.559 18.8413 178.186 13.0954 185.661 13.0954C188.966 13.0954 191.762 14.3158 193.491 16.9599H193.593C193.542 15.8412 193.542 14.5192 193.542 12.7903V6.35938L200 6.35938ZM180.169 25.8076C180.169 30.0789 182.813 33.4349 187.034 33.4349C190.949 33.4349 193.695 30.4348 193.695 25.8076C193.695 21.6889 191 18.0786 186.83 18.0786C182.61 18.0786 180.169 21.6889 180.169 25.8076Z" fill="white"/>
+      </svg>
+      <p>&copy; 2026 Leland</p>
+    </div>
+  </footer>
+
+</body>
+</html>
